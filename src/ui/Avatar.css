@@ -1,0 +1,26 @@
+.avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1;
+  flex: none;
+}
+
+.avatar--md {
+  width: var(--touch-target-lg);
+  height: var(--touch-target-lg);
+  font-size: var(--font-size-xl);
+}
+
+.avatar--lg {
+  width: var(--touch-target-xl);
+  height: var(--touch-target-xl);
+  font-size: var(--font-size-2xl);
+}
+
+.avatar[data-tone='reading'] { background: var(--color-subject-reading); }
+.avatar[data-tone='writing'] { background: var(--color-subject-writing); }
+.avatar[data-tone='numeracy'] { background: var(--color-subject-numeracy); }
+.avatar[data-tone='digital'] { background: var(--color-subject-digital); }
