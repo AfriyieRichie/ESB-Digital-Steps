@@ -1,0 +1,95 @@
+.facilitator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.facilitator__title {
+  font-size: var(--font-size-2xl);
+}
+
+.facilitator__subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.facilitator__error {
+  color: var(--color-danger);
+}
+
+.facilitator__scroll {
+  overflow-x: auto;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.facilitator__table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--font-size-sm);
+}
+
+.facilitator__table th,
+.facilitator__table td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.facilitator__table thead th[data-tone] {
+  color: #ffffff;
+}
+
+.facilitator__table thead th[data-tone='reading'] { background: var(--color-subject-reading); }
+.facilitator__table thead th[data-tone='writing'] { background: var(--color-subject-writing); }
+.facilitator__table thead th[data-tone='numeracy'] { background: var(--color-subject-numeracy); }
+.facilitator__table thead th[data-tone='digital'] { background: var(--color-subject-digital); }
+
+.facilitator__comp {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface-sunken);
+}
+
+.facilitator__comp-id {
+  font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+}
+
+.facilitator__sticky {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--color-surface);
+  text-align: left;
+}
+
+.facilitator__corner {
+  background: var(--color-surface-sunken);
+}
+
+.facilitator__learner {
+  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.facilitator__band {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.facilitator__cell--done {
+  color: var(--color-success);
+  font-weight: 800;
+  background: rgba(46, 125, 50, 0.1);
+}
+
+.facilitator__pct,
+.facilitator__pct-head {
+  font-weight: 800;
+  background: var(--color-surface-sunken);
+}
