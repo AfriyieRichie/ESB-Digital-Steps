@@ -1,0 +1,98 @@
+.tap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 100%;
+  width: 100%;
+}
+
+.tap__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.tap__instruction {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tap__count {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-subject-digital);
+}
+
+.tap__field {
+  position: relative;
+  flex: 1;
+  min-height: 360px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-sunken);
+  overflow: hidden;
+}
+
+.tap__star {
+  position: absolute;
+  /* Centre the star on its coordinate. */
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  /* Comfortably above the 44px accessibility floor for small fingers. */
+  width: var(--touch-target-xl);
+  height: var(--touch-target-xl);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-star);
+  font-size: var(--touch-target-xl);
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform var(--motion-fast) ease, opacity var(--motion-fast) ease;
+}
+
+.tap__star:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.tap__star:not(.tap__star--popped):active {
+  transform: translate(-50%, -50%) scale(0.88);
+}
+
+.tap__star--popped {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.6);
+  pointer-events: none;
+}
+
+.tap__progress {
+  height: var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+  overflow: hidden;
+}
+
+.tap__progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--color-subject-digital);
+  transition: width var(--motion-base) ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap__star,
+  .tap__progress-fill {
+    transition: none;
+  }
+  .tap__star--popped {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

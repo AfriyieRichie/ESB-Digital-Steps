@@ -1,0 +1,10 @@
+{
+  "id": "tap",
+  "subject": "digital",
+  "band": 1,
+  "title": "Wake it and tap",
+  "blurb": "Tap the stars.",
+  "competencies": ["u_power", "u_tap"],
+  "activityType": "tap",
+  "config": { "count": 6 }
+}
