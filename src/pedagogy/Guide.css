@@ -1,0 +1,23 @@
+.guide {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.guide__face {
+  font-size: var(--font-size-3xl);
+  line-height: 1;
+  flex: none;
+}
+
+.guide__bubble {
+  position: relative;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-1);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}

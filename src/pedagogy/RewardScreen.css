@@ -1,0 +1,36 @@
+.reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+  padding-top: var(--space-6);
+}
+
+.reward__star {
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--color-star);
+  animation: reward-pop var(--motion-slow) ease both;
+}
+
+.reward__title {
+  font-size: var(--font-size-2xl);
+}
+
+@keyframes reward-pop {
+  from {
+    transform: scale(0.2) rotate(-12deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reward__star {
+    animation: none;
+  }
+}
