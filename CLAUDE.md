@@ -75,7 +75,9 @@ build order.
   - `attempts.ts` — the attempt log + per-skill/learner stats (accuracy, time).
   - `mastery.ts` — derives mastery from attempts; writes the CompetencyEvent
     milestone once a skill is mastered. Activities feed it via `onAttempt`.
-  - `export.ts` — funder-facing export (stub).
+  - `export.ts` / `exportModel.ts` — funder-facing export: collects live Dexie
+    data into a CSV + JSON bundle (pure model is unit-tested), downloaded via
+    `ui/download.ts` with no network.
 - `src/content/` — lesson JSON per subject, validated by `schema.ts` (Zod).
   A lesson lists `skills` and ordered `steps`; each step is one activity +
   config. Item schemas (`chooseItem`, `typeItem`) are defined ready for their

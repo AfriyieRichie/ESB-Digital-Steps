@@ -121,6 +121,13 @@ mastery % and accuracy per skill, time-on-task, streak, last-seen, and
 **per-strand** roll-ups, with the existing learners × competencies grid as the
 at-a-glance view.
 
+**Funder export (DONE)** — `data/export.ts` collects every learner's mastery,
+accuracy, time-on-task, streak, stars/XP, and badges into a **CSV** (wide grid:
+a 1/0 column per competency + summary metrics) and a full **JSON** snapshot.
+Serialisation is pure and unit-tested (`exportModel.ts`); the facilitator
+downloads it with `ui/download.ts` — a Blob + anchor click, no network, no
+popup, so it works over file:// and in a sandbox where allowed.
+
 ---
 
 ## 6. Build order (each slice ships on its own)

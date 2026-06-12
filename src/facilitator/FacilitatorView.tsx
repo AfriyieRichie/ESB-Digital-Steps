@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import { COMPETENCIES } from '../data/competencies';
 import { SUBJECTS } from '../data/subjects';
+import { collectExport } from '../data/export';
+import { downloadText } from '../ui/download';
+import { Button } from '../ui/Button';
 import { useFacilitatorData } from './useFacilitatorData';
 import './FacilitatorView.css';
 
@@ -24,8 +28,25 @@ function formatAccuracy(accuracy: number, attempts: number): string {
   return attempts === 0 ? '—' : `${Math.round(accuracy * 100)}%`;
 }
 
+type ExportState = 'idle' | 'working' | 'done' | 'blocked';
+
 export function FacilitatorView(): React.JSX.Element {
   const data = useFacilitatorData();
+  const [exportState, setExportState] = useState<ExportState>('idle');
+
+  async function handleExport(format: 'csv' | 'json'): Promise<void> {
+    setExportState('working');
+    try {
+      const bundle = await collectExport();
+      const ok =
+        format === 'csv'
+          ? downloadText(`${bundle.filenameBase}.csv`, bundle.csv, 'text/csv')
+          : downloadText(`${bundle.filenameBase}.json`, bundle.json, 'application/json');
+      setExportState(ok ? 'done' : 'blocked');
+    } catch {
+      setExportState('blocked');
+    }
+  }
 
   return (
     <section className="facilitator">
@@ -33,6 +54,25 @@ export function FacilitatorView(): React.JSX.Element {
       <p className="facilitator__subtitle">
         Competencies demonstrated by each learner. Data is stored on this device.
       </p>
+
+      <div className="facilitator__export">
+        <Button variant="ghost" onPointerDown={() => void handleExport('csv')} disabled={exportState === 'working'}>
+          ⬇ Export CSV
+        </Button>
+        <Button variant="ghost" onPointerDown={() => void handleExport('json')} disabled={exportState === 'working'}>
+          ⬇ Export JSON
+        </Button>
+        {exportState === 'done' && (
+          <span className="facilitator__export-msg" role="status">
+            Saved to your device.
+          </span>
+        )}
+        {exportState === 'blocked' && (
+          <span className="facilitator__export-msg facilitator__export-msg--warn" role="status">
+            This device blocked the download — try a browser, not the sandboxed app.
+          </span>
+        )}
+      </div>
 
       {data.status === 'loading' && <p>Loading…</p>}
       {data.status === 'error' && (
