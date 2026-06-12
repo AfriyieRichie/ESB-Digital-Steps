@@ -20,7 +20,7 @@ type LoadState =
  * competency grid row. Reads on mount, so navigating into the dashboard always
  * reflects the latest recorded progress.
  */
-export function useFacilitatorData(): LoadState {
+export function useFacilitatorData(reloadToken = 0): LoadState {
   const [state, setState] = useState<LoadState>({ status: 'loading' });
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function useFacilitatorData(): LoadState {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [reloadToken]);
 
   return state;
 }

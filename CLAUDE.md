@@ -27,8 +27,12 @@ real, per-child progress. **The data is ours** and lives on the device.
 5. **Touch + mouse/keyboard.** Use Pointer Events; provide an on-screen keyboard
    for typing activities (tablets may have no physical keyboard).
 6. **Low-spec friendly.** Light bundle, avoid heavy dependencies.
-7. **Child privacy.** Store only a first name + learning data. No accounts, no
-   contact/personal data, no analytics that leave the device.
+7. **Child privacy / on-device data.** Profiles are no-login (a tap on a name,
+   not an account; no child passwords). We store a first name + learning data,
+   plus optional grade / age / school captured at onboarding to place and group
+   learners. **All data stays on the device and never leaves it** — no network,
+   no analytics. Because we hold more than a first name, guardian consent is a
+   deployment requirement, and removing a learner cascades all their data.
 8. **Accessibility floor.** Large touch targets, visible keyboard focus,
    sufficient contrast, `prefers-reduced-motion` respected.
 

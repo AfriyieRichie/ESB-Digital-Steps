@@ -4,6 +4,10 @@ import { SUBJECTS } from '../data/subjects';
 import { collectExport } from '../data/export';
 import { downloadText } from '../ui/download';
 import { Button } from '../ui/Button';
+import { deleteLearner, updateLearner } from '../learner/createLearner';
+import { LearnerForm } from '../learner/LearnerForm';
+import { gradeLabel } from '../learner/placement';
+import type { Learner } from '../data/db';
 import { useFacilitatorData } from './useFacilitatorData';
 import './FacilitatorView.css';
 
@@ -31,8 +35,12 @@ function formatAccuracy(accuracy: number, attempts: number): string {
 type ExportState = 'idle' | 'working' | 'done' | 'blocked';
 
 export function FacilitatorView(): React.JSX.Element {
-  const data = useFacilitatorData();
+  const [reloadToken, setReloadToken] = useState(0);
+  const data = useFacilitatorData(reloadToken);
   const [exportState, setExportState] = useState<ExportState>('idle');
+  const [editing, setEditing] = useState<Learner | null>(null);
+
+  const reload = (): void => setReloadToken((t) => t + 1);
 
   async function handleExport(format: 'csv' | 'json'): Promise<void> {
     setExportState('working');
@@ -48,12 +56,45 @@ export function FacilitatorView(): React.JSX.Element {
     }
   }
 
+  if (editing) {
+    return (
+      <section className="facilitator">
+        <LearnerForm
+          heading={`Edit ${editing.name}`}
+          submitLabel="Save changes"
+          initial={{
+            name: editing.name,
+            band: editing.band,
+            avatar: editing.avatar,
+            ...(editing.grade !== undefined ? { grade: editing.grade } : {}),
+            ...(editing.age !== undefined ? { age: editing.age } : {}),
+            ...(editing.school !== undefined ? { school: editing.school } : {}),
+          }}
+          onSubmit={async (values) => {
+            await updateLearner(editing.id, values);
+            setEditing(null);
+            reload();
+          }}
+          onCancel={() => setEditing(null)}
+        />
+      </section>
+    );
+  }
+
   return (
     <section className="facilitator">
       <h1 className="facilitator__title">Facilitator dashboard</h1>
       <p className="facilitator__subtitle">
         Competencies demonstrated by each learner. Data is stored on this device.
       </p>
+
+      {data.status === 'ready' && (
+        <LearnerManager
+          learners={data.data.learners}
+          onEdit={setEditing}
+          onDeleted={reload}
+        />
+      )}
 
       <div className="facilitator__export">
         <Button variant="ghost" onPointerDown={() => void handleExport('csv')} disabled={exportState === 'working'}>
@@ -161,5 +202,77 @@ export function FacilitatorView(): React.JSX.Element {
         </div>
       )}
     </section>
+  );
+}
+
+interface LearnerManagerProps {
+  learners: Learner[];
+  onEdit: (learner: Learner) => void;
+  onDeleted: () => void;
+}
+
+/** Add / edit / remove learners. Inline delete confirmation (no popups). */
+function LearnerManager({ learners, onEdit, onDeleted }: LearnerManagerProps): React.JSX.Element {
+  const [pendingDelete, setPendingDelete] = useState<string | null>(null);
+
+  async function confirmDelete(id: string): Promise<void> {
+    await deleteLearner(id);
+    setPendingDelete(null);
+    onDeleted();
+  }
+
+  function meta(learner: Learner): string {
+    const parts = [`Level ${learner.band}`];
+    if (learner.grade !== undefined) parts.push(gradeLabel(learner.grade));
+    if (learner.school) parts.push(learner.school);
+    return parts.join(' · ');
+  }
+
+  return (
+    <details className="manager">
+      <summary className="manager__summary">Manage learners ({learners.length})</summary>
+      <ul className="manager__list">
+        {learners.map((learner) => (
+          <li key={learner.id} className="manager__row">
+            <div className="manager__who">
+              <span className="manager__name">{learner.name}</span>
+              <span className="manager__meta">{meta(learner)}</span>
+            </div>
+            {pendingDelete === learner.id ? (
+              <div className="manager__confirm" role="group" aria-label={`Delete ${learner.name}?`}>
+                <span>Delete {learner.name} and all their data?</span>
+                <button
+                  type="button"
+                  className="manager__btn manager__btn--danger"
+                  onPointerDown={() => void confirmDelete(learner.id)}
+                >
+                  Yes, delete
+                </button>
+                <button
+                  type="button"
+                  className="manager__btn"
+                  onPointerDown={() => setPendingDelete(null)}
+                >
+                  Keep
+                </button>
+              </div>
+            ) : (
+              <div className="manager__actions">
+                <button type="button" className="manager__btn" onPointerDown={() => onEdit(learner)}>
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  className="manager__btn manager__btn--danger"
+                  onPointerDown={() => setPendingDelete(learner.id)}
+                >
+                  Remove
+                </button>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }

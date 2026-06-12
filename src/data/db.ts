@@ -19,6 +19,12 @@ export interface Learner {
   avatar: number;
   hubId: string;
   createdAt: number;
+  // Optional profile fields captured at onboarding (all on-device, never
+  // transmitted). `grade` seeds the initial band; `school` groups learners for
+  // reporting. These are more than a first name, so guardian consent applies.
+  grade?: number;
+  age?: number;
+  school?: string;
 }
 
 export interface CompetencyEvent {

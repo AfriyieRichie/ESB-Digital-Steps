@@ -1,0 +1,100 @@
+.learner-form {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-2);
+}
+
+.learner-form__title {
+  font-size: var(--font-size-xl);
+}
+
+.learner-form__note {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+}
+
+.learner-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.learner-form__field--narrow {
+  max-width: 160px;
+}
+
+.learner-form__label {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.learner-form__input {
+  min-height: var(--touch-target-lg);
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.learner-form__input:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.learner-form__options {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.learner-form__chip {
+  min-height: var(--touch-target-lg);
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.learner-form__chip--on {
+  border-color: var(--color-primary);
+  background: rgba(27, 111, 107, 0.12);
+  color: var(--color-primary-strong);
+}
+
+.learner-form__avatar {
+  padding: var(--space-1);
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.learner-form__avatar--on {
+  border-color: var(--color-primary);
+}
+
+.learner-form__error {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.learner-form__actions {
+  display: flex;
+  gap: var(--space-4);
+}
