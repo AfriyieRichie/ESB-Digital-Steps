@@ -2,6 +2,7 @@ import { useCurrentLearner } from '../../learner/store';
 import { useLearner } from '../../learner/useLearners';
 import { getSubject, SUBJECTS, type SubjectId } from '../../data/subjects';
 import { getCompetency } from '../../data/competencies';
+import { useVillage } from '../../gamification/useVillage';
 import { useAppStore } from '../store';
 import { useJourney } from './useJourney';
 import type { LessonProgress } from '../../sequencing/progression';
@@ -17,7 +18,9 @@ export function JourneyScreen(): React.JSX.Element {
   const currentLearnerId = useCurrentLearner((s) => s.currentLearnerId);
   const learner = useLearner(currentLearnerId);
   const journey = useJourney(currentLearnerId);
+  const village = useVillage(currentLearnerId);
   const startActivity = useAppStore((s) => s.startActivity);
+  const goVillage = useAppStore((s) => s.goVillage);
 
   if (!learner || journey.status === 'loading') {
     return <p className="journey__hint">Loading…</p>;
@@ -33,8 +36,16 @@ export function JourneyScreen(): React.JSX.Element {
 
   return (
     <section className="journey">
-      <h1 className="journey__title">{learner.name}&rsquo;s journey</h1>
-      <p className="journey__subtitle">Level {learner.band}</p>
+      <div className="journey__head">
+        <div>
+          <h1 className="journey__title">{learner.name}&rsquo;s journey</h1>
+          <p className="journey__subtitle">Level {learner.band}</p>
+        </div>
+        <button type="button" className="journey__village-btn" onPointerDown={goVillage}>
+          🏡 My village
+          <span className="journey__village-stars">⭐ {village.stars}</span>
+        </button>
+      </div>
 
       {readyForNextBand && (
         <p className="journey__ready" role="status">

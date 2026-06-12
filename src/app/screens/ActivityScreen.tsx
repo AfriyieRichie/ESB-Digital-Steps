@@ -3,6 +3,7 @@ import { getLesson } from '../../content/lessons';
 import { ACTIVITY_REGISTRY } from '../../activities/registry';
 import type { AttemptResult } from '../../activities/engine.types';
 import { recordAttempt } from '../../data/mastery';
+import { applyActivityReward } from '../../gamification/progress';
 import { useCurrentLearner } from '../../learner/store';
 import { useAppStore } from '../store';
 
@@ -57,13 +58,17 @@ export function ActivityScreen(): React.JSX.Element {
       setStepIndex((i) => i + 1);
       return;
     }
-    // Final step: wait for every attempt write to settle, then report how many
-    // skills became mastered so the reward screen can celebrate accurately.
+    // Final step: wait for every attempt write to settle, then apply the
+    // gamification reward (stars/XP/streak/badges) and move to the reward screen.
     void (async () => {
       await Promise.all(pending.current);
-      finishActivity(masteredThisSession.current.size);
+      if (currentLearnerId === null) return;
+      const reward = await applyActivityReward(currentLearnerId, {
+        newlyMastered: masteredThisSession.current.size,
+      });
+      finishActivity(reward);
     })();
-  }, [lesson, stepIndex, finishActivity]);
+  }, [lesson, stepIndex, currentLearnerId, finishActivity]);
 
   if (!lesson) {
     return <p>Choose a lesson to begin.</p>;

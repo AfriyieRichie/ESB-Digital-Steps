@@ -3,6 +3,7 @@ import { useAppStore } from './store';
 import { StartScreen } from './screens/StartScreen';
 import { JourneyScreen } from './screens/JourneyScreen';
 import { ActivityScreen } from './screens/ActivityScreen';
+import { VillageScreen } from './screens/VillageScreen';
 import { LearnerPicker } from '../learner/LearnerPicker';
 import { RewardScreen } from '../pedagogy/RewardScreen';
 import { FacilitatorView } from '../facilitator/FacilitatorView';
@@ -18,6 +19,7 @@ export function App(): React.JSX.Element {
       {screen === 'journey' && <JourneyScreen />}
       {screen === 'activity' && <ActivityScreen />}
       {screen === 'reward' && <RewardScreen />}
+      {screen === 'village' && <VillageScreen />}
       {screen === 'facilitator' && <FacilitatorView />}
     </AppShell>
   );

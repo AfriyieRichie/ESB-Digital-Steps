@@ -94,14 +94,21 @@ are actually used.
 
 ---
 
-## 4. Engagement: the village world (offline)
+## 4. Engagement: the village world (offline) — DONE
 
-- **Per-learner progress state** *(slice #5 — Dexie)* — XP, stars, **streak**,
-  last-active.
-- **Awards/badges** — milestones (first lesson, strand complete, 5-day streak).
-- **Grow-a-village** — stars buy **cosmetic-only** village pieces (huts, trees,
-  animals, a market). Locally relevant, calm, collectible; entirely on-device.
-- **Reward store** — spend stars on village pieces and avatar cosmetics.
+- **Per-learner progress state** *(Dexie v3 `learnerProgress`)* — XP, spendable
+  **stars**, lifetime stars, lessons completed, skills mastered, **streak**,
+  last-active day.
+- **Awards/badges** *(`gamification/badges.ts` + `awards` table)* — First Steps,
+  Sharp Mind, On a Roll (3-day streak), Star Gatherer, Rising Star. Awarded the
+  first time a rule qualifies; idempotent.
+- **Grow-a-village** *(`gamification/village.ts` + `inventory` table)* — stars
+  buy **cosmetic-only** pieces (shea tree, hut, well, goat, market…). Calm,
+  collectible, entirely on-device.
+- **Reward store** — the Village screen shows the village scene plus a "Star
+  shop"; the reward screen reports stars/XP/streak/new badges after each
+  activity. Pure maths in `gamification/economy.ts`; Dexie service in
+  `gamification/progress.ts`.
 
 The Guide character (`pedagogy/`) narrates and celebrates throughout.
 
@@ -126,8 +133,8 @@ at-a-glance view.
    keyboard) DONE**, with the first real numeracy (count), reading (type the
    letter), and digital (parts) lessons; Drag and Match still to come.
 4. **Progression engine** *(DONE)* — placement, path map, unlock-on-mastery.
-5. **Village gamification** — XP / streak / badges + the village world + reward
-   store.
+5. **Village gamification** *(DONE)* — XP / streak / badges + the village world +
+   reward store.
 6. **i18n + audio** — local message and audio bundles per locale.
 
 ---

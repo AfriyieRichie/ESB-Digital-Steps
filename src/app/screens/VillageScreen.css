@@ -1,0 +1,143 @@
+.village {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.village__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.village__title {
+  font-size: var(--font-size-2xl);
+}
+
+.village__stars {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-numeracy, var(--color-text));
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-sunken);
+}
+
+.village__scene {
+  min-height: 220px;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  /* A calm sky-to-ground gradient using tokens only. */
+  background: linear-gradient(to bottom, #eaf4ff 0%, #eaf4ff 55%, #e7f3d8 55%, #e7f3d8 100%);
+  display: grid;
+  place-items: center;
+}
+
+.village__empty {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.village__pieces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.village__piece {
+  font-size: 4rem;
+  line-height: 1;
+  animation: village-pop var(--motion-base) ease both;
+}
+
+.village__store-title {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-2);
+}
+
+.village__message {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.village__store {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-4);
+}
+
+.store-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+}
+
+.store-card__emoji {
+  font-size: var(--font-size-3xl);
+  line-height: 1;
+}
+
+.store-card__label {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-align: center;
+}
+
+.store-card__buy {
+  min-height: var(--touch-target-min);
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--font-size-base);
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.store-card__buy:disabled {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.store-card__owned {
+  min-height: var(--touch-target-min);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--color-success);
+}
+
+.village__actions {
+  margin-top: var(--space-2);
+}
+
+@keyframes village-pop {
+  from { transform: scale(0.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .village__piece {
+    animation: none;
+  }
+}

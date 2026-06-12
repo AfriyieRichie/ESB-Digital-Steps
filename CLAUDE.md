@@ -87,6 +87,9 @@ build order.
   unlock-on-mastery gating, and band-placement readiness (TaRL).
 - `src/learner/` — no-login learner selection + current-learner store.
 - `src/pedagogy/` — guide character, feedback, reward screen.
+- `src/gamification/` — stars/XP/streak (`economy.ts`, pure), badges + village
+  catalogs, the Dexie `progress.ts` service (rewards, idempotent badges, village
+  purchases). The grow-a-village reward world; cosmetic-only, on-device.
 - `src/app/` — shell + state-driven screen routing (no router library).
 - `src/facilitator/` — read-only learners × competencies dashboard (live Dexie).
 - `src/ui/` — shared components + `tokens.css` (design tokens).

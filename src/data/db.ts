@@ -52,12 +52,45 @@ export interface Session {
   facilitatorName: string;
 }
 
+// --- Gamification (slice #5) -------------------------------------------------
+// All cosmetic + motivational state, on-device. `stars` is the spendable
+// balance; `totalStarsEarned` is the lifetime count (badges look at lifetime).
+export interface LearnerProgress {
+  learnerId: string;
+  xp: number;
+  stars: number;
+  totalStarsEarned: number;
+  lessonsCompleted: number;
+  skillsMastered: number;
+  streakDays: number;
+  /** Local-day index of last activity, for streak maths (null = never). */
+  lastActiveDay: number | null;
+  updatedAt: number;
+}
+
+export interface Award {
+  id: string; // `${learnerId}::${badgeId}` — unique, makes awarding idempotent
+  learnerId: string;
+  badgeId: string;
+  awardedAt: number;
+}
+
+export interface InventoryItem {
+  id: string; // `${learnerId}::${pieceId}` — unique, one of each village piece
+  learnerId: string;
+  pieceId: string;
+  acquiredAt: number;
+}
+
 class EsbDatabase extends Dexie {
   hubs!: EntityTable<Hub, 'id'>;
   learners!: EntityTable<Learner, 'id'>;
   competencyEvents!: EntityTable<CompetencyEvent, 'id'>;
   sessions!: EntityTable<Session, 'id'>;
   attempts!: EntityTable<Attempt, 'id'>;
+  learnerProgress!: EntityTable<LearnerProgress, 'learnerId'>;
+  awards!: EntityTable<Award, 'id'>;
+  inventory!: EntityTable<InventoryItem, 'id'>;
 
   constructor() {
     super('esb-digital-steps');
@@ -78,6 +111,14 @@ class EsbDatabase extends Dexie {
     // queries cheap.
     this.version(2).stores({
       attempts: '++id, learnerId, skillId, lessonId, at, [learnerId+skillId]',
+    });
+
+    // v3: gamification state (slice #5). The unique compound id on awards and
+    // inventory keeps awarding a badge / owning a piece idempotent.
+    this.version(3).stores({
+      learnerProgress: 'learnerId',
+      awards: 'id, learnerId, badgeId',
+      inventory: 'id, learnerId, pieceId',
     });
   }
 }
