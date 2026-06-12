@@ -178,6 +178,39 @@ describe('choose & type steps (slice #3)', () => {
       }),
     ).toThrow(/Invalid lesson/);
   });
+
+  it('accepts a match step and requires at least two pairs', () => {
+    const ok = parseLesson({
+      ...validLesson,
+      subject: 'reading',
+      strand: 'r_print',
+      skills: ['r_word'],
+      steps: [
+        {
+          activityType: 'match',
+          config: {
+            pairs: [
+              { id: 'm1', skill: 'r_word', left: '🐱', right: 'cat' },
+              { id: 'm2', skill: 'r_word', left: '🐶', right: 'dog' },
+            ],
+          },
+        },
+      ],
+    });
+    expect(ok.steps[0]?.activityType).toBe('match');
+
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        subject: 'reading',
+        strand: 'r_print',
+        skills: ['r_word'],
+        steps: [
+          { activityType: 'match', config: { pairs: [{ id: 'm1', left: 'a', right: 'b' }] } },
+        ],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
 });
 
 describe('item schemas (consumed by Choose / Type)', () => {

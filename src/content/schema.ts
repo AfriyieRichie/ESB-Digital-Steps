@@ -14,7 +14,7 @@ import { isStrandId, strandBelongsToSubject } from '../data/strands';
 
 // Activity types that have a registered, playable component. Keep this in sync
 // with activities/registry.ts — the registry is typed against it.
-export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag'] as const;
+export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag', 'match'] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
 const bandSchema = z.union([z.literal(1), z.literal(2), z.literal(3)]);
@@ -74,9 +74,18 @@ export const dragItemSchema = itemBaseSchema
     path: ['answerIndex'],
   });
 
+// Match: pair each left with its right. The pair's id ties the two together.
+export const matchPairSchema = itemBaseSchema
+  .extend({
+    left: z.string().min(1),
+    right: z.string().min(1),
+  })
+  .strict();
+
 export type ChooseItem = z.infer<typeof chooseItemSchema>;
 export type TypeItem = z.infer<typeof typeItemSchema>;
 export type DragItem = z.infer<typeof dragItemSchema>;
+export type MatchPair = z.infer<typeof matchPairSchema>;
 
 // --- Step config schemas -----------------------------------------------------
 const tapConfigSchema = z
@@ -103,10 +112,17 @@ const dragConfigSchema = z
   })
   .strict();
 
+const matchConfigSchema = z
+  .object({
+    pairs: z.array(matchPairSchema).min(2),
+  })
+  .strict();
+
 export type TapConfig = z.infer<typeof tapConfigSchema>;
 export type ChooseConfig = z.infer<typeof chooseConfigSchema>;
 export type TypeConfig = z.infer<typeof typeConfigSchema>;
 export type DragConfig = z.infer<typeof dragConfigSchema>;
+export type MatchConfig = z.infer<typeof matchConfigSchema>;
 
 // A step is one activity instance: its type plus the matching config. Adding a
 // variant here is the one-line change that lets content express a new activity.
@@ -115,6 +131,7 @@ const stepSchema = z.discriminatedUnion('activityType', [
   z.object({ activityType: z.literal('choose'), config: chooseConfigSchema }).strict(),
   z.object({ activityType: z.literal('type'), config: typeConfigSchema }).strict(),
   z.object({ activityType: z.literal('drag'), config: dragConfigSchema }).strict(),
+  z.object({ activityType: z.literal('match'), config: matchConfigSchema }).strict(),
 ]);
 
 export type Step = z.infer<typeof stepSchema>;

@@ -1,0 +1,24 @@
+{
+  "id": "words",
+  "subject": "reading",
+  "strand": "r_print",
+  "band": 3,
+  "title": "Match the word",
+  "blurb": "Match each picture to its word.",
+  "order": 1,
+  "skills": ["r_word"],
+  "steps": [
+    {
+      "activityType": "match",
+      "config": {
+        "pairs": [
+          { "id": "w_cat", "skill": "r_word", "left": "🐱", "right": "cat" },
+          { "id": "w_dog", "skill": "r_word", "left": "🐶", "right": "dog" },
+          { "id": "w_sun", "skill": "r_word", "left": "☀️", "right": "sun" },
+          { "id": "w_tree", "skill": "r_word", "left": "🌳", "right": "tree" },
+          { "id": "w_fish", "skill": "r_word", "left": "🐟", "right": "fish" }
+        ]
+      }
+    }
+  ]
+}

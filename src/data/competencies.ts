@@ -40,11 +40,16 @@ const DIGITAL_COMPETENCIES: readonly Competency[] = [
 // Type activities with real content. These grow as the curriculum is authored.
 const READING_COMPETENCIES: readonly Competency[] = [
   { id: 'r_letter', subject: 'reading', strand: 'r_print', label: 'Recognises letters', prerequisites: [] },
+  // Cross-band prerequisites (e.g. r_word after r_letter) are left empty so a
+  // learner placed at a higher band — assumed to have the foundations — is not
+  // locked out. In-band gating is still demonstrated (see m_numeral).
+  { id: 'r_word', subject: 'reading', strand: 'r_print', label: 'Reads simple words', prerequisites: [] },
 ];
 const WRITING_COMPETENCIES: readonly Competency[] = [];
 const NUMERACY_COMPETENCIES: readonly Competency[] = [
   { id: 'm_count', subject: 'numeracy', strand: 'n_number', label: 'Counts objects to 10', prerequisites: [] },
   { id: 'm_numeral', subject: 'numeracy', strand: 'n_number', label: 'Recognises numerals', prerequisites: ['m_count'] },
+  { id: 'm_add', subject: 'numeracy', strand: 'n_number', label: 'Adds within 10', prerequisites: [] },
 ];
 
 export const COMPETENCIES: readonly Competency[] = [

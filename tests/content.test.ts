@@ -12,7 +12,17 @@ describe('bundled lessons', () => {
   it('loads at least the authored lessons', () => {
     const ids = LESSONS.map((l) => l.id);
     expect(ids).toEqual(
-      expect.arrayContaining(['tap', 'parts', 'count', 'numerals', 'letters', 'drag', 'care']),
+      expect.arrayContaining([
+        'tap',
+        'parts',
+        'count',
+        'numerals',
+        'letters',
+        'drag',
+        'care',
+        'words',
+        'addmatch',
+      ]),
     );
   });
 

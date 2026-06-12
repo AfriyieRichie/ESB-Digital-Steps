@@ -1,0 +1,24 @@
+{
+  "id": "addmatch",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 3,
+  "title": "Add and match",
+  "blurb": "Match each sum to its answer.",
+  "order": 1,
+  "skills": ["m_add"],
+  "steps": [
+    {
+      "activityType": "match",
+      "config": {
+        "pairs": [
+          { "id": "a_2", "skill": "m_add", "left": "1 + 1", "right": "2" },
+          { "id": "a_3", "skill": "m_add", "left": "2 + 1", "right": "3" },
+          { "id": "a_4", "skill": "m_add", "left": "2 + 2", "right": "4" },
+          { "id": "a_5", "skill": "m_add", "left": "3 + 2", "right": "5" },
+          { "id": "a_6", "skill": "m_add", "left": "4 + 2", "right": "6" }
+        ]
+      }
+    }
+  ]
+}
