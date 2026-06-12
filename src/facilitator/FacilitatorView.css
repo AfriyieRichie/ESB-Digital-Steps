@@ -40,6 +40,41 @@
   color: var(--color-danger);
 }
 
+.facilitator__transfer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.facilitator__transfer-label {
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.facilitator__import {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target-lg);
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary-strong);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.facilitator__import:hover {
+  background: var(--color-surface-sunken);
+}
+
 /* --- Learner management ---------------------------------------------------- */
 .manager {
   margin-bottom: var(--space-4);

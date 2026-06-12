@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { COMPETENCIES } from '../data/competencies';
 import { SUBJECTS } from '../data/subjects';
 import { collectExport } from '../data/export';
+import { exportHubData, importHubData } from '../data/backup';
 import { downloadText } from '../ui/download';
 import { Button } from '../ui/Button';
 import { deleteLearner, updateLearner } from '../learner/createLearner';
@@ -41,8 +42,27 @@ export function FacilitatorView(): React.JSX.Element {
   const [exportState, setExportState] = useState<ExportState>('idle');
   const [editing, setEditing] = useState<Learner | null>(null);
   const [reportId, setReportId] = useState<string | null>(null);
+  const [transferMsg, setTransferMsg] = useState<string | null>(null);
 
   const reload = (): void => setReloadToken((t) => t + 1);
+
+  async function handleHubExport(): Promise<void> {
+    const bundle = await exportHubData();
+    const ok = downloadText(`${bundle.filenameBase}.json`, bundle.json, 'application/json');
+    setTransferMsg(ok ? 'Hub data saved — copy it to another device to import.' : 'This device blocked the download.');
+  }
+
+  async function handleHubImport(file: File): Promise<void> {
+    try {
+      const result = await importHubData(await file.text());
+      setTransferMsg(
+        `Imported: ${result.learnersAdded} new learner(s), ${result.learnersUpdated} updated, ${result.competenciesAdded} new skill(s).`,
+      );
+      reload();
+    } catch (err) {
+      setTransferMsg(err instanceof Error ? err.message : 'Could not import that file.');
+    }
+  }
 
   async function handleExport(format: 'csv' | 'json'): Promise<void> {
     setExportState('working');
@@ -124,6 +144,31 @@ export function FacilitatorView(): React.JSX.Element {
         {exportState === 'blocked' && (
           <span className="facilitator__export-msg facilitator__export-msg--warn" role="status">
             This device blocked the download — try a browser, not the sandboxed app.
+          </span>
+        )}
+      </div>
+
+      <div className="facilitator__transfer">
+        <span className="facilitator__transfer-label">Move learners between this hub&rsquo;s devices:</span>
+        <Button variant="ghost" onPointerDown={() => void handleHubExport()}>
+          ⬇ Export hub data
+        </Button>
+        <label className="facilitator__import">
+          ⬆ Import hub data
+          <input
+            type="file"
+            accept="application/json"
+            className="sr-only"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) void handleHubImport(file);
+              e.target.value = '';
+            }}
+          />
+        </label>
+        {transferMsg && (
+          <span className="facilitator__export-msg" role="status">
+            {transferMsg}
           </span>
         )}
       </div>
