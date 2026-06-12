@@ -2,16 +2,18 @@ import { describe, expect, it } from 'vitest';
 import { bloomRank, defaultBloomForBand, difficultyScore } from '../src/data/difficulty';
 
 describe('Bloom difficulty ladder', () => {
-  it('ranks Bloom levels recall < apply < analyze < create', () => {
+  it('ranks Bloom levels low to high', () => {
     expect(bloomRank('recall')).toBeLessThan(bloomRank('apply'));
     expect(bloomRank('apply')).toBeLessThan(bloomRank('analyze'));
-    expect(bloomRank('analyze')).toBeLessThan(bloomRank('create'));
+    expect(bloomRank('analyze')).toBeLessThan(bloomRank('evaluate'));
+    expect(bloomRank('evaluate')).toBeLessThan(bloomRank('create'));
   });
 
   it('expects higher cognitive levels in higher bands', () => {
     expect(defaultBloomForBand(1)).toBe('recall');
     expect(defaultBloomForBand(2)).toBe('apply');
-    expect(defaultBloomForBand(4)).toBe('analyze');
+    expect(defaultBloomForBand(3)).toBe('analyze');
+    expect(defaultBloomForBand(4)).toBe('evaluate');
     expect(defaultBloomForBand(5)).toBe('create');
   });
 

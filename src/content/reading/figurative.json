@@ -1,0 +1,24 @@
+{
+  "id": "figurative",
+  "subject": "reading",
+  "strand": "r_vocab",
+  "band": 4,
+  "title": "Picture words",
+  "blurb": "Language that paints a picture.",
+  "order": 2,
+  "skills": ["r_figurative"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fig_gold", "skill": "r_figurative", "bloom": "analyze", "prompt": "“She has a heart of gold.” This means she is:", "choices": ["very kind", "made of metal", "very rich"], "answerIndex": 0 },
+          { "id": "fig_zoo", "skill": "r_figurative", "bloom": "analyze", "prompt": "“The classroom was a zoo.” This means it was:", "choices": ["wild and noisy", "full of real animals", "very quiet"], "answerIndex": 0 },
+          { "id": "fig_flew", "skill": "r_figurative", "bloom": "analyze", "prompt": "“Time flew by.” This means time passed:", "choices": ["very quickly", "on wings", "very slowly"], "answerIndex": 0 },
+          { "id": "fig_simile", "skill": "r_figurative", "bloom": "analyze", "prompt": "“He was as brave as a lion.” Comparing with “as…as” is called a:", "choices": ["simile", "question", "spelling rule"], "answerIndex": 0 },
+          { "id": "fig_person", "skill": "r_figurative", "bloom": "analyze", "prompt": "“The wind whispered through the trees.” Giving the wind a human action is called:", "choices": ["personification", "a number fact", "a rhyme"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mainidea",
+  "subject": "reading",
+  "strand": "r_comp",
+  "band": 3,
+  "title": "The main idea",
+  "blurb": "Read, then find what it is mostly about.",
+  "order": 1,
+  "skills": ["r_main"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "Busy Bees",
+        "passage": "Bees are very busy insects. They fly from flower to flower to collect sweet nectar. They carry the nectar back to their hive and turn it into honey. As they move between flowers, bees also carry pollen, which helps new flowers grow.",
+        "questions": [
+          { "id": "mi_about", "skill": "r_main", "bloom": "analyze", "prompt": "What is this passage mostly about?", "choices": ["How bees collect nectar and help flowers", "How to ride a bicycle", "Why the sky is blue"], "answerIndex": 0 },
+          { "id": "mi_collect", "skill": "r_main", "bloom": "recall", "prompt": "What do bees collect from flowers?", "choices": ["Nectar", "Stones", "Water"], "answerIndex": 0 },
+          { "id": "mi_hive", "skill": "r_main", "bloom": "recall", "prompt": "Where do bees take the nectar?", "choices": ["Back to their hive", "To the sea", "To school"], "answerIndex": 0 },
+          { "id": "mi_pollen", "skill": "r_main", "bloom": "apply", "prompt": "How do bees help new flowers grow?", "choices": ["They carry pollen between flowers", "They eat the flowers", "They cut the flowers"], "answerIndex": 0 },
+          { "id": "mi_title", "skill": "r_main", "bloom": "analyze", "prompt": "Which is the best title for this passage?", "choices": ["Busy Bees", "Fast Cars", "Tall Mountains"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

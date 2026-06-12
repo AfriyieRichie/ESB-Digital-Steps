@@ -1,0 +1,24 @@
+{
+  "id": "wordfamily",
+  "subject": "reading",
+  "strand": "r_print",
+  "band": 2,
+  "title": "Word families",
+  "blurb": "Words that end the same.",
+  "order": 2,
+  "skills": ["r_family"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "wf_at", "skill": "r_family", "bloom": "apply", "prompt": "Which word is in the -AT family?", "choices": ["bat", "big", "bus"], "answerIndex": 0 },
+          { "id": "wf_an", "skill": "r_family", "bloom": "apply", "prompt": "Which word is in the -AN family?", "choices": ["pan", "pig", "pot"], "answerIndex": 0 },
+          { "id": "wf_ig", "skill": "r_family", "bloom": "apply", "prompt": "Which word is in the -IG family?", "choices": ["pig", "peg", "pop"], "answerIndex": 0 },
+          { "id": "wf_op", "skill": "r_family", "bloom": "apply", "prompt": "Which word is in the -OP family?", "choices": ["top", "tap", "tip"], "answerIndex": 0 },
+          { "id": "wf_un", "skill": "r_family", "bloom": "apply", "prompt": "Which word is in the -UN family?", "choices": ["run", "ran", "rin"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

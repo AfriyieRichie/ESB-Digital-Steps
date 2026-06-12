@@ -1,0 +1,24 @@
+{
+  "id": "sounds",
+  "subject": "reading",
+  "strand": "r_print",
+  "band": 1,
+  "title": "First sounds",
+  "blurb": "Hear the first sound in a word.",
+  "order": 2,
+  "skills": ["r_sound"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "s_s", "skill": "r_sound", "bloom": "recall", "prompt": "Which one starts with the /s/ sound?", "choices": ["☀️ sun", "🐱 cat", "🐟 fish"], "answerIndex": 0 },
+          { "id": "s_m", "skill": "r_sound", "bloom": "recall", "prompt": "Which one starts with the /m/ sound?", "choices": ["🌙 moon", "🐶 dog", "🍎 apple"], "answerIndex": 0 },
+          { "id": "s_b", "skill": "r_sound", "bloom": "recall", "prompt": "Which one starts with the /b/ sound?", "choices": ["⚽ ball", "🐟 fish", "🌳 tree"], "answerIndex": 0 },
+          { "id": "s_f", "skill": "r_sound", "bloom": "recall", "prompt": "Which one starts with the /f/ sound?", "choices": ["🐟 fish", "🐐 goat", "☀️ sun"], "answerIndex": 0 },
+          { "id": "s_t", "skill": "r_sound", "bloom": "recall", "prompt": "Which one starts with the /t/ sound?", "choices": ["🌳 tree", "🍎 apple", "🐱 cat"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

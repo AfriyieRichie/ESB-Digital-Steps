@@ -1,0 +1,24 @@
+{
+  "id": "rhyme",
+  "subject": "reading",
+  "strand": "r_print",
+  "band": 1,
+  "title": "Rhyme time",
+  "blurb": "Find the words that rhyme.",
+  "order": 3,
+  "skills": ["r_rhyme"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "rh_cat", "skill": "r_rhyme", "bloom": "apply", "prompt": "Which word rhymes with CAT?", "choices": ["hat", "dog", "sun"], "answerIndex": 0 },
+          { "id": "rh_dog", "skill": "r_rhyme", "bloom": "apply", "prompt": "Which word rhymes with DOG?", "choices": ["log", "cat", "pen"], "answerIndex": 0 },
+          { "id": "rh_sun", "skill": "r_rhyme", "bloom": "apply", "prompt": "Which word rhymes with SUN?", "choices": ["bun", "top", "map"], "answerIndex": 0 },
+          { "id": "rh_bee", "skill": "r_rhyme", "bloom": "apply", "prompt": "Which word rhymes with BEE?", "choices": ["tree", "car", "hand"], "answerIndex": 0 },
+          { "id": "rh_cake", "skill": "r_rhyme", "bloom": "apply", "prompt": "Which word rhymes with CAKE?", "choices": ["lake", "milk", "fish"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

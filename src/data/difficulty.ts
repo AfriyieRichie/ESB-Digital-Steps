@@ -11,9 +11,11 @@ export { BLOOM_LEVELS };
 
 const BLOOM_RANK: Record<BloomLevel, number> = {
   recall: 0,
-  apply: 1,
-  analyze: 2,
-  create: 3,
+  understand: 1,
+  apply: 2,
+  analyze: 3,
+  evaluate: 4,
+  create: 5,
 };
 
 export function bloomRank(level: BloomLevel): number {
@@ -23,8 +25,9 @@ export function bloomRank(level: BloomLevel): number {
 /** The cognitive level a band is expected to reach by default (recall -> create). */
 export function defaultBloomForBand(band: number): BloomLevel {
   if (band <= 1) return 'recall';
-  if (band <= 3) return 'apply';
-  if (band <= 4) return 'analyze';
+  if (band <= 2) return 'apply';
+  if (band <= 3) return 'analyze';
+  if (band <= 4) return 'evaluate';
   return 'create';
 }
 

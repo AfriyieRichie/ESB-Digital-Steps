@@ -2,7 +2,7 @@
   "id": "words",
   "subject": "reading",
   "strand": "r_print",
-  "band": 3,
+  "band": 2,
   "title": "Match the word",
   "blurb": "Match each picture to its word.",
   "order": 1,

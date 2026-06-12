@@ -1,0 +1,24 @@
+{
+  "id": "synonyms",
+  "subject": "reading",
+  "strand": "r_vocab",
+  "band": 3,
+  "title": "Same meaning",
+  "blurb": "Match words that mean the same.",
+  "order": 2,
+  "skills": ["r_synonym"],
+  "steps": [
+    {
+      "activityType": "match",
+      "config": {
+        "pairs": [
+          { "id": "sy_big", "skill": "r_synonym", "bloom": "apply", "left": "big", "right": "large" },
+          { "id": "sy_happy", "skill": "r_synonym", "bloom": "apply", "left": "happy", "right": "glad" },
+          { "id": "sy_fast", "skill": "r_synonym", "bloom": "apply", "left": "fast", "right": "quick" },
+          { "id": "sy_small", "skill": "r_synonym", "bloom": "apply", "left": "small", "right": "tiny" },
+          { "id": "sy_cold", "skill": "r_synonym", "bloom": "apply", "left": "cold", "right": "chilly" }
+        ]
+      }
+    }
+  ]
+}

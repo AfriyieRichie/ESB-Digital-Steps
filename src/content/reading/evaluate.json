@@ -1,0 +1,24 @@
+{
+  "id": "evaluate",
+  "subject": "reading",
+  "strand": "r_comp",
+  "band": 5,
+  "title": "Strong or weak?",
+  "blurb": "Judge evidence and spot bias.",
+  "order": 2,
+  "skills": ["r_evaluate"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ev_evidence", "skill": "r_evaluate", "bloom": "evaluate", "prompt": "Which is the strongest evidence that exercise is healthy?", "choices": ["A study of 10,000 people found less heart disease", "My friend says it works", "Everyone just knows it"], "answerIndex": 0 },
+          { "id": "ev_unsupported", "skill": "r_evaluate", "bloom": "analyze", "prompt": "A claim given with no evidence at all is best called:", "choices": ["unsupported", "proven", "detailed"], "answerIndex": 0 },
+          { "id": "ev_bias", "skill": "r_evaluate", "bloom": "evaluate", "prompt": "Which statement shows the writer's bias?", "choices": ["This is clearly the only sensible choice", "The report lists three options", "Sales rose by four percent"], "answerIndex": 0 },
+          { "id": "ev_reliable", "skill": "r_evaluate", "bloom": "analyze", "prompt": "To check whether a source is reliable, you should mainly ask:", "choices": ["Who wrote it, and why?", "Is it colourful?", "Is it short?"], "answerIndex": 0 },
+          { "id": "ev_conflict", "skill": "r_evaluate", "bloom": "evaluate", "prompt": "Two trusted sources disagree. A careful reader will:", "choices": ["compare the evidence in each", "always believe the first one", "ignore them both"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

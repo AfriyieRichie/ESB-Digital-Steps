@@ -5,6 +5,7 @@ import Type from './Type/Type';
 import Drag from './Drag/Drag';
 import Match from './Match/Match';
 import Order from './Order/Order';
+import Read from './Read/Read';
 
 // Maps each lesson's activityType to the component that renders it. Adding an
 // activity type is just a new folder + an entry here — nothing else in the
@@ -16,4 +17,5 @@ export const ACTIVITY_REGISTRY: ActivityRegistry = {
   drag: Drag,
   match: Match,
   order: Order,
+  read: Read,
 };

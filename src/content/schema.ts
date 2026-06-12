@@ -14,7 +14,7 @@ import { isStrandId, strandBelongsToSubject } from '../data/strands';
 
 // Activity types that have a registered, playable component. Keep this in sync
 // with activities/registry.ts — the registry is typed against it.
-export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag', 'match', 'order'] as const;
+export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag', 'match', 'order', 'read'] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
 const bandSchema = z.union([
@@ -25,10 +25,10 @@ const bandSchema = z.union([
   z.literal(5),
 ]);
 
-// Bloom's cognitive level — the spine of the difficulty ladder (see
-// data/difficulty.ts). Optional on items; defaults conceptually to the band's
-// expectation.
-export const BLOOM_LEVELS = ['recall', 'apply', 'analyze', 'create'] as const;
+// Bloom's cognitive levels (low -> high) — the spine of the difficulty ladder
+// (see data/difficulty.ts). Optional on items; defaults conceptually to the
+// band's expectation.
+export const BLOOM_LEVELS = ['recall', 'understand', 'apply', 'analyze', 'evaluate', 'create'] as const;
 const bloomSchema = z.enum(BLOOM_LEVELS);
 
 const skillIdSchema = z.string().refine(isCompetencyId, {
@@ -150,12 +150,23 @@ const orderConfigSchema = z
   })
   .strict();
 
+// Read: a passage shown (and read aloud) once, then comprehension questions
+// (same shape as Choose items). For main idea, inference, author's purpose, etc.
+const readConfigSchema = z
+  .object({
+    title: z.string().min(1).optional(),
+    passage: z.string().min(1),
+    questions: z.array(chooseItemSchema).min(1),
+  })
+  .strict();
+
 export type TapConfig = z.infer<typeof tapConfigSchema>;
 export type ChooseConfig = z.infer<typeof chooseConfigSchema>;
 export type TypeConfig = z.infer<typeof typeConfigSchema>;
 export type DragConfig = z.infer<typeof dragConfigSchema>;
 export type MatchConfig = z.infer<typeof matchConfigSchema>;
 export type OrderConfig = z.infer<typeof orderConfigSchema>;
+export type ReadConfig = z.infer<typeof readConfigSchema>;
 
 // A step is one activity instance: its type plus the matching config. Adding a
 // variant here is the one-line change that lets content express a new activity.
@@ -166,6 +177,7 @@ const stepSchema = z.discriminatedUnion('activityType', [
   z.object({ activityType: z.literal('drag'), config: dragConfigSchema }).strict(),
   z.object({ activityType: z.literal('match'), config: matchConfigSchema }).strict(),
   z.object({ activityType: z.literal('order'), config: orderConfigSchema }).strict(),
+  z.object({ activityType: z.literal('read'), config: readConfigSchema }).strict(),
 ]);
 
 export type Step = z.infer<typeof stepSchema>;

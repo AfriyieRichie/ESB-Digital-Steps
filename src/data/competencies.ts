@@ -38,13 +38,28 @@ const DIGITAL_COMPETENCIES: readonly Competency[] = [
 
 // First numeracy and reading competencies — enough to anchor the Choose and
 // Type activities with real content. These grow as the curriculum is authored.
+// Reading spans phonics -> decoding/fluency -> comprehension -> analysis across
+// the five bands. (Cross-band prerequisites are left light because the engine
+// only gates on prerequisites taught at the learner's own band.)
 const READING_COMPETENCIES: readonly Competency[] = [
+  // Band 1 — phonemic awareness & print
   { id: 'r_letter', subject: 'reading', strand: 'r_print', label: 'Recognises letters', prerequisites: [] },
-  // r_word naturally depends on r_letter. The progression engine only *gates* on
-  // prerequisites taught at the learner's own band, so a learner placed at a
-  // higher band (assumed to have the foundations) is not locked out — while
-  // in-band gating still applies (see m_numeral after m_count).
+  { id: 'r_sound', subject: 'reading', strand: 'r_print', label: 'Matches sounds to letters', prerequisites: [] },
+  { id: 'r_rhyme', subject: 'reading', strand: 'r_print', label: 'Hears rhyming words', prerequisites: [] },
+  // Band 2 — decoding to fluency
   { id: 'r_word', subject: 'reading', strand: 'r_print', label: 'Reads simple words', prerequisites: ['r_letter'] },
+  { id: 'r_family', subject: 'reading', strand: 'r_print', label: 'Reads word families', prerequisites: [] },
+  { id: 'r_cloze', subject: 'reading', strand: 'r_comp', label: 'Completes a sentence in context', prerequisites: [] },
+  // Band 3 — reading to learn
+  { id: 'r_main', subject: 'reading', strand: 'r_comp', label: 'Finds the main idea', prerequisites: [] },
+  { id: 'r_context', subject: 'reading', strand: 'r_vocab', label: 'Uses context clues', prerequisites: [] },
+  { id: 'r_synonym', subject: 'reading', strand: 'r_vocab', label: 'Knows synonyms & antonyms', prerequisites: [] },
+  // Band 4 — analysis
+  { id: 'r_infer', subject: 'reading', strand: 'r_comp', label: 'Makes inferences', prerequisites: [] },
+  { id: 'r_figurative', subject: 'reading', strand: 'r_vocab', label: 'Understands figurative language', prerequisites: [] },
+  // Band 5 — critical reading
+  { id: 'r_purpose', subject: 'reading', strand: 'r_comp', label: "Identifies author's purpose", prerequisites: [] },
+  { id: 'r_evaluate', subject: 'reading', strand: 'r_comp', label: 'Evaluates arguments & evidence', prerequisites: [] },
 ];
 const WRITING_COMPETENCIES: readonly Competency[] = [
   { id: 'w_word', subject: 'writing', strand: 'w_build', label: 'Builds simple words', prerequisites: [] },

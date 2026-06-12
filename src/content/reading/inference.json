@@ -1,0 +1,26 @@
+{
+  "id": "inference",
+  "subject": "reading",
+  "strand": "r_comp",
+  "band": 4,
+  "title": "Read between the lines",
+  "blurb": "Work out what the text does not say directly.",
+  "order": 1,
+  "skills": ["r_infer"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "The Gathering Clouds",
+        "passage": "Kofi looked up at the dark clouds gathering above the market. He quickly folded the cloth on his stall, grabbed his umbrella from the doorway, and called to his sister to bring the baskets inside. The first heavy drops were already starting to fall.",
+        "questions": [
+          { "id": "inf_about", "skill": "r_infer", "bloom": "analyze", "prompt": "What can you tell is about to happen?", "choices": ["A heavy rainstorm", "A sunny afternoon", "A snowfall"], "answerIndex": 0 },
+          { "id": "inf_why", "skill": "r_infer", "bloom": "analyze", "prompt": "Why did Kofi grab his umbrella?", "choices": ["He expected the rain", "He wanted shade from the sun", "To use it as a walking stick"], "answerIndex": 0 },
+          { "id": "inf_feel", "skill": "r_infer", "bloom": "analyze", "prompt": "How was Kofi most likely feeling?", "choices": ["In a hurry", "Bored", "Sleepy"], "answerIndex": 0 },
+          { "id": "inf_quick", "skill": "r_infer", "bloom": "apply", "prompt": "The words “quickly folded” suggest Kofi was:", "choices": ["moving fast", "moving slowly", "standing still"], "answerIndex": 0 },
+          { "id": "inf_where", "skill": "r_infer", "bloom": "analyze", "prompt": "Where does this scene most likely take place?", "choices": ["At an outdoor market", "Deep inside a cave", "On a boat at sea"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

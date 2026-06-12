@@ -212,6 +212,39 @@ describe('choose & type steps (slice #3)', () => {
     ).toThrow(/Invalid lesson/);
   });
 
+  it('accepts a read step (passage + comprehension questions)', () => {
+    const lesson = parseLesson({
+      ...validLesson,
+      subject: 'reading',
+      strand: 'r_comp',
+      skills: ['r_main'],
+      steps: [
+        {
+          activityType: 'read',
+          config: {
+            title: 'Bees',
+            passage: 'Bees make honey.',
+            questions: [
+              { id: 'q1', skill: 'r_main', bloom: 'analyze', prompt: 'What is it about?', choices: ['Bees', 'Cars'], answerIndex: 0 },
+            ],
+          },
+        },
+      ],
+    });
+    expect(lesson.steps[0]?.activityType).toBe('read');
+
+    // A read step needs a passage.
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        subject: 'reading',
+        strand: 'r_comp',
+        skills: ['r_main'],
+        steps: [{ activityType: 'read', config: { questions: [{ id: 'q1', prompt: 'x', choices: ['a', 'b'], answerIndex: 0 }] } }],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
+
   it('accepts an order step and rejects a single-letter answer', () => {
     const ok = parseLesson({
       ...validLesson,

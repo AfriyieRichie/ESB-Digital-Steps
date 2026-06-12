@@ -1,0 +1,24 @@
+{
+  "id": "cloze",
+  "subject": "reading",
+  "strand": "r_comp",
+  "band": 2,
+  "title": "Finish the sentence",
+  "blurb": "Choose the word that fits.",
+  "order": 3,
+  "skills": ["r_cloze"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cl_fly", "skill": "r_cloze", "bloom": "apply", "prompt": "The bird can ___ in the sky.", "choices": ["fly", "cup", "green"], "answerIndex": 0 },
+          { "id": "cl_spoon", "skill": "r_cloze", "bloom": "apply", "prompt": "I eat my soup with a ___.", "choices": ["spoon", "chair", "cloud"], "answerIndex": 0 },
+          { "id": "cl_hot", "skill": "r_cloze", "bloom": "apply", "prompt": "In the afternoon the sun is very ___.", "choices": ["hot", "slow", "quiet"], "answerIndex": 0 },
+          { "id": "cl_night", "skill": "r_cloze", "bloom": "apply", "prompt": "We go to sleep at ___.", "choices": ["night", "run", "blue"], "answerIndex": 0 },
+          { "id": "cl_water", "skill": "r_cloze", "bloom": "apply", "prompt": "A fish lives in the ___.", "choices": ["water", "tree", "fire"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

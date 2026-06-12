@@ -1,0 +1,24 @@
+{
+  "id": "context",
+  "subject": "reading",
+  "strand": "r_vocab",
+  "band": 3,
+  "title": "Word detective",
+  "blurb": "Use the sentence to work out the word.",
+  "order": 3,
+  "skills": ["r_context"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ctx_scalding", "skill": "r_context", "bloom": "analyze", "prompt": "The soup was scalding, so she waited for it to cool. What does “scalding” mean?", "choices": ["very hot", "very cold", "very sweet"], "answerIndex": 0 },
+          { "id": "ctx_narrow", "skill": "r_context", "bloom": "analyze", "prompt": "The path was so narrow that only one person could pass. What does “narrow” mean?", "choices": ["thin", "wide", "tall"], "answerIndex": 0 },
+          { "id": "ctx_weary", "skill": "r_context", "bloom": "analyze", "prompt": "He felt weary after the long walk and sat down to rest. What does “weary” mean?", "choices": ["tired", "happy", "angry"], "answerIndex": 0 },
+          { "id": "ctx_ancient", "skill": "r_context", "bloom": "analyze", "prompt": "The ancient ruins were thousands of years old. What does “ancient” mean?", "choices": ["very old", "brand new", "very small"], "answerIndex": 0 },
+          { "id": "ctx_faint", "skill": "r_context", "bloom": "analyze", "prompt": "She spoke in a faint whisper we could barely hear. What does “faint” mean?", "choices": ["weak and quiet", "loud and clear", "fast"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

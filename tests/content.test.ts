@@ -25,6 +25,18 @@ describe('bundled lessons', () => {
         'addmatch',
         'buildword',
         'bigwords',
+        // Reading curriculum across the five bands
+        'sounds',
+        'rhyme',
+        'wordfamily',
+        'cloze',
+        'mainidea',
+        'synonyms',
+        'context',
+        'inference',
+        'figurative',
+        'purpose',
+        'evaluate',
       ]),
     );
   });

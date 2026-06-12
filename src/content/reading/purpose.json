@@ -1,0 +1,26 @@
+{
+  "id": "purpose",
+  "subject": "reading",
+  "strand": "r_comp",
+  "band": 5,
+  "title": "Why did they write it?",
+  "blurb": "Find the author's purpose and craft.",
+  "order": 1,
+  "skills": ["r_purpose"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "The Gift of Time",
+        "passage": "Every child deserves clean water. Right now, millions of children walk for hours each day just to fill a single bucket — hours they could spend learning in school. By building wells in rural communities, we can change this. Please support our cause, and give a child the gift of time.",
+        "questions": [
+          { "id": "pur_main", "skill": "r_purpose", "bloom": "evaluate", "prompt": "What is the author's main purpose?", "choices": ["To persuade readers to help", "To explain exactly how a well is built", "To tell a funny story"], "answerIndex": 0 },
+          { "id": "pur_phrase", "skill": "r_purpose", "bloom": "analyze", "prompt": "The phrase “the gift of time” is meant to:", "choices": ["appeal to the reader's emotions", "give exact statistics", "describe a wristwatch"], "answerIndex": 0 },
+          { "id": "pur_audience", "skill": "r_purpose", "bloom": "analyze", "prompt": "Who is the intended audience?", "choices": ["People who might donate or help", "Engineers only", "Toddlers"], "answerIndex": 0 },
+          { "id": "pur_opinion", "skill": "r_purpose", "bloom": "evaluate", "prompt": "Which sentence is an opinion, not a fact?", "choices": ["Every child deserves clean water", "Some children walk to fetch water", "Wells can be built in communities"], "answerIndex": 0 },
+          { "id": "pur_cta", "skill": "r_purpose", "bloom": "analyze", "prompt": "“Please support our cause” is an example of a:", "choices": ["call to action", "heading", "caption"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
