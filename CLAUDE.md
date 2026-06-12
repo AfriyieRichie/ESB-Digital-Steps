@@ -82,6 +82,11 @@ build order.
   - `export.ts` / `exportModel.ts` — funder-facing export: collects live Dexie
     data into a CSV + JSON bundle (pure model is unit-tested), downloaded via
     `ui/download.ts` with no network.
+  - `backup.ts` — `snapshotHubData` + idempotent `mergeHubData` (the sync
+    primitives) + file export/import for USB transfer between a hub's devices.
+  - `sync/` — the **sync seam**: a `SyncAdapter` (pull/push) + `runSync` engine
+    so a Kolibri or local-network adapter can be plugged in later with no feature
+    rewrite. Behaviour today is unchanged (data stays in IndexedDB per device).
 - `src/content/` — lesson JSON per subject, validated by `schema.ts` (Zod).
   A lesson lists `skills` and ordered `steps`; each step is one activity +
   config. Item schemas (`chooseItem`, `typeItem`) are defined ready for their

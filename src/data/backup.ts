@@ -31,8 +31,12 @@ export interface ExportBundle {
   filenameBase: string;
 }
 
-export async function exportHubData(at: number = Date.now()): Promise<ExportBundle> {
-  const backup: HubBackup = {
+/**
+ * The device's full syncable snapshot. This is the single primitive both the
+ * file export and the sync engine build on (see data/sync/).
+ */
+export async function snapshotHubData(at: number = Date.now()): Promise<HubBackup> {
+  return {
     version: 1,
     exportedAt: new Date(at).toISOString(),
     hubs: await db.hubs.toArray(),
@@ -42,6 +46,10 @@ export async function exportHubData(at: number = Date.now()): Promise<ExportBund
     awards: await db.awards.toArray(),
     inventory: await db.inventory.toArray(),
   };
+}
+
+export async function exportHubData(at: number = Date.now()): Promise<ExportBundle> {
+  const backup = await snapshotHubData(at);
   return {
     json: JSON.stringify(backup, null, 2),
     filenameBase: `esb-hub-data-${backup.exportedAt.slice(0, 10)}`,
@@ -83,14 +91,16 @@ export function parseBackup(json: string): HubBackup {
 }
 
 /**
- * Merge a backup into this device. Idempotent:
+ * Merge a snapshot into this device. Idempotent:
  * - hubs/learners: upserted by id;
  * - competency events: unioned by id, keeping the earliest demonstration;
  * - progress: last-writer-wins by updatedAt;
  * - awards/inventory: unioned by id (never duplicated).
+ *
+ * This is the merge primitive the sync engine uses; importHubData just parses a
+ * file and calls it.
  */
-export async function importHubData(json: string): Promise<ImportResult> {
-  const data = parseBackup(json);
+export async function mergeHubData(data: HubBackup): Promise<ImportResult> {
   const result: ImportResult = { learnersAdded: 0, learnersUpdated: 0, competenciesAdded: 0 };
 
   await db.transaction(
@@ -136,4 +146,9 @@ export async function importHubData(json: string): Promise<ImportResult> {
   );
 
   return result;
+}
+
+/** Parse a backup file and merge it into this device. */
+export async function importHubData(json: string): Promise<ImportResult> {
+  return mergeHubData(parseBackup(json));
 }

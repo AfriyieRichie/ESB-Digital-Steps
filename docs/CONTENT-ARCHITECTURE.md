@@ -154,6 +154,29 @@ popup, so it works over file:// and in a sandbox where allowed.
 
 ---
 
+## 6a. Data sharing & sync (the adapter seam)
+
+Each device stores its data in IndexedDB. Sharing that data across the hub's
+tablets is pulled behind a small seam so the transport can be chosen later
+without rewriting features:
+
+- `data/backup.ts` — `snapshotHubData()` (serialise the device's syncable
+  records) and `mergeHubData()` (idempotent merge: learners upserted, competency
+  events unioned keeping the earliest, progress last-writer-wins,
+  awards/inventory unioned). File export/import are thin wrappers over these.
+- `data/sync/` — `SyncAdapter` (`pull()` / `push()`), a `runSync(adapter)`
+  engine (pull → merge → snapshot → push; converges every device to the same
+  data because the merge is idempotent and order-independent), and a
+  `MemorySyncAdapter` reference/test implementation.
+
+**What ships now:** file-based transfer (facilitator export → import via USB),
+which is the manual form of the same primitive. **What plugs in later, with no
+feature rewrite:**
+- a **Kolibri adapter** — store/read the snapshot via Kolibri's per-user state
+  channel and let Kolibri's device-to-device + Data Portal sync carry it (the
+  app is built to run as a Kolibri HTML5App); or
+- a **LAN adapter** — push/pull to a hub device over the local network.
+
 ## 7. Adding content (the authoring contract)
 
 To add a lesson, drop a JSON file under `content/<subject>/` and ensure:
