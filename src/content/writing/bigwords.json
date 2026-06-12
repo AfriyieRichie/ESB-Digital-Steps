@@ -1,0 +1,24 @@
+{
+  "id": "bigwords",
+  "subject": "writing",
+  "strand": "w_build",
+  "band": 2,
+  "title": "Bigger words",
+  "blurb": "Spell four-letter words.",
+  "order": 1,
+  "skills": ["w_word"],
+  "steps": [
+    {
+      "activityType": "order",
+      "config": {
+        "items": [
+          { "id": "big_hand", "skill": "w_word", "prompt": "Make this word:", "answer": "hand" },
+          { "id": "big_fish", "skill": "w_word", "prompt": "Make this word:", "answer": "fish" },
+          { "id": "big_milk", "skill": "w_word", "prompt": "Make this word:", "answer": "milk" },
+          { "id": "big_book", "skill": "w_word", "prompt": "Make this word:", "answer": "book" },
+          { "id": "big_star", "skill": "w_word", "prompt": "Make this word:", "answer": "star" }
+        ]
+      }
+    }
+  ]
+}

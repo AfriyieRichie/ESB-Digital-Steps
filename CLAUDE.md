@@ -84,8 +84,9 @@ build order.
   activities.
 - `src/activities/` — `engine.types.ts` (the Activity contract) + one folder per
   activity type. `Tap/`, `Choose/`, `Type/` (with `ui/OnScreenKeyboard`), and
-  `Drag/` (Pointer-Events drag-to-target), and `Match/` (tap-to-pair) are built.
-  Lessons span bands 1–3 across digital, numeracy, and reading.
+  `Drag/` (Pointer-Events drag-to-target), `Match/` (tap-to-pair), and `Order/`
+  (build-the-word) are built. Lessons span bands 1–3 across all four subjects
+  (digital, numeracy, reading, writing).
 - `src/audio/` — synthesised earcons (`sounds.ts`, Web Audio, no asset files) +
   a session mute store, and `voice.ts`: on-device English narration (Web Speech)
   that reads prompts aloud for pre-readers (emoji-stripped, mute-aware,

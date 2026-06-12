@@ -211,6 +211,34 @@ describe('choose & type steps (slice #3)', () => {
       }),
     ).toThrow(/Invalid lesson/);
   });
+
+  it('accepts an order step and rejects a single-letter answer', () => {
+    const ok = parseLesson({
+      ...validLesson,
+      subject: 'writing',
+      strand: 'w_build',
+      skills: ['w_word'],
+      steps: [
+        {
+          activityType: 'order',
+          config: { items: [{ id: 'o1', skill: 'w_word', prompt: 'Make this word:', answer: 'cat' }] },
+        },
+      ],
+    });
+    expect(ok.steps[0]?.activityType).toBe('order');
+
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        subject: 'writing',
+        strand: 'w_build',
+        skills: ['w_word'],
+        steps: [
+          { activityType: 'order', config: { items: [{ id: 'o1', prompt: 'x', answer: 'a' }] } },
+        ],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
 });
 
 describe('item schemas (consumed by Choose / Type)', () => {

@@ -19,7 +19,8 @@ export const STRANDS: readonly Strand[] = [
   { id: 'n_number', subject: 'numeracy', label: 'Numbers & counting' },
   // Reading
   { id: 'r_print', subject: 'reading', label: 'Letters & print' },
-  // writing strands go here as content is authored.
+  // Writing
+  { id: 'w_build', subject: 'writing', label: 'Building words' },
 ];
 
 const STRAND_BY_ID: ReadonlyMap<string, Strand> = new Map(STRANDS.map((s) => [s.id, s]));

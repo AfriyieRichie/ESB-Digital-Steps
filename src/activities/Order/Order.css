@@ -1,0 +1,98 @@
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  height: 100%;
+}
+
+.order__prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.order__prompt {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.order__slots {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.order__slot {
+  display: grid;
+  place-items: center;
+  min-width: var(--touch-target-lg);
+  min-height: var(--touch-target-lg);
+  padding: var(--space-2);
+  border-bottom: 5px solid var(--color-border);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-border);
+}
+
+.order__slot--filled {
+  color: var(--color-subject-writing);
+  border-bottom-color: var(--color-subject-writing);
+}
+
+.order__tiles {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.order__tile {
+  display: grid;
+  place-items: center;
+  width: var(--touch-target-xl);
+  height: var(--touch-target-xl);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--motion-fast) ease, opacity var(--motion-fast) ease;
+}
+
+.order__tile:active {
+  transform: scale(0.94);
+}
+
+.order__tile--used {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.order__tile--wrong {
+  border-color: var(--color-danger);
+  animation: order-shake var(--motion-base) ease;
+}
+
+@keyframes order-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order__tile,
+  .order__tile--wrong {
+    transition: none;
+    animation: none;
+  }
+}

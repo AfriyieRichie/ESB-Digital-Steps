@@ -3,6 +3,7 @@ import { LESSONS } from '../src/content/lessons';
 import { ACTIVITY_REGISTRY } from '../src/activities/registry';
 import { isCompetencyId } from '../src/data/competencies';
 import { strandBelongsToSubject } from '../src/data/strands';
+import { SUBJECT_IDS } from '../src/data/subjects';
 
 // Guards the authored content as a whole: everything under content/ loads and
 // validates (LESSONS would throw on import otherwise), and every lesson is
@@ -22,6 +23,8 @@ describe('bundled lessons', () => {
         'care',
         'words',
         'addmatch',
+        'buildword',
+        'bigwords',
       ]),
     );
   });
@@ -31,6 +34,13 @@ describe('bundled lessons', () => {
       for (const step of lesson.steps) {
         expect(ACTIVITY_REGISTRY[step.activityType]).toBeDefined();
       }
+    }
+  });
+
+  it('covers all four subjects with at least one lesson', () => {
+    const subjectsWithLessons = new Set(LESSONS.map((l) => l.subject));
+    for (const subject of SUBJECT_IDS) {
+      expect(subjectsWithLessons.has(subject), `subject ${subject}`).toBe(true);
     }
   });
 

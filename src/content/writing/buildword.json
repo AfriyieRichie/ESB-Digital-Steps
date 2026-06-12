@@ -1,0 +1,24 @@
+{
+  "id": "buildword",
+  "subject": "writing",
+  "strand": "w_build",
+  "band": 1,
+  "title": "Build the word",
+  "blurb": "Put the letters in order.",
+  "order": 1,
+  "skills": ["w_word"],
+  "steps": [
+    {
+      "activityType": "order",
+      "config": {
+        "items": [
+          { "id": "bw_cat", "skill": "w_word", "prompt": "Make this word:", "answer": "cat" },
+          { "id": "bw_dog", "skill": "w_word", "prompt": "Make this word:", "answer": "dog" },
+          { "id": "bw_sun", "skill": "w_word", "prompt": "Make this word:", "answer": "sun" },
+          { "id": "bw_pen", "skill": "w_word", "prompt": "Make this word:", "answer": "pen" },
+          { "id": "bw_bed", "skill": "w_word", "prompt": "Make this word:", "answer": "bed" }
+        ]
+      }
+    }
+  ]
+}

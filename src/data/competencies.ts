@@ -45,7 +45,9 @@ const READING_COMPETENCIES: readonly Competency[] = [
   // locked out. In-band gating is still demonstrated (see m_numeral).
   { id: 'r_word', subject: 'reading', strand: 'r_print', label: 'Reads simple words', prerequisites: [] },
 ];
-const WRITING_COMPETENCIES: readonly Competency[] = [];
+const WRITING_COMPETENCIES: readonly Competency[] = [
+  { id: 'w_word', subject: 'writing', strand: 'w_build', label: 'Builds simple words', prerequisites: [] },
+];
 const NUMERACY_COMPETENCIES: readonly Competency[] = [
   { id: 'm_count', subject: 'numeracy', strand: 'n_number', label: 'Counts objects to 10', prerequisites: [] },
   { id: 'm_numeral', subject: 'numeracy', strand: 'n_number', label: 'Recognises numerals', prerequisites: ['m_count'] },
