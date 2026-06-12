@@ -1,0 +1,23 @@
+{
+  "id": "letters",
+  "subject": "reading",
+  "strand": "r_print",
+  "band": 1,
+  "title": "Type the letter",
+  "blurb": "Copy each letter.",
+  "skills": ["r_letter"],
+  "steps": [
+    {
+      "activityType": "type",
+      "config": {
+        "items": [
+          { "id": "l_a", "skill": "r_letter", "prompt": "Type this letter:", "answer": "A" },
+          { "id": "l_b", "skill": "r_letter", "prompt": "Type this letter:", "answer": "B" },
+          { "id": "l_c", "skill": "r_letter", "prompt": "Type this letter:", "answer": "C" },
+          { "id": "l_m", "skill": "r_letter", "prompt": "Type this letter:", "answer": "M" },
+          { "id": "l_s", "skill": "r_letter", "prompt": "Type this letter:", "answer": "S" }
+        ]
+      }
+    }
+  ]
+}

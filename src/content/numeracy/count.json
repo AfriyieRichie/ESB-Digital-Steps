@@ -1,0 +1,23 @@
+{
+  "id": "count",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 1,
+  "title": "Count with me",
+  "blurb": "How many do you see?",
+  "skills": ["m_count"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "c_apples", "skill": "m_count", "prompt": "Count the apples:  🍎 🍎 🍎", "choices": ["2", "3", "4"], "answerIndex": 1 },
+          { "id": "c_stars", "skill": "m_count", "prompt": "Count the stars:  ⭐ ⭐ ⭐ ⭐ ⭐", "choices": ["4", "5", "6"], "answerIndex": 1 },
+          { "id": "c_balls", "skill": "m_count", "prompt": "Count the balls:  ⚽ ⚽", "choices": ["1", "2", "3"], "answerIndex": 1 },
+          { "id": "c_fish", "skill": "m_count", "prompt": "Count the fish:  🐟 🐟 🐟 🐟", "choices": ["3", "4", "5"], "answerIndex": 1 },
+          { "id": "c_cats", "skill": "m_count", "prompt": "Count the cats:  🐱 🐱 🐱 🐱 🐱 🐱", "choices": ["5", "6", "7"], "answerIndex": 1 }
+        ]
+      }
+    }
+  ]
+}

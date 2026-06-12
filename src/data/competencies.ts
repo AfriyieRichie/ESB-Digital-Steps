@@ -36,12 +36,16 @@ const DIGITAL_COMPETENCIES: readonly Competency[] = [
   { id: 'c_return', subject: 'digital', strand: 'd_care', label: 'Returns the device after use', prerequisites: [] },
 ];
 
-// Reading / writing / numeracy competencies will be added here as those
-// subjects get content. Keeping them as explicit (empty) arrays documents the
-// intent and keeps COMPETENCIES below subject-complete.
-const READING_COMPETENCIES: readonly Competency[] = [];
+// First numeracy and reading competencies — enough to anchor the Choose and
+// Type activities with real content. These grow as the curriculum is authored.
+const READING_COMPETENCIES: readonly Competency[] = [
+  { id: 'r_letter', subject: 'reading', strand: 'r_print', label: 'Recognises letters', prerequisites: [] },
+];
 const WRITING_COMPETENCIES: readonly Competency[] = [];
-const NUMERACY_COMPETENCIES: readonly Competency[] = [];
+const NUMERACY_COMPETENCIES: readonly Competency[] = [
+  { id: 'm_count', subject: 'numeracy', strand: 'n_number', label: 'Counts objects to 10', prerequisites: [] },
+  { id: 'm_numeral', subject: 'numeracy', strand: 'n_number', label: 'Recognises numerals', prerequisites: ['m_count'] },
+];
 
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,

@@ -18,6 +18,12 @@ export interface AttemptResult {
   ms?: number;
   /** The content item answered, for item-based activities. Optional. */
   itemId?: string;
+  /**
+   * The skills this specific action evidences. When omitted, the screen wrapper
+   * attributes it to all of the lesson's skills. Item-based activities should
+   * pass the answered item's skill so mastery is attributed precisely.
+   */
+  skills?: readonly string[];
 }
 
 export interface ActivityProps<Config> {

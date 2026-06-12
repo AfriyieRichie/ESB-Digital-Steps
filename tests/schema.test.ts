@@ -75,7 +75,81 @@ describe('parseLesson (content model v2)', () => {
   });
 });
 
-describe('item schemas (ready for slice #3 activities)', () => {
+describe('choose & type steps (slice #3)', () => {
+  it('accepts a choose step with items', () => {
+    const lesson = parseLesson({
+      ...validLesson,
+      skills: ['u_parts'],
+      steps: [
+        {
+          activityType: 'choose',
+          config: {
+            items: [
+              { id: 'q1', skill: 'u_parts', prompt: 'Power?', choices: ['A', 'B'], answerIndex: 0 },
+            ],
+          },
+        },
+      ],
+    });
+    expect(lesson.steps[0]?.activityType).toBe('choose');
+  });
+
+  it('accepts a type step with items', () => {
+    const lesson = parseLesson({
+      ...validLesson,
+      subject: 'reading',
+      strand: 'r_print',
+      skills: ['r_letter'],
+      steps: [
+        {
+          activityType: 'type',
+          config: { items: [{ id: 't1', skill: 'r_letter', prompt: 'Type A', answer: 'A' }] },
+        },
+      ],
+    });
+    expect(lesson.steps[0]?.activityType).toBe('type');
+  });
+
+  it('rejects a choose step whose item answerIndex is out of range', () => {
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        skills: ['u_parts'],
+        steps: [
+          {
+            activityType: 'choose',
+            config: { items: [{ id: 'q1', prompt: 'x', choices: ['A', 'B'], answerIndex: 9 }] },
+          },
+        ],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
+
+  it('rejects an item that references an unknown skill', () => {
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        steps: [
+          {
+            activityType: 'choose',
+            config: { items: [{ id: 'q1', skill: 'nope', prompt: 'x', choices: ['A', 'B'], answerIndex: 0 }] },
+          },
+        ],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
+
+  it('requires at least one item in a step', () => {
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        steps: [{ activityType: 'choose', config: { items: [] } }],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
+});
+
+describe('item schemas (consumed by Choose / Type)', () => {
   it('validates a choose item and rejects an out-of-range answer', () => {
     const ok = chooseItemSchema.safeParse({
       id: 'q1',

@@ -1,0 +1,106 @@
+.choose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  height: 100%;
+}
+
+.choose__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.choose__progress {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.choose__prompt {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.choose__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+
+.choose__option {
+  display: grid;
+  place-items: center;
+  min-height: var(--touch-target-xl);
+  padding: var(--space-5);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--motion-fast) ease, border-color var(--motion-fast) ease,
+    background var(--motion-fast) ease;
+}
+
+.choose__option:hover {
+  border-color: var(--color-primary);
+}
+
+.choose__option:active {
+  transform: scale(0.97);
+}
+
+.choose__option:disabled {
+  cursor: default;
+}
+
+.choose__option--right {
+  border-color: var(--color-success);
+  background: rgba(46, 125, 50, 0.14);
+  color: var(--color-success);
+}
+
+.choose__option--wrong {
+  border-color: var(--color-danger);
+  background: rgba(179, 38, 30, 0.1);
+  animation: choose-shake var(--motion-base) ease;
+}
+
+.choose__feedback {
+  min-height: var(--font-size-xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.choose__feedback--right {
+  color: var(--color-success);
+}
+
+.choose__feedback--wrong {
+  color: var(--color-danger);
+}
+
+.choose__feedback--idle {
+  color: transparent;
+}
+
+@keyframes choose-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choose__option,
+  .choose__option--wrong {
+    transition: none;
+    animation: none;
+  }
+}

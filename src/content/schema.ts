@@ -14,7 +14,7 @@ import { isStrandId, strandBelongsToSubject } from '../data/strands';
 
 // Activity types that have a registered, playable component. Keep this in sync
 // with activities/registry.ts — the registry is typed against it.
-export const ACTIVITY_TYPES = ['tap'] as const;
+export const ACTIVITY_TYPES = ['tap', 'choose', 'type'] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
 const bandSchema = z.union([z.literal(1), z.literal(2), z.literal(3)]);
@@ -70,12 +70,28 @@ const tapConfigSchema = z
   })
   .strict();
 
+const chooseConfigSchema = z
+  .object({
+    items: z.array(chooseItemSchema).min(1),
+  })
+  .strict();
+
+const typeConfigSchema = z
+  .object({
+    items: z.array(typeItemSchema).min(1),
+  })
+  .strict();
+
 export type TapConfig = z.infer<typeof tapConfigSchema>;
+export type ChooseConfig = z.infer<typeof chooseConfigSchema>;
+export type TypeConfig = z.infer<typeof typeConfigSchema>;
 
 // A step is one activity instance: its type plus the matching config. Adding a
 // variant here is the one-line change that lets content express a new activity.
 const stepSchema = z.discriminatedUnion('activityType', [
   z.object({ activityType: z.literal('tap'), config: tapConfigSchema }).strict(),
+  z.object({ activityType: z.literal('choose'), config: chooseConfigSchema }).strict(),
+  z.object({ activityType: z.literal('type'), config: typeConfigSchema }).strict(),
 ]);
 
 export type Step = z.infer<typeof stepSchema>;

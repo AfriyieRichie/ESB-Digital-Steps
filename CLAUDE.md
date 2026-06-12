@@ -81,7 +81,8 @@ build order.
   config. Item schemas (`chooseItem`, `typeItem`) are defined ready for their
   activities.
 - `src/activities/` — `engine.types.ts` (the Activity contract) + one folder per
-  activity type. `Tap/` is built; others are stubs implementing the same contract.
+  activity type. `Tap/`, `Choose/`, and `Type/` are built (the last with the
+  shared `ui/OnScreenKeyboard`); Drag/Match implement the same contract later.
 - `src/learner/` — no-login learner selection + current-learner store.
 - `src/pedagogy/` — guide character, feedback, reward screen.
 - `src/app/` — shell + state-driven screen routing (no router library).

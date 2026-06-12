@@ -34,8 +34,11 @@ export function ActivityScreen(): React.JSX.Element {
   const onAttempt = useCallback(
     (result: AttemptResult) => {
       if (!lesson || currentLearnerId === null) return;
+      // Attribute to the item's own skills when the activity provides them,
+      // otherwise to the whole lesson (e.g. the generative Tap activity).
+      const skills = result.skills && result.skills.length > 0 ? result.skills : lesson.skills;
       const write = (async () => {
-        const newly = await recordAttempt(currentLearnerId, lesson.skills, {
+        const newly = await recordAttempt(currentLearnerId, skills, {
           correct: result.correct,
           ms: result.ms ?? 0,
           lessonId: lesson.id,

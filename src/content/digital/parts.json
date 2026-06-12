@@ -1,0 +1,23 @@
+{
+  "id": "parts",
+  "subject": "digital",
+  "strand": "d_use",
+  "band": 1,
+  "title": "Parts of the tablet",
+  "blurb": "Find the right part.",
+  "skills": ["u_parts"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "p_on", "skill": "u_parts", "prompt": "Which one turns the tablet ON?", "choices": ["Power button", "Speaker", "Camera"], "answerIndex": 0 },
+          { "id": "p_screen", "skill": "u_parts", "prompt": "Where do you see pictures and words?", "choices": ["The screen", "The back", "The charger"], "answerIndex": 0 },
+          { "id": "p_louder", "skill": "u_parts", "prompt": "What makes the sound louder?", "choices": ["Volume button", "Power button", "Screen"], "answerIndex": 0 },
+          { "id": "p_charge", "skill": "u_parts", "prompt": "Where does the charger go?", "choices": ["Charging port", "Screen", "Speaker"], "answerIndex": 0 },
+          { "id": "p_touch", "skill": "u_parts", "prompt": "Which part do you tap with your finger?", "choices": ["Touchscreen", "Back cover", "Charger"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

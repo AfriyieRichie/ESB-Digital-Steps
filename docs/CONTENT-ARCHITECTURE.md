@@ -119,8 +119,9 @@ at-a-glance view.
    Zod content layer; migrate the Tap lesson; step runner. No Dexie change.
 2. **Attempt log + derived mastery** *(DONE)* — Dexie v2 (`Attempt`); mastery
    service; dashboard shows accuracy / mastery % / time-on-task.
-3. **More activity types** consuming items — Choose, Drag, Type (on-screen
-   keyboard), Match — and the first real numeracy / reading / digital lessons.
+3. **More activity types** consuming items — **Choose + Type (with on-screen
+   keyboard) DONE**, with the first real numeracy (count), reading (type the
+   letter), and digital (parts) lessons; Drag and Match still to come.
 4. **Progression engine** — placement, path map, unlock-on-mastery.
 5. **Village gamification** — XP / streak / badges + the village world + reward
    store.
