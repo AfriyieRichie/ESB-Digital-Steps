@@ -26,6 +26,32 @@ TaRL** (see `CLAUDE.md`).
 
 ---
 
+## 1a. Developmental bands, tracks & the difficulty ladder
+
+**Five bands** span ages ~4–16 (`data/db.ts` `Band = 1..5`): 1 Early childhood
+(4–6) · 2 Early elementary (6–8) · 3 Upper elementary (8–11) · 4 Middle school
+(11–14) · 5 Early high school (14–16). Grade seeds the starting band
+(`learner/placement.ts`), then mastery adapts it.
+
+**Tracks (subjects)** — `data/subjects.ts`: reading, writing, numeracy, science,
+digital, logic, social ("My world"), sel ("Feelings & friends"), arts. Each has
+a **strand** taxonomy (`data/strands.ts`) aligned to the framework (e.g. reading
+→ print / comprehension / vocabulary; numeracy → number / operations / geometry /
+data; digital → use / care / coding / safety). Competencies + lessons are
+authored onto this skeleton.
+
+**Difficulty scales on several axes at once** (`data/difficulty.ts`), not one
+number:
+- **Bloom's cognitive level** (recall → apply → analyze → create) is the spine;
+  `item.bloom` carries it, `defaultBloomForBand` sets the band expectation.
+- **Fine-grained `difficulty` 1–5** within a band breaks ties (`difficultyScore`).
+- Scaffolding, step count, and text/number load grow with the band in content.
+
+**Mastery gates, not age locks.** A skill is mastered at ~80% accuracy over
+enough recent attempts (`data/mastery.ts`); a learner advances when the gate is
+met, can accelerate, or repeat. **Spaced repetition** (`sequencing/review.ts`, a
+Leitner scheduler) resurfaces mastered facts/vocabulary so they stick.
+
 ## 2. The content model
 
 ```

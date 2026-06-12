@@ -95,6 +95,11 @@
 .report__subject-head[data-tone='writing'] { background: var(--color-subject-writing); }
 .report__subject-head[data-tone='numeracy'] { background: var(--color-subject-numeracy); }
 .report__subject-head[data-tone='digital'] { background: var(--color-subject-digital); }
+.report__subject-head[data-tone='science'] { background: var(--color-subject-science); }
+.report__subject-head[data-tone='logic'] { background: var(--color-subject-logic); }
+.report__subject-head[data-tone='social'] { background: var(--color-subject-social); }
+.report__subject-head[data-tone='sel'] { background: var(--color-subject-sel); }
+.report__subject-head[data-tone='arts'] { background: var(--color-subject-arts); }
 
 .report__subject-title {
   font-size: var(--font-size-lg);

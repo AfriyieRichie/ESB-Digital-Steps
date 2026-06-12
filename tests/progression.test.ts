@@ -89,6 +89,6 @@ describe('band placement (Teaching at the Right Level)', () => {
   it('never advances past the top band', () => {
     const band1 = lessonsForBand(1);
     const allSkills = new Set(band1.flatMap((l) => l.skills));
-    expect(readyForNextBand(3, band1, allSkills)).toBe(false);
+    expect(readyForNextBand(5, band1, allSkills)).toBe(false);
   });
 });

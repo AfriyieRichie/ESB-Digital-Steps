@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { LESSONS } from '../src/content/lessons';
 import { ACTIVITY_REGISTRY } from '../src/activities/registry';
-import { isCompetencyId } from '../src/data/competencies';
+import { competenciesForSubject, isCompetencyId } from '../src/data/competencies';
 import { strandBelongsToSubject } from '../src/data/strands';
 import { SUBJECT_IDS } from '../src/data/subjects';
 
@@ -37,10 +37,13 @@ describe('bundled lessons', () => {
     }
   });
 
-  it('covers all four subjects with at least one lesson', () => {
+  it('every subject that has competencies also has at least one lesson', () => {
     const subjectsWithLessons = new Set(LESSONS.map((l) => l.subject));
     for (const subject of SUBJECT_IDS) {
-      expect(subjectsWithLessons.has(subject), `subject ${subject}`).toBe(true);
+      const hasCompetencies = competenciesForSubject(subject).length > 0;
+      if (hasCompetencies) {
+        expect(subjectsWithLessons.has(subject), `subject ${subject}`).toBe(true);
+      }
     }
   });
 

@@ -17,7 +17,19 @@ import { isStrandId, strandBelongsToSubject } from '../data/strands';
 export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag', 'match', 'order'] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
-const bandSchema = z.union([z.literal(1), z.literal(2), z.literal(3)]);
+const bandSchema = z.union([
+  z.literal(1),
+  z.literal(2),
+  z.literal(3),
+  z.literal(4),
+  z.literal(5),
+]);
+
+// Bloom's cognitive level — the spine of the difficulty ladder (see
+// data/difficulty.ts). Optional on items; defaults conceptually to the band's
+// expectation.
+export const BLOOM_LEVELS = ['recall', 'apply', 'analyze', 'create'] as const;
+const bloomSchema = z.enum(BLOOM_LEVELS);
 
 const skillIdSchema = z.string().refine(isCompetencyId, {
   message: 'references a skill id that is not in the competency framework',
@@ -39,7 +51,11 @@ const itemBaseSchema = z.object({
   skill: skillIdSchema.optional(),
   /** Optional difficulty within the lesson's band, 1 (easiest) .. 5. */
   difficulty: z.number().int().min(1).max(5).optional(),
+  /** Optional cognitive level (recall -> apply -> analyze -> create). */
+  bloom: bloomSchema.optional(),
 });
+
+export type BloomLevel = (typeof BLOOM_LEVELS)[number];
 
 export const chooseItemSchema = itemBaseSchema
   .extend({

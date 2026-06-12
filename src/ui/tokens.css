@@ -42,6 +42,11 @@
   --color-subject-writing: #8a3ffc;
   --color-subject-numeracy: #e08600;
   --color-subject-digital: #0fa3a3;
+  --color-subject-science: #1f8a4c;
+  --color-subject-logic: #4f46e5;
+  --color-subject-social: #8a5a2b;
+  --color-subject-sel: #be185d;
+  --color-subject-arts: #a21caf;
 
   /* --- Gradients (depth + delight) -------------------------------------- */
   --gradient-bg: linear-gradient(180deg, var(--color-bg-top) 0%, var(--color-bg-bottom) 100%);
@@ -53,6 +58,11 @@
   --gradient-writing: linear-gradient(180deg, #a771ff 0%, #8a3ffc 100%);
   --gradient-numeracy: linear-gradient(180deg, #ffb14d 0%, #e08600 100%);
   --gradient-digital: linear-gradient(180deg, #2fc4c4 0%, #0b7d7d 100%);
+  --gradient-science: linear-gradient(180deg, #43b873 0%, #1f8a4c 100%);
+  --gradient-logic: linear-gradient(180deg, #7b74ee 0%, #4f46e5 100%);
+  --gradient-social: linear-gradient(180deg, #b58046 0%, #8a5a2b 100%);
+  --gradient-sel: linear-gradient(180deg, #e8568f 0%, #be185d 100%);
+  --gradient-arts: linear-gradient(180deg, #c94fd6 0%, #a21caf 100%);
 
   /* --- Type scale ------------------------------------------------------- */
   --font-family-base: 'Nunito', 'Quicksand', 'Baloo 2', 'Segoe UI Rounded',

@@ -5,7 +5,13 @@ import Dexie, { type EntityTable } from 'dexie';
 // upgrade() callback for any future shape change — never mutate an existing
 // version's stores.
 
-export type Band = 1 | 2 | 3;
+// Five developmental bands spanning ages ~4–16 (see docs/CONTENT-ARCHITECTURE).
+//   1: Early childhood (4–6)     2: Early elementary (6–8)
+//   3: Upper elementary (8–11)   4: Middle school (11–14)
+//   5: Early high school (14–16)
+export type Band = 1 | 2 | 3 | 4 | 5;
+export const BANDS: readonly Band[] = [1, 2, 3, 4, 5];
+export const MAX_BAND: Band = 5;
 
 export interface Hub {
   id: string;

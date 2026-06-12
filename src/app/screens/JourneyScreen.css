@@ -93,6 +93,11 @@
 .track__label[data-tone='writing'] { background: var(--gradient-writing); }
 .track__label[data-tone='numeracy'] { background: var(--gradient-numeracy); }
 .track__label[data-tone='digital'] { background: var(--gradient-digital); }
+.track__label[data-tone='science'] { background: var(--gradient-science); }
+.track__label[data-tone='logic'] { background: var(--gradient-logic); }
+.track__label[data-tone='social'] { background: var(--gradient-social); }
+.track__label[data-tone='sel'] { background: var(--gradient-sel); }
+.track__label[data-tone='arts'] { background: var(--gradient-arts); }
 
 .track__list {
   list-style: none;
@@ -144,6 +149,11 @@
 .lesson-card[data-tone='writing'] { --card-grad: var(--gradient-writing); --card-lip: #6a2fd0; }
 .lesson-card[data-tone='numeracy'] { --card-grad: var(--gradient-numeracy); --card-lip: #b56b00; }
 .lesson-card[data-tone='digital'] { --card-grad: var(--gradient-digital); --card-lip: #0a6868; }
+.lesson-card[data-tone='science'] { --card-grad: var(--gradient-science); --card-lip: #176b3a; }
+.lesson-card[data-tone='logic'] { --card-grad: var(--gradient-logic); --card-lip: #3c34c4; }
+.lesson-card[data-tone='social'] { --card-grad: var(--gradient-social); --card-lip: #6e4521; }
+.lesson-card[data-tone='sel'] { --card-grad: var(--gradient-sel); --card-lip: #9c1450; }
+.lesson-card[data-tone='arts'] { --card-grad: var(--gradient-arts); --card-lip: #861897; }
 
 /* Colour cap at the top of each card. */
 .lesson-card::after {

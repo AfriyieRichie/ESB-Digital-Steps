@@ -1,5 +1,5 @@
 import type { Lesson } from '../content/schema';
-import type { Band } from '../data/db';
+import { MAX_BAND, type Band } from '../data/db';
 import { getCompetency } from '../data/competencies';
 
 // The progression engine: pure functions that turn "which skills has this
@@ -94,7 +94,7 @@ export function readyForNextBand(
   mastered: ReadonlySet<string>,
 ): boolean {
   return (
-    currentBand < 3 &&
+    currentBand < MAX_BAND &&
     bandLessons.length > 0 &&
     bandLessons.every((lesson) => isLessonComplete(lesson, mastered))
   );

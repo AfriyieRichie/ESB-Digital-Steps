@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Avatar } from '../ui/Avatar';
 import { Button } from '../ui/Button';
-import type { Band } from '../data/db';
+import { BANDS, type Band } from '../data/db';
 import type { LearnerProfileInput } from './createLearner';
 import { GRADE_OPTIONS, gradeLabel, suggestBandForGrade } from './placement';
 import './LearnerForm.css';
 
-const BANDS: readonly Band[] = [1, 2, 3];
 const AVATARS = [0, 1, 2, 3];
 
 interface LearnerFormProps {
