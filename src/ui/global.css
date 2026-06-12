@@ -16,14 +16,16 @@ body {
   margin: 0;
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  line-height: 1.4;
+  line-height: var(--line-base);
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--gradient-bg);
+  background-attachment: fixed;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Visible keyboard focus everywhere, regardless of component. */
+/* Visible keyboard focus everywhere. */
 :focus-visible {
   outline: var(--focus-ring-width) solid var(--color-focus);
   outline-offset: var(--focus-ring-offset);
@@ -35,12 +37,19 @@ button {
 
 h1,
 h2,
+h3 {
+  line-height: var(--line-tight);
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
 h3,
 p {
   margin: 0;
 }
 
-/* Screen-reader-only utility for accessible labels. */
+/* Screen-reader-only utility. */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -51,4 +60,16 @@ p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Shared entrance animation for screens. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

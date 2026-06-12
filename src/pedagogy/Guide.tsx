@@ -1,9 +1,9 @@
+import { Mascot } from '../ui/Mascot';
 import { SpeakButton } from '../ui/SpeakButton';
 import './Guide.css';
 
-// A small, friendly guide character that speaks to the child: an emoji face, a
-// speech line, and a tappable speaker that reads the line aloud (on-device
-// English voice — see audio/voice.ts).
+// The friendly guide: the star mascot, a speech line, and a tappable speaker
+// that reads the line aloud (on-device voice — see audio/voice.ts).
 
 interface GuideProps {
   message: string;
@@ -11,12 +11,9 @@ interface GuideProps {
 }
 
 export function Guide({ message, mood = 'happy' }: GuideProps): React.JSX.Element {
-  const face = mood === 'cheer' ? '🤩' : '🙂';
   return (
     <div className="guide">
-      <span className="guide__face" aria-hidden="true">
-        {face}
-      </span>
+      <Mascot mood={mood} size={84} />
       <p className="guide__bubble">{message}</p>
       <SpeakButton text={message} />
     </div>

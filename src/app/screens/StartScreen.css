@@ -2,14 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-8);
   text-align: center;
-  padding-top: var(--space-8);
+  padding-top: var(--space-6);
+}
+
+.start__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 620px;
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--gradient-hero);
+  box-shadow: var(--shadow-1);
 }
 
 .start__title {
   font-size: var(--font-size-3xl);
+  font-weight: 900;
   color: var(--color-primary-strong);
+}
+
+.start__tagline {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 .start__actions {

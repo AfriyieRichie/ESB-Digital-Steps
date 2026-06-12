@@ -7,7 +7,9 @@
 
 .picker__title {
   font-size: var(--font-size-2xl);
+  font-weight: 900;
   text-align: center;
+  color: var(--color-primary-strong);
 }
 
 .picker__hint,
@@ -38,22 +40,24 @@
   width: 100%;
   min-height: var(--touch-target-xl);
   padding: var(--space-5);
-  border: 2px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--press-lip) var(--color-border), var(--shadow-1);
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  transition: transform var(--motion-fast) ease, box-shadow var(--motion-fast) ease;
+  transition: transform var(--motion-fast) var(--ease-spring), box-shadow var(--motion-fast) ease;
 }
 
 .picker__card:hover {
-  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+  box-shadow: var(--press-lip) var(--color-border), var(--shadow-2);
 }
 
 .picker__card:active {
-  transform: scale(0.97);
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--color-border), var(--shadow-1);
 }
 
 .picker__name {

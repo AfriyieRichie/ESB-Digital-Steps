@@ -26,6 +26,11 @@ export function RewardScreen(): React.JSX.Element {
 
   return (
     <section className="reward">
+      <div className="reward__confetti" aria-hidden="true">
+        {Array.from({ length: 16 }).map((_, i) => (
+          <span key={i} className="reward__confetti-piece" />
+        ))}
+      </div>
       <div className="reward__star" aria-hidden="true">
         ★
       </div>

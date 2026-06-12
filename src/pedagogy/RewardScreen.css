@@ -1,21 +1,81 @@
 .reward {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-5);
   text-align: center;
   padding-top: var(--space-6);
+  overflow: hidden;
 }
 
 .reward__star {
-  font-size: 8rem;
+  font-size: 7rem;
   line-height: 1;
   color: var(--color-star);
-  animation: reward-pop var(--motion-slow) ease both;
+  filter: drop-shadow(0 8px 14px rgba(245, 158, 11, 0.45));
+  animation: reward-pop var(--motion-slow) var(--ease-spring) both;
 }
 
 .reward__title {
   font-size: var(--font-size-2xl);
+  font-weight: 900;
+  color: var(--color-primary-strong);
+}
+
+/* --- Confetti -------------------------------------------------------------- */
+.reward__confetti {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.reward__confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confetti-fall 1.8s var(--ease-out) forwards;
+}
+
+.reward__confetti-piece:nth-child(odd) { background: var(--color-accent); }
+.reward__confetti-piece:nth-child(2n) { background: var(--color-secondary); }
+.reward__confetti-piece:nth-child(3n) { background: var(--color-star); }
+.reward__confetti-piece:nth-child(4n) { background: var(--color-primary); }
+.reward__confetti-piece:nth-child(5n) { background: var(--color-subject-reading); }
+
+.reward__confetti-piece:nth-child(1) { left: 8%; animation-delay: 0s; }
+.reward__confetti-piece:nth-child(2) { left: 16%; animation-delay: 0.15s; }
+.reward__confetti-piece:nth-child(3) { left: 24%; animation-delay: 0.05s; }
+.reward__confetti-piece:nth-child(4) { left: 32%; animation-delay: 0.25s; }
+.reward__confetti-piece:nth-child(5) { left: 40%; animation-delay: 0.1s; }
+.reward__confetti-piece:nth-child(6) { left: 48%; animation-delay: 0.3s; }
+.reward__confetti-piece:nth-child(7) { left: 56%; animation-delay: 0.08s; }
+.reward__confetti-piece:nth-child(8) { left: 64%; animation-delay: 0.22s; }
+.reward__confetti-piece:nth-child(9) { left: 72%; animation-delay: 0.12s; }
+.reward__confetti-piece:nth-child(10) { left: 80%; animation-delay: 0.28s; }
+.reward__confetti-piece:nth-child(11) { left: 88%; animation-delay: 0.04s; }
+.reward__confetti-piece:nth-child(12) { left: 92%; animation-delay: 0.18s; }
+.reward__confetti-piece:nth-child(13) { left: 12%; animation-delay: 0.34s; }
+.reward__confetti-piece:nth-child(14) { left: 36%; animation-delay: 0.4s; }
+.reward__confetti-piece:nth-child(15) { left: 60%; animation-delay: 0.36s; }
+.reward__confetti-piece:nth-child(16) { left: 84%; animation-delay: 0.44s; }
+
+@keyframes confetti-fall {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(280px) rotate(540deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reward__confetti-piece {
+    animation: none;
+    display: none;
+  }
 }
 
 .reward__stats {
