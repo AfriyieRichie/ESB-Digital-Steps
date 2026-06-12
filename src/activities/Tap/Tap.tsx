@@ -1,8 +1,9 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { TapConfig } from '../../content/schema';
 import { initTapState, isTapComplete, registerTap, tapProgress } from './tapLogic';
 import { playPop } from '../../audio/sounds';
+import { speak } from '../../audio/voice';
 import './Tap.css';
 
 interface Target {
@@ -34,6 +35,11 @@ export default function Tap({ config, onAttempt, onComplete }: ActivityProps<Tap
   const [popped, setPopped] = useState<ReadonlySet<number>>(() => new Set());
   // Timestamp of the previous tap (or mount), to report each tap's reaction time.
   const lastTapAt = useRef<number>(Date.now());
+
+  // Speak the instruction once when the activity opens.
+  useEffect(() => {
+    speak('Tap the stars!');
+  }, []);
 
   function handleTap(targetId: number): void {
     if (popped.has(targetId)) return;

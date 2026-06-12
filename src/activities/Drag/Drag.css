@@ -16,6 +16,13 @@
   color: var(--color-text-muted);
 }
 
+.drag__prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
 .drag__prompt {
   font-size: var(--font-size-2xl);
   font-weight: 800;

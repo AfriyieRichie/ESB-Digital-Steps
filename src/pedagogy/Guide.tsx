@@ -1,8 +1,9 @@
+import { SpeakButton } from '../ui/SpeakButton';
 import './Guide.css';
 
-// A small, friendly guide character that speaks to the child. Kept deliberately
-// minimal (an emoji face + a speech line) — no audio yet; bundled audio arrives
-// in a later task via assets/audio.
+// A small, friendly guide character that speaks to the child: an emoji face, a
+// speech line, and a tappable speaker that reads the line aloud (on-device
+// English voice — see audio/voice.ts).
 
 interface GuideProps {
   message: string;
@@ -17,6 +18,7 @@ export function Guide({ message, mood = 'happy' }: GuideProps): React.JSX.Elemen
         {face}
       </span>
       <p className="guide__bubble">{message}</p>
+      <SpeakButton text={message} />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.speak-btn {
+  display: inline-grid;
+  place-items: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  flex: none;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--motion-fast) ease, background var(--motion-fast) ease;
+}
+
+.speak-btn:hover {
+  background: var(--color-surface-sunken);
+}
+
+.speak-btn:active {
+  transform: scale(0.92);
+}

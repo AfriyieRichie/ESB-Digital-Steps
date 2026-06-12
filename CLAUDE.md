@@ -87,7 +87,9 @@ build order.
   `Drag/` (Pointer-Events drag-to-target) are built; Match implements the same
   contract later.
 - `src/audio/` — synthesised earcons (`sounds.ts`, Web Audio, no asset files) +
-  a session mute store. `voice.ts` (bundled narration) reserved for later.
+  a session mute store, and `voice.ts`: on-device English narration (Web Speech)
+  that reads prompts aloud for pre-readers (emoji-stripped, mute-aware,
+  best-effort). Recorded clips can replace it behind the same `speak()` later.
 - `src/i18n/` — message catalogue (English complete) + `useT`; locales fall back
   to English so partial translations ship safely.
 - `src/sequencing/` — `progression.ts`: pure logic for lesson ordering,

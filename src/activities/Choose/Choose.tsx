@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { ChooseConfig } from '../../content/schema';
 import { playCorrect, playWrong } from '../../audio/sounds';
+import { speak } from '../../audio/voice';
+import { SpeakButton } from '../../ui/SpeakButton';
 import './Choose.css';
 
 // Multiple-choice activity: the child reads a prompt and taps the right answer
@@ -24,6 +26,12 @@ export default function Choose({
 
   const item = config.items[itemIndex];
   const isLastItem = itemIndex === config.items.length - 1;
+
+  // Read each new prompt aloud for children who cannot read it yet.
+  const prompt = item?.prompt;
+  useEffect(() => {
+    if (prompt) speak(prompt);
+  }, [prompt]);
 
   function handleChoice(choiceIndex: number): void {
     if (!item || status === 'right') return; // locked while the correct answer animates
@@ -74,7 +82,10 @@ export default function Choose({
         </p>
       </div>
 
-      <p className="choose__prompt">{item.prompt}</p>
+      <div className="choose__prompt-row">
+        <p className="choose__prompt">{item.prompt}</p>
+        <SpeakButton text={item.prompt} />
+      </div>
 
       <div className="choose__grid" role="group" aria-label={item.prompt}>
         {item.choices.map((choice, choiceIndex) => {

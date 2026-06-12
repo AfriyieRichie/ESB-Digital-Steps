@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { DragConfig } from '../../content/schema';
 import { playCorrect, playWrong } from '../../audio/sounds';
+import { speak } from '../../audio/voice';
+import { SpeakButton } from '../../ui/SpeakButton';
 import './Drag.css';
 
 // Drag activity: drag the token onto the correct labelled target. Pointer Events
@@ -27,6 +29,12 @@ export default function Drag({
 
   const item = config.items[itemIndex];
   const isLastItem = itemIndex === config.items.length - 1;
+
+  // Read each new prompt aloud for children who cannot read it yet.
+  const prompt = item?.prompt;
+  useEffect(() => {
+    if (prompt) speak(prompt);
+  }, [prompt]);
 
   function targetAtPoint(clientX: number, clientY: number): number | null {
     for (let i = 0; i < targetRefs.current.length; i += 1) {
@@ -107,7 +115,10 @@ export default function Drag({
         </p>
       </div>
 
-      <p className="drag__prompt">{item.prompt}</p>
+      <div className="drag__prompt-row">
+        <p className="drag__prompt">{item.prompt}</p>
+        <SpeakButton text={item.prompt} />
+      </div>
 
       <div className="drag__stage">
         <button

@@ -18,6 +18,13 @@
   color: var(--color-text-muted);
 }
 
+.type__prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
 .type__prompt {
   font-size: var(--font-size-xl);
   font-weight: 700;

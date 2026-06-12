@@ -4,6 +4,8 @@ import type { TypeConfig } from '../../content/schema';
 import { OnScreenKeyboard } from '../../ui/OnScreenKeyboard';
 import { isAnswerCorrect, keyboardMode } from './typeLogic';
 import { playCorrect, playWrong } from '../../audio/sounds';
+import { speak } from '../../audio/voice';
+import { SpeakButton } from '../../ui/SpeakButton';
 import './Type.css';
 
 // Typing activity: the child copies the shown letter/number using the on-screen
@@ -28,6 +30,13 @@ export default function Type({
   const isLastItem = itemIndex === config.items.length - 1;
   const mode = item ? keyboardMode(item.answer) : 'letters';
   const maxLength = item ? item.answer.length + MAX_OVERTYPE : 0;
+  // Spoken cue: the instruction plus the letter/number to copy.
+  const spokenPrompt = item ? `${item.prompt} ${item.answer}` : '';
+
+  // Read each new prompt aloud for children who cannot read it yet.
+  useEffect(() => {
+    if (spokenPrompt) speak(spokenPrompt);
+  }, [spokenPrompt]);
 
   const appendChar = useCallback(
     (char: string) => {
@@ -110,7 +119,10 @@ export default function Type({
         </p>
       </div>
 
-      <p className="type__prompt">{item.prompt}</p>
+      <div className="type__prompt-row">
+        <p className="type__prompt">{item.prompt}</p>
+        <SpeakButton text={spokenPrompt} />
+      </div>
 
       <div className="type__target" aria-hidden="true">
         {item.answer}
