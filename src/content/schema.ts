@@ -105,6 +105,8 @@ export const lessonSchema = z
     band: bandSchema,
     title: z.string().min(1),
     blurb: z.string(),
+    /** Order within a (subject, band) track on the journey map. Lower first. */
+    order: z.number().int().nonnegative().optional(),
     skills: z.array(skillIdSchema).min(1),
     steps: z.array(stepSchema).min(1),
   })

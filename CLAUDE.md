@@ -83,6 +83,8 @@ build order.
 - `src/activities/` — `engine.types.ts` (the Activity contract) + one folder per
   activity type. `Tap/`, `Choose/`, and `Type/` are built (the last with the
   shared `ui/OnScreenKeyboard`); Drag/Match implement the same contract later.
+- `src/sequencing/` — `progression.ts`: pure logic for lesson ordering,
+  unlock-on-mastery gating, and band-placement readiness (TaRL).
 - `src/learner/` — no-login learner selection + current-learner store.
 - `src/pedagogy/` — guide character, feedback, reward screen.
 - `src/app/` — shell + state-driven screen routing (no router library).

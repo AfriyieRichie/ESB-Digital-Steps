@@ -11,32 +11,78 @@
 .journey__subtitle {
   color: var(--color-text-muted);
   font-size: var(--font-size-lg);
-  margin-bottom: var(--space-4);
 }
 
 .journey__hint {
   font-size: var(--font-size-lg);
 }
 
-.journey__grid {
+.journey__ready {
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: rgba(46, 125, 50, 0.12);
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+}
+
+/* --- Per-subject track ----------------------------------------------------- */
+.track {
+  margin-top: var(--space-5);
+}
+
+.track__label {
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.track__label[data-tone='reading'] { color: var(--color-subject-reading); }
+.track__label[data-tone='writing'] { color: var(--color-subject-writing); }
+.track__label[data-tone='numeracy'] { color: var(--color-subject-numeracy); }
+.track__label[data-tone='digital'] { color: var(--color-subject-digital); }
+
+.track__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: stretch;
 }
 
-.journey__card {
+/* A connector line between nodes, hidden on the first node and on wrap. */
+.track__node {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-4);
+}
+
+.track__node:not(:first-child)::before {
+  content: '';
+  align-self: center;
+  width: var(--space-4);
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  margin-left: calc(var(--space-4) * -1);
+}
+
+/* --- Lesson card ----------------------------------------------------------- */
+.lesson-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  width: 100%;
-  min-height: 160px;
-  padding: var(--space-5);
+  width: 220px;
+  min-height: 150px;
+  padding: var(--space-4);
   text-align: left;
   border: none;
-  border-left: 8px solid var(--card-tone, var(--color-primary));
+  border-top: 8px solid var(--card-tone, var(--color-primary));
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-1);
@@ -46,34 +92,63 @@
   transition: transform var(--motion-fast) ease, box-shadow var(--motion-fast) ease;
 }
 
-.journey__card:hover {
+.lesson-card[data-tone='reading'] { --card-tone: var(--color-subject-reading); }
+.lesson-card[data-tone='writing'] { --card-tone: var(--color-subject-writing); }
+.lesson-card[data-tone='numeracy'] { --card-tone: var(--color-subject-numeracy); }
+.lesson-card[data-tone='digital'] { --card-tone: var(--color-subject-digital); }
+
+.lesson-card:hover {
   box-shadow: var(--shadow-2);
 }
 
-.journey__card:active {
+.lesson-card:active {
   transform: scale(0.98);
 }
 
-.journey__card[data-tone='reading'] { --card-tone: var(--color-subject-reading); }
-.journey__card[data-tone='writing'] { --card-tone: var(--color-subject-writing); }
-.journey__card[data-tone='numeracy'] { --card-tone: var(--color-subject-numeracy); }
-.journey__card[data-tone='digital'] { --card-tone: var(--color-subject-digital); }
-
-.journey__subject {
-  font-size: var(--font-size-sm);
+.lesson-card__badge {
+  display: grid;
+  place-items: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  border-radius: 50%;
+  background: var(--color-surface-sunken);
+  font-size: var(--font-size-lg);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--card-tone, var(--color-primary));
 }
 
-.journey__lesson-title {
-  font-size: var(--font-size-xl);
+.lesson-card__title {
+  font-size: var(--font-size-lg);
   font-weight: 800;
   color: var(--color-text);
 }
 
-.journey__blurb {
+.lesson-card__blurb {
   font-size: var(--font-size-base);
   color: var(--color-text-muted);
+}
+
+/* States */
+.lesson-card--done {
+  border-top-color: var(--color-success);
+}
+
+.lesson-card--done .lesson-card__badge {
+  background: var(--color-success);
+  color: #ffffff;
+}
+
+.lesson-card--locked {
+  cursor: default;
+  background: var(--color-surface-sunken);
+  border-top-color: var(--color-border);
+  box-shadow: none;
+  opacity: 0.85;
+}
+
+.lesson-card--locked:hover {
+  box-shadow: none;
+}
+
+.lesson-card--locked:active {
+  transform: none;
 }

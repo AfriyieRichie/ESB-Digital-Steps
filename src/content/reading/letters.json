@@ -5,6 +5,7 @@
   "band": 1,
   "title": "Type the letter",
   "blurb": "Copy each letter.",
+  "order": 1,
   "skills": ["r_letter"],
   "steps": [
     {

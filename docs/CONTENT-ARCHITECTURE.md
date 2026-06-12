@@ -84,10 +84,13 @@ are actually used.
   evidence via the `onAttempt` contract; `ActivityScreen` logs it and counts
   newly-mastered skills for the reward. The facilitator view shows mastery %,
   accuracy, and time-on-task. *Light spaced review is still to come.*
-- **Placement + adaptive band** *(slice #4)* — place a learner at a band (TaRL);
-  nudge up/down from rolling accuracy.
-- **Progression path** *(slice #4)* — `sequencing/` computes the ordered lessons
-  for a learner and which are unlocked.
+- **Placement + adaptive band** *(slice #4 — DONE)* — initial placement is the
+  seeded band; `readyForNextBand` flags when a learner has mastered every lesson
+  at their band (TaRL) and surfaces a "ready for Level N+1" banner.
+- **Progression path** *(slice #4 — DONE)* — `sequencing/progression.ts` (pure,
+  unit-tested) orders each band's lessons into per-subject tracks and marks each
+  done / available / locked; a lesson unlocks once its skills' prerequisites are
+  mastered. The journey map renders these states.
 
 ---
 
@@ -122,7 +125,7 @@ at-a-glance view.
 3. **More activity types** consuming items — **Choose + Type (with on-screen
    keyboard) DONE**, with the first real numeracy (count), reading (type the
    letter), and digital (parts) lessons; Drag and Match still to come.
-4. **Progression engine** — placement, path map, unlock-on-mastery.
+4. **Progression engine** *(DONE)* — placement, path map, unlock-on-mastery.
 5. **Village gamification** — XP / streak / badges + the village world + reward
    store.
 6. **i18n + audio** — local message and audio bundles per locale.

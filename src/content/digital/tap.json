@@ -5,6 +5,7 @@
   "band": 1,
   "title": "Wake it and tap",
   "blurb": "Tap the stars.",
+  "order": 1,
   "skills": ["u_power", "u_tap"],
   "steps": [{ "activityType": "tap", "config": { "count": 6 } }]
 }

@@ -5,6 +5,7 @@
   "band": 1,
   "title": "Count with me",
   "blurb": "How many do you see?",
+  "order": 1,
   "skills": ["m_count"],
   "steps": [
     {

@@ -5,6 +5,7 @@
   "band": 1,
   "title": "Parts of the tablet",
   "blurb": "Find the right part.",
+  "order": 2,
   "skills": ["u_parts"],
   "steps": [
     {
