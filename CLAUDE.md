@@ -107,7 +107,10 @@ build order.
   catalogs, the Dexie `progress.ts` service (rewards, idempotent badges, village
   purchases). The grow-a-village reward world; cosmetic-only, on-device.
 - `src/app/` — shell + state-driven screen routing (no router library).
-- `src/facilitator/` — read-only learners × competencies dashboard (live Dexie).
+- `src/facilitator/` — learners × competencies dashboard (live Dexie) + a
+  per-child progress report (`LearnerReport`, tap a name), learner management
+  (add/edit/remove), funder export, and an optional PIN gate (`auth.ts` stores
+  only a hash; session-unlock in `authStore`). Children never need the PIN.
 - `src/ui/` — shared components + `tokens.css` (design tokens).
 - `tests/` — Vitest logic tests.
 

@@ -88,6 +88,13 @@ export interface InventoryItem {
   acquiredAt: number;
 }
 
+// Small key-value store for device settings (e.g. the facilitator PIN hash).
+// On-device only, like everything else.
+export interface Setting {
+  key: string;
+  value: string;
+}
+
 class EsbDatabase extends Dexie {
   hubs!: EntityTable<Hub, 'id'>;
   learners!: EntityTable<Learner, 'id'>;
@@ -97,6 +104,7 @@ class EsbDatabase extends Dexie {
   learnerProgress!: EntityTable<LearnerProgress, 'learnerId'>;
   awards!: EntityTable<Award, 'id'>;
   inventory!: EntityTable<InventoryItem, 'id'>;
+  settings!: EntityTable<Setting, 'key'>;
 
   constructor() {
     super('esb-digital-steps');
@@ -125,6 +133,11 @@ class EsbDatabase extends Dexie {
       learnerProgress: 'learnerId',
       awards: 'id, learnerId, badgeId',
       inventory: 'id, learnerId, pieceId',
+    });
+
+    // v4: device settings (facilitator PIN hash, etc.).
+    this.version(4).stores({
+      settings: 'key',
     });
   }
 }

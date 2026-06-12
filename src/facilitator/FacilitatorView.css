@@ -13,6 +13,12 @@
   margin-bottom: var(--space-4);
 }
 
+.facilitator__hint {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-3);
+}
+
 .facilitator__error {
   color: var(--color-danger);
 }
@@ -171,6 +177,18 @@
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
+}
+
+.facilitator__learner-link {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  color: var(--color-primary-strong);
+  text-decoration: underline;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .facilitator__band {

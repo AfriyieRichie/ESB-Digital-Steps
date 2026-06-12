@@ -1,0 +1,40 @@
+.pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding-top: var(--space-6);
+}
+
+.pin__heading {
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.pin__dots {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.pin__dot {
+  width: var(--space-4);
+  height: var(--space-4);
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.pin__dot--on {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.pin__error {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.pin__actions {
+  display: flex;
+  gap: var(--space-4);
+}

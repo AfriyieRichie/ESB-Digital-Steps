@@ -9,6 +9,7 @@ import { LearnerForm } from '../learner/LearnerForm';
 import { gradeLabel } from '../learner/placement';
 import type { Learner } from '../data/db';
 import { useFacilitatorData } from './useFacilitatorData';
+import { LearnerReport } from './LearnerReport';
 import './FacilitatorView.css';
 
 // Read-only dashboard: learners (rows) × the competency framework (columns),
@@ -39,6 +40,7 @@ export function FacilitatorView(): React.JSX.Element {
   const data = useFacilitatorData(reloadToken);
   const [exportState, setExportState] = useState<ExportState>('idle');
   const [editing, setEditing] = useState<Learner | null>(null);
+  const [reportId, setReportId] = useState<string | null>(null);
 
   const reload = (): void => setReloadToken((t) => t + 1);
 
@@ -54,6 +56,14 @@ export function FacilitatorView(): React.JSX.Element {
     } catch {
       setExportState('blocked');
     }
+  }
+
+  if (reportId) {
+    return (
+      <section className="facilitator">
+        <LearnerReport learnerId={reportId} onBack={() => setReportId(null)} />
+      </section>
+    );
   }
 
   if (editing) {
@@ -88,10 +98,13 @@ export function FacilitatorView(): React.JSX.Element {
         Competencies demonstrated by each learner. Data is stored on this device.
       </p>
 
+      <p className="facilitator__hint">Tap a learner&rsquo;s name for their full progress report.</p>
+
       {data.status === 'ready' && (
         <LearnerManager
           learners={data.data.learners}
           onEdit={setEditing}
+          onView={setReportId}
           onDeleted={reload}
         />
       )}
@@ -164,7 +177,13 @@ export function FacilitatorView(): React.JSX.Element {
                 return (
                   <tr key={learner.id}>
                     <th scope="row" className="facilitator__sticky facilitator__learner">
-                      {learner.name}
+                      <button
+                        type="button"
+                        className="facilitator__learner-link"
+                        onPointerDown={() => setReportId(learner.id)}
+                      >
+                        {learner.name}
+                      </button>
                       <span className="facilitator__band">L{learner.band}</span>
                     </th>
                     {COMPETENCIES.map((competency) => {
@@ -208,11 +227,12 @@ export function FacilitatorView(): React.JSX.Element {
 interface LearnerManagerProps {
   learners: Learner[];
   onEdit: (learner: Learner) => void;
+  onView: (learnerId: string) => void;
   onDeleted: () => void;
 }
 
 /** Add / edit / remove learners. Inline delete confirmation (no popups). */
-function LearnerManager({ learners, onEdit, onDeleted }: LearnerManagerProps): React.JSX.Element {
+function LearnerManager({ learners, onEdit, onView, onDeleted }: LearnerManagerProps): React.JSX.Element {
   const [pendingDelete, setPendingDelete] = useState<string | null>(null);
 
   async function confirmDelete(id: string): Promise<void> {
@@ -258,6 +278,9 @@ function LearnerManager({ learners, onEdit, onDeleted }: LearnerManagerProps): R
               </div>
             ) : (
               <div className="manager__actions">
+                <button type="button" className="manager__btn" onPointerDown={() => onView(learner.id)}>
+                  View
+                </button>
                 <button type="button" className="manager__btn" onPointerDown={() => onEdit(learner)}>
                   Edit
                 </button>

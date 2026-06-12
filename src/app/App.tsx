@@ -6,7 +6,7 @@ import { ActivityScreen } from './screens/ActivityScreen';
 import { VillageScreen } from './screens/VillageScreen';
 import { LearnerPicker } from '../learner/LearnerPicker';
 import { RewardScreen } from '../pedagogy/RewardScreen';
-import { FacilitatorView } from '../facilitator/FacilitatorView';
+import { FacilitatorGate } from '../facilitator/FacilitatorGate';
 
 /** Top-level screen router: a plain switch over the navigation state. */
 export function App(): React.JSX.Element {
@@ -20,7 +20,7 @@ export function App(): React.JSX.Element {
       {screen === 'activity' && <ActivityScreen />}
       {screen === 'reward' && <RewardScreen />}
       {screen === 'village' && <VillageScreen />}
-      {screen === 'facilitator' && <FacilitatorView />}
+      {screen === 'facilitator' && <FacilitatorGate />}
     </AppShell>
   );
 }
