@@ -1,6 +1,9 @@
+import { useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { Guide } from './Guide';
 import { useAppStore } from '../app/store';
+import { playReward } from '../audio/sounds';
+import { useT } from '../i18n/store';
 import './RewardScreen.css';
 
 /** Celebratory screen shown after an activity completes. */
@@ -8,6 +11,12 @@ export function RewardScreen(): React.JSX.Element {
   const goJourney = useAppStore((s) => s.goJourney);
   const goVillage = useAppStore((s) => s.goVillage);
   const reward = useAppStore((s) => s.lastReward);
+  const t = useT();
+
+  // Play the reward fanfare once when the screen appears.
+  useEffect(() => {
+    playReward();
+  }, []);
 
   const newlyMastered = reward?.newlyMastered ?? 0;
   const message =
@@ -20,7 +29,7 @@ export function RewardScreen(): React.JSX.Element {
       <div className="reward__star" aria-hidden="true">
         ★
       </div>
-      <h1 className="reward__title">Well done!</h1>
+      <h1 className="reward__title">{t('reward.title')}</h1>
       <Guide message={message} mood="cheer" />
 
       {reward && (
@@ -61,9 +70,9 @@ export function RewardScreen(): React.JSX.Element {
       )}
 
       <div className="reward__actions">
-        <Button onPointerDown={goVillage}>Visit my village</Button>
+        <Button onPointerDown={goVillage}>{t('reward.visitVillage')}</Button>
         <Button variant="ghost" onPointerDown={goJourney}>
-          Back to my journey
+          {t('reward.backToJourney')}
         </Button>
       </div>
     </section>

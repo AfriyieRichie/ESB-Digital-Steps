@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { TapConfig } from '../../content/schema';
 import { initTapState, isTapComplete, registerTap, tapProgress } from './tapLogic';
+import { playPop } from '../../audio/sounds';
 import './Tap.css';
 
 interface Target {
@@ -42,6 +43,7 @@ export default function Tap({ config, onAttempt, onComplete }: ActivityProps<Tap
     lastTapAt.current = now;
     // Every star tapped is a successful demonstration of the lesson's skills.
     onAttempt?.({ correct: true, ms });
+    playPop();
 
     const nextPopped = new Set(popped);
     nextPopped.add(targetId);

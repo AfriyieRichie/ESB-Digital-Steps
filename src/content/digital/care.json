@@ -1,0 +1,24 @@
+{
+  "id": "care",
+  "subject": "digital",
+  "strand": "d_care",
+  "band": 2,
+  "title": "Hold it safely",
+  "blurb": "Look after the tablet.",
+  "order": 1,
+  "skills": ["c_hold"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "h_carry", "skill": "c_hold", "prompt": "How should you carry the tablet?", "choices": ["With two hands", "By the cord", "Throw it"], "answerIndex": 0 },
+          { "id": "h_place", "skill": "c_hold", "prompt": "Where is it safe to put the tablet?", "choices": ["On a flat table", "On the very edge", "On a wobbly chair"], "answerIndex": 0 },
+          { "id": "h_walk", "skill": "c_hold", "prompt": "Walking with the tablet, you should…", "choices": ["Hold it tight and walk slowly", "Run with it", "Wave it around"], "answerIndex": 0 },
+          { "id": "h_slip", "skill": "c_hold", "prompt": "If the tablet starts to slip?", "choices": ["Hold it with both hands", "Let it fall", "Kick it up"], "answerIndex": 0 },
+          { "id": "h_safe", "skill": "c_hold", "prompt": "The safest way to hold it is…", "choices": ["Flat against your body", "On one finger", "On your head"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

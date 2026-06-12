@@ -11,7 +11,9 @@ import { strandBelongsToSubject } from '../src/data/strands';
 describe('bundled lessons', () => {
   it('loads at least the authored lessons', () => {
     const ids = LESSONS.map((l) => l.id);
-    expect(ids).toEqual(expect.arrayContaining(['tap', 'parts', 'count', 'letters']));
+    expect(ids).toEqual(
+      expect.arrayContaining(['tap', 'parts', 'count', 'numerals', 'letters', 'drag', 'care']),
+    );
   });
 
   it('every step uses a registered activity type', () => {

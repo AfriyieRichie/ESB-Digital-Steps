@@ -14,7 +14,7 @@ import { isStrandId, strandBelongsToSubject } from '../data/strands';
 
 // Activity types that have a registered, playable component. Keep this in sync
 // with activities/registry.ts — the registry is typed against it.
-export const ACTIVITY_TYPES = ['tap', 'choose', 'type'] as const;
+export const ACTIVITY_TYPES = ['tap', 'choose', 'type', 'drag'] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
 const bandSchema = z.union([z.literal(1), z.literal(2), z.literal(3)]);
@@ -60,8 +60,23 @@ export const typeItemSchema = itemBaseSchema
   })
   .strict();
 
+// Drag: drag the `token` onto the correct one of several labelled targets.
+export const dragItemSchema = itemBaseSchema
+  .extend({
+    prompt: z.string().min(1),
+    token: z.string().min(1),
+    targets: z.array(z.string().min(1)).min(2),
+    answerIndex: z.number().int().nonnegative(),
+  })
+  .strict()
+  .refine((item) => item.answerIndex < item.targets.length, {
+    message: 'answerIndex is out of range for targets',
+    path: ['answerIndex'],
+  });
+
 export type ChooseItem = z.infer<typeof chooseItemSchema>;
 export type TypeItem = z.infer<typeof typeItemSchema>;
+export type DragItem = z.infer<typeof dragItemSchema>;
 
 // --- Step config schemas -----------------------------------------------------
 const tapConfigSchema = z
@@ -82,9 +97,16 @@ const typeConfigSchema = z
   })
   .strict();
 
+const dragConfigSchema = z
+  .object({
+    items: z.array(dragItemSchema).min(1),
+  })
+  .strict();
+
 export type TapConfig = z.infer<typeof tapConfigSchema>;
 export type ChooseConfig = z.infer<typeof chooseConfigSchema>;
 export type TypeConfig = z.infer<typeof typeConfigSchema>;
+export type DragConfig = z.infer<typeof dragConfigSchema>;
 
 // A step is one activity instance: its type plus the matching config. Adding a
 // variant here is the one-line change that lets content express a new activity.
@@ -92,6 +114,7 @@ const stepSchema = z.discriminatedUnion('activityType', [
   z.object({ activityType: z.literal('tap'), config: tapConfigSchema }).strict(),
   z.object({ activityType: z.literal('choose'), config: chooseConfigSchema }).strict(),
   z.object({ activityType: z.literal('type'), config: typeConfigSchema }).strict(),
+  z.object({ activityType: z.literal('drag'), config: dragConfigSchema }).strict(),
 ]);
 
 export type Step = z.infer<typeof stepSchema>;

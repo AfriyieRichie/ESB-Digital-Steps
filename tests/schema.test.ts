@@ -147,6 +147,37 @@ describe('choose & type steps (slice #3)', () => {
       }),
     ).toThrow(/Invalid lesson/);
   });
+
+  it('accepts a drag step and rejects an out-of-range target', () => {
+    const ok = parseLesson({
+      ...validLesson,
+      skills: ['u_drag'],
+      steps: [
+        {
+          activityType: 'drag',
+          config: {
+            items: [
+              { id: 'd1', skill: 'u_drag', prompt: 'Ball to basket', token: '⚽', targets: ['🧺', '🗑️'], answerIndex: 0 },
+            ],
+          },
+        },
+      ],
+    });
+    expect(ok.steps[0]?.activityType).toBe('drag');
+
+    expect(() =>
+      parseLesson({
+        ...validLesson,
+        skills: ['u_drag'],
+        steps: [
+          {
+            activityType: 'drag',
+            config: { items: [{ id: 'd1', prompt: 'x', token: '⚽', targets: ['a', 'b'], answerIndex: 7 }] },
+          },
+        ],
+      }),
+    ).toThrow(/Invalid lesson/);
+  });
 });
 
 describe('item schemas (consumed by Choose / Type)', () => {

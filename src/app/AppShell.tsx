@@ -4,6 +4,8 @@ import { Avatar } from '../ui/Avatar';
 import { useAppStore } from './store';
 import { useCurrentLearner } from '../learner/store';
 import { useLearner } from '../learner/useLearners';
+import { useSound } from '../audio/soundStore';
+import { useT } from '../i18n/store';
 import './AppShell.css';
 
 // Persistent frame around every screen: a title bar with context-appropriate
@@ -21,6 +23,9 @@ export function AppShell({ children }: AppShellProps): React.JSX.Element {
   const currentLearnerId = useCurrentLearner((s) => s.currentLearnerId);
   const clearLearner = useCurrentLearner((s) => s.clear);
   const learner = useLearner(currentLearnerId);
+  const soundEnabled = useSound((s) => s.enabled);
+  const toggleSound = useSound((s) => s.toggle);
+  const t = useT();
 
   const showHome = screen !== 'start';
   // Inside a learner's flow, "back" returns to their journey; otherwise home.
@@ -45,20 +50,30 @@ export function AppShell({ children }: AppShellProps): React.JSX.Element {
           aria-label="Go to start"
         >
           <span className="shell__brand-mark" aria-hidden="true">◆</span>
-          ESB Digital Steps
+          {t('app.title')}
         </button>
 
         <div className="shell__actions">
           {inLearnerFlow && (
             <Button variant="ghost" onPointerDown={goJourney}>
-              Back
+              {t('common.back')}
             </Button>
           )}
           {showHome && screen !== 'reward' && screen !== 'activity' && (
             <Button variant="ghost" onPointerDown={handleHome}>
-              Home
+              {t('common.home')}
             </Button>
           )}
+          <button
+            type="button"
+            className="shell__sound"
+            onPointerDown={toggleSound}
+            aria-pressed={soundEnabled}
+            aria-label={soundEnabled ? t('sound.on') : t('sound.off')}
+            title={soundEnabled ? t('sound.on') : t('sound.off')}
+          >
+            {soundEnabled ? '🔊' : '🔇'}
+          </button>
           {learner && screen !== 'facilitator' && (
             <span className="shell__learner">
               <Avatar name={learner.name} avatar={learner.avatar} />

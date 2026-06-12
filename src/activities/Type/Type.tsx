@@ -3,6 +3,7 @@ import type { ActivityProps } from '../engine.types';
 import type { TypeConfig } from '../../content/schema';
 import { OnScreenKeyboard } from '../../ui/OnScreenKeyboard';
 import { isAnswerCorrect, keyboardMode } from './typeLogic';
+import { playCorrect, playWrong } from '../../audio/sounds';
 import './Type.css';
 
 // Typing activity: the child copies the shown letter/number using the on-screen
@@ -58,10 +59,12 @@ export default function Type({
 
     if (!correct) {
       setStatus('wrong');
+      playWrong();
       return;
     }
 
     setStatus('right');
+    playCorrect();
     window.setTimeout(() => {
       if (isLastItem) {
         onComplete();

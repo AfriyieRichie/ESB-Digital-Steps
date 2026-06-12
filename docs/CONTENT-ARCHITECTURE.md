@@ -142,7 +142,12 @@ popup, so it works over file:// and in a sandbox where allowed.
 4. **Progression engine** *(DONE)* — placement, path map, unlock-on-mastery.
 5. **Village gamification** *(DONE)* — XP / streak / badges + the village world +
    reward store.
-6. **i18n + audio** — local message and audio bundles per locale.
+6. **i18n + audio** *(infrastructure DONE)* — `i18n/` message catalogue (English
+   complete) + `useT`, wired through the core UI; `audio/` synthesised earcons
+   (correct/wrong/reward/pop via Web Audio — no asset files, fully offline) with
+   a mute toggle. **Still needed from the field:** real translations for the
+   target language(s) and recorded voice narration (the `audio/voice.ts` clip
+   path is reserved for these).
 
 ---
 

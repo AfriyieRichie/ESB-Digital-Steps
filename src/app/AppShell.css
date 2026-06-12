@@ -38,6 +38,19 @@
   gap: var(--space-3);
 }
 
+.shell__sound {
+  display: grid;
+  place-items: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
 .shell__learner {
   display: inline-flex;
   align-items: center;

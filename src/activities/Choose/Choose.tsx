@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { ChooseConfig } from '../../content/schema';
+import { playCorrect, playWrong } from '../../audio/sounds';
 import './Choose.css';
 
 // Multiple-choice activity: the child reads a prompt and taps the right answer
@@ -40,10 +41,12 @@ export default function Choose({
 
     if (!correct) {
       setStatus('wrong');
+      playWrong();
       return;
     }
 
     setStatus('right');
+    playCorrect();
     window.setTimeout(() => {
       if (isLastItem) {
         onComplete();

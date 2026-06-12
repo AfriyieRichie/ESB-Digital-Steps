@@ -83,8 +83,13 @@ build order.
   config. Item schemas (`chooseItem`, `typeItem`) are defined ready for their
   activities.
 - `src/activities/` — `engine.types.ts` (the Activity contract) + one folder per
-  activity type. `Tap/`, `Choose/`, and `Type/` are built (the last with the
-  shared `ui/OnScreenKeyboard`); Drag/Match implement the same contract later.
+  activity type. `Tap/`, `Choose/`, `Type/` (with `ui/OnScreenKeyboard`), and
+  `Drag/` (Pointer-Events drag-to-target) are built; Match implements the same
+  contract later.
+- `src/audio/` — synthesised earcons (`sounds.ts`, Web Audio, no asset files) +
+  a session mute store. `voice.ts` (bundled narration) reserved for later.
+- `src/i18n/` — message catalogue (English complete) + `useT`; locales fall back
+  to English so partial translations ship safely.
 - `src/sequencing/` — `progression.ts`: pure logic for lesson ordering,
   unlock-on-mastery gating, and band-placement readiness (TaRL).
 - `src/learner/` — no-login learner selection + current-learner store.

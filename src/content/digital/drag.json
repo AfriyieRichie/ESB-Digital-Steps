@@ -1,0 +1,24 @@
+{
+  "id": "drag",
+  "subject": "digital",
+  "strand": "d_use",
+  "band": 1,
+  "title": "Move things around",
+  "blurb": "Drag each thing to the right place.",
+  "order": 3,
+  "skills": ["u_drag"],
+  "steps": [
+    {
+      "activityType": "drag",
+      "config": {
+        "items": [
+          { "id": "d_ball", "skill": "u_drag", "prompt": "Put the ball in the basket.", "token": "⚽", "targets": ["🧺 Basket", "🗑️ Bin"], "answerIndex": 0 },
+          { "id": "d_book", "skill": "u_drag", "prompt": "Put the book on the shelf.", "token": "📕", "targets": ["📚 Shelf", "🍲 Pot"], "answerIndex": 0 },
+          { "id": "d_banana", "skill": "u_drag", "prompt": "Put the banana in the bowl.", "token": "🍌", "targets": ["🥣 Bowl", "👟 Shoe"], "answerIndex": 0 },
+          { "id": "d_flower", "skill": "u_drag", "prompt": "Put the flower in the pot.", "token": "🌼", "targets": ["🪴 Pot", "🚗 Car"], "answerIndex": 0 },
+          { "id": "d_fish", "skill": "u_drag", "prompt": "Put the fish in the water.", "token": "🐟", "targets": ["💧 Water", "🔥 Fire"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
