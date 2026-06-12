@@ -11,7 +11,7 @@ type LoadState<T> =
  * effect-based read keeps the dependency footprint small; the data is small and
  * changes rarely within a session.
  */
-export function useLearners(): LoadState<Learner[]> {
+export function useLearners(reloadToken = 0): LoadState<Learner[]> {
   const [state, setState] = useState<LoadState<Learner[]>>({ status: 'loading' });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function useLearners(): LoadState<Learner[]> {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [reloadToken]);
 
   return state;
 }

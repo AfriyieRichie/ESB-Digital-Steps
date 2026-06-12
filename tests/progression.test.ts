@@ -57,6 +57,23 @@ describe('buildJourney', () => {
   });
 });
 
+describe('cross-band prerequisites (Teaching at the Right Level)', () => {
+  it('does not lock a band-3 lesson behind a prerequisite taught only at a lower band', () => {
+    // words (r_word) depends on r_letter, and addmatch (m_add) depends on
+    // m_count — both taught at band 1, not band 3. A band-3 learner with no
+    // mastery should still find them available, not locked.
+    const journey = buildJourney(lessonsForBand(3), new Set());
+    for (const progress of journey) {
+      expect(progress.state, progress.lesson.id).toBe('available');
+    }
+  });
+
+  it('still gates within a band (numerals stays locked behind count)', () => {
+    const journey = buildJourney(lessonsForBand(1), new Set());
+    expect(journey.find((p) => p.lesson.id === 'numerals')?.state).toBe('locked');
+  });
+});
+
 describe('band placement (Teaching at the Right Level)', () => {
   it('is not ready to advance until every band lesson is complete', () => {
     const band1 = lessonsForBand(1);

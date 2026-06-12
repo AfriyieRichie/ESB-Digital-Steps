@@ -40,8 +40,20 @@ export function isLessonUnlocked(lesson: Lesson, mastered: ReadonlySet<string>):
   return lessonPrerequisiteSkills(lesson).every((skillId) => mastered.has(skillId));
 }
 
-export function lessonProgress(lesson: Lesson, mastered: ReadonlySet<string>): LessonProgress {
-  const missingPrereqs = lessonPrerequisiteSkills(lesson).filter((s) => !mastered.has(s));
+/**
+ * Per-lesson state, gating only on prerequisites that are taught within the
+ * learner's own band (`bandSkills`). A prerequisite met only at a lower band is
+ * assumed satisfied — a learner placed at a higher band already has the
+ * foundations and must not be locked out (Teaching at the Right Level). Pass the
+ * full prerequisite set as `bandSkills` to gate on everything.
+ */
+export function lessonProgress(
+  lesson: Lesson,
+  mastered: ReadonlySet<string>,
+  bandSkills: ReadonlySet<string>,
+): LessonProgress {
+  const gatingPrereqs = lessonPrerequisiteSkills(lesson).filter((s) => bandSkills.has(s));
+  const missingPrereqs = gatingPrereqs.filter((s) => !mastered.has(s));
   const state: LessonState = isLessonComplete(lesson, mastered)
     ? 'done'
     : missingPrereqs.length > 0
@@ -57,12 +69,18 @@ export function orderLessons(lessons: readonly Lesson[]): Lesson[] {
   );
 }
 
-/** The ordered journey (with per-lesson state) for a set of lessons. */
+/**
+ * The ordered journey (with per-lesson state) for one band's lessons. Gating is
+ * band-aware: a lesson is only locked behind prerequisites that are themselves
+ * taught at this band, so cross-band prerequisites don't strand a learner placed
+ * higher up.
+ */
 export function buildJourney(
   lessons: readonly Lesson[],
   mastered: ReadonlySet<string>,
 ): LessonProgress[] {
-  return orderLessons(lessons).map((lesson) => lessonProgress(lesson, mastered));
+  const bandSkills = new Set(lessons.flatMap((l) => l.skills));
+  return orderLessons(lessons).map((lesson) => lessonProgress(lesson, mastered, bandSkills));
 }
 
 /**

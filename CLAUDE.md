@@ -95,7 +95,9 @@ build order.
   to English so partial translations ship safely.
 - `src/sequencing/` — `progression.ts`: pure logic for lesson ordering,
   unlock-on-mastery gating, and band-placement readiness (TaRL).
-- `src/learner/` — no-login learner selection + current-learner store.
+- `src/learner/` — no-login learner selection + current-learner store +
+  facilitator onboarding (`createLearner`: first name, level, avatar only — no
+  passwords, no PII; identity is a tap on a name, not an account).
 - `src/pedagogy/` — guide character, feedback, reward screen.
 - `src/gamification/` — stars/XP/streak (`economy.ts`, pure), badges + village
   catalogs, the Dexie `progress.ts` service (rewards, idempotent badges, village

@@ -89,8 +89,11 @@ are actually used.
   at their band (TaRL) and surfaces a "ready for Level N+1" banner.
 - **Progression path** *(slice #4 — DONE)* — `sequencing/progression.ts` (pure,
   unit-tested) orders each band's lessons into per-subject tracks and marks each
-  done / available / locked; a lesson unlocks once its skills' prerequisites are
-  mastered. The journey map renders these states.
+  done / available / locked; a lesson unlocks once its prerequisites are
+  mastered. Gating is **band-aware**: a lesson is only locked behind
+  prerequisites that are themselves taught at the learner's band, so a learner
+  placed at a higher band (assumed to have the foundations) is never stranded.
+  The journey map renders these states.
 
 ---
 
