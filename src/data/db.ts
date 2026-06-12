@@ -29,6 +29,22 @@ export interface CompetencyEvent {
   demonstratedAt: number;
 }
 
+// One row per item/action attempt — the raw evidence from which mastery is
+// derived (see docs/CONTENT-ARCHITECTURE.md §3). Many rows per learner, so the
+// id is an auto-incrementing number rather than a derived key.
+export interface Attempt {
+  id?: number;
+  learnerId: string;
+  skillId: string;
+  lessonId: string;
+  /** The specific content item, when the activity is item-based (optional). */
+  itemId?: string;
+  correct: boolean;
+  /** Time spent on this attempt in milliseconds (for time-on-task reporting). */
+  ms: number;
+  at: number;
+}
+
 export interface Session {
   id: string;
   hubId: string;
@@ -41,6 +57,7 @@ class EsbDatabase extends Dexie {
   learners!: EntityTable<Learner, 'id'>;
   competencyEvents!: EntityTable<CompetencyEvent, 'id'>;
   sessions!: EntityTable<Session, 'id'>;
+  attempts!: EntityTable<Attempt, 'id'>;
 
   constructor() {
     super('esb-digital-steps');
@@ -54,6 +71,13 @@ class EsbDatabase extends Dexie {
       learners: 'id, hubId, band',
       competencyEvents: 'id, &[learnerId+competencyId], learnerId, competencyId, lessonId',
       sessions: 'id, hubId, date',
+    });
+
+    // v2: the attempt log (slice #2). Only the new table is declared; unchanged
+    // tables carry over. The [learnerId+skillId] index makes per-skill mastery
+    // queries cheap.
+    this.version(2).stores({
+      attempts: '++id, learnerId, skillId, lessonId, at, [learnerId+skillId]',
     });
   }
 }

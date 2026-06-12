@@ -73,13 +73,17 @@ are actually used.
 
 ## 3. Mastery & progression (infrastructure)
 
-- **Attempt log** *(slice #2 — Dexie v2)* — one row per item attempt:
-  `{ learnerId, itemId, skillId, correct, ms, at }`. The raw evidence.
-- **Derived mastery** *(slice #2)* — a skill is *mastered* at e.g. ≥ 80%
-  accuracy over ≥ N recent items. On crossing the threshold we write the
-  idempotent `CompetencyEvent` (our existing milestone, now *earned by
-  evidence* rather than a single tap). Light spaced review resurfaces mastered
-  skills so they stick.
+- **Attempt log** *(slice #2 — DONE, Dexie v2)* — one row per item/action
+  attempt: `{ learnerId, skillId, lessonId, itemId?, correct, ms, at }`
+  (`data/attempts.ts`). The raw evidence; an action fans out into one row per
+  skill it evidences.
+- **Derived mastery** *(slice #2 — DONE)* — `data/mastery.ts`: a skill is
+  *mastered* at ≥ `MASTERY_ACCURACY` (0.8) over ≥ `MASTERY_MIN_ATTEMPTS` (4)
+  attempts. Crossing the threshold writes the idempotent `CompetencyEvent` — our
+  milestone, now *earned by evidence* rather than a single tap. Activities report
+  evidence via the `onAttempt` contract; `ActivityScreen` logs it and counts
+  newly-mastered skills for the reward. The facilitator view shows mastery %,
+  accuracy, and time-on-task. *Light spaced review is still to come.*
 - **Placement + adaptive band** *(slice #4)* — place a learner at a band (TaRL);
   nudge up/down from rolling accuracy.
 - **Progression path** *(slice #4)* — `sequencing/` computes the ordered lessons
@@ -111,10 +115,10 @@ at-a-glance view.
 
 ## 6. Build order (each slice ships on its own)
 
-1. **Content model v2** *(this slice)* — Strand + Lesson-with-steps + Item in the
+1. **Content model v2** *(DONE)* — Strand + Lesson-with-steps + Item in the
    Zod content layer; migrate the Tap lesson; step runner. No Dexie change.
-2. **Attempt log + derived mastery** — Dexie v2 (`Attempt`); mastery service;
-   dashboard shows accuracy / mastery %.
+2. **Attempt log + derived mastery** *(DONE)* — Dexie v2 (`Attempt`); mastery
+   service; dashboard shows accuracy / mastery % / time-on-task.
 3. **More activity types** consuming items — Choose, Drag, Type (on-screen
    keyboard), Match — and the first real numeracy / reading / digital lessons.
 4. **Progression engine** — placement, path map, unlock-on-mastery.

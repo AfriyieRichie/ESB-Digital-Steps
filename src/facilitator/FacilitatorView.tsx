@@ -13,6 +13,17 @@ const SUBJECTS_WITH_COMPETENCIES = SUBJECTS.filter((s) =>
   COMPETENCIES.some((c) => c.subject === s.id),
 );
 
+function formatDuration(totalMs: number): string {
+  const totalSeconds = Math.round(totalMs / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${String(seconds).padStart(2, '0')}`;
+}
+
+function formatAccuracy(accuracy: number, attempts: number): string {
+  return attempts === 0 ? '—' : `${Math.round(accuracy * 100)}%`;
+}
+
 export function FacilitatorView(): React.JSX.Element {
   const data = useFacilitatorData();
 
@@ -46,8 +57,14 @@ export function FacilitatorView(): React.JSX.Element {
                     </th>
                   );
                 })}
-                <th scope="col" className="facilitator__pct-head">
-                  %
+                <th scope="col" className="facilitator__summary-head" rowSpan={2}>
+                  Mastery
+                </th>
+                <th scope="col" className="facilitator__summary-head" rowSpan={2}>
+                  Accuracy
+                </th>
+                <th scope="col" className="facilitator__summary-head" rowSpan={2}>
+                  Time
                 </th>
               </tr>
               <tr>
@@ -57,12 +74,12 @@ export function FacilitatorView(): React.JSX.Element {
                     <span className="facilitator__comp-id">{competency.id}</span>
                   </th>
                 ))}
-                <th scope="col" className="facilitator__pct-head" />
               </tr>
             </thead>
             <tbody>
               {data.data.learners.map((learner) => {
                 const row = data.data.grid.get(learner.id);
+                const summary = data.data.summaries.get(learner.id);
                 return (
                   <tr key={learner.id}>
                     <th scope="row" className="facilitator__sticky facilitator__learner">
@@ -91,7 +108,11 @@ export function FacilitatorView(): React.JSX.Element {
                         </td>
                       );
                     })}
-                    <td className="facilitator__pct">{row?.completionPercent ?? 0}%</td>
+                    <td className="facilitator__summary">{row?.completionPercent ?? 0}%</td>
+                    <td className="facilitator__summary">
+                      {formatAccuracy(summary?.accuracy ?? 0, summary?.attempts ?? 0)}
+                    </td>
+                    <td className="facilitator__summary">{formatDuration(summary?.totalMs ?? 0)}</td>
                   </tr>
                 );
               })}

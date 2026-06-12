@@ -88,8 +88,12 @@
   background: rgba(46, 125, 50, 0.1);
 }
 
-.facilitator__pct,
-.facilitator__pct-head {
+.facilitator__summary,
+.facilitator__summary-head {
   font-weight: 800;
   background: var(--color-surface-sunken);
+}
+
+.facilitator__summary-head {
+  vertical-align: middle;
 }

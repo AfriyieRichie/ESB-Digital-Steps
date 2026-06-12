@@ -1,19 +1,22 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { getLesson } from '../../content/lessons';
 import { ACTIVITY_REGISTRY } from '../../activities/registry';
-import { recordCompetencies } from '../../data/events';
+import type { AttemptResult } from '../../activities/engine.types';
+import { recordAttempt } from '../../data/mastery';
 import { useCurrentLearner } from '../../learner/store';
 import { useAppStore } from '../store';
 
 /**
  * Plays a lesson as an ordered sequence of steps. For each step it looks up the
  * activity component by the step's activityType and hands it the validated
- * config. When a step reports completion it advances to the next; after the
- * final step it records the lesson's skills for the current learner
- * (idempotently) and moves to the reward screen.
+ * config. Activities report graded actions through onAttempt; those are logged
+ * against the lesson's skills, and mastery (the CompetencyEvent milestone) is
+ * derived from the attempt log — completing a lesson no longer asserts mastery
+ * by itself. After the final step it advances to the reward screen, telling it
+ * how many skills were newly mastered this session.
  *
- * Activities themselves know nothing about learners, steps, or persistence — all
- * of that lives here, so new activity types need no new plumbing.
+ * Activities know nothing about learners, steps, or persistence — all of that
+ * lives here, so new activity types need no new plumbing.
  */
 export function ActivityScreen(): React.JSX.Element {
   const activeLessonId = useAppStore((s) => s.activeLessonId);
@@ -23,26 +26,41 @@ export function ActivityScreen(): React.JSX.Element {
   const lesson = activeLessonId !== null ? getLesson(activeLessonId) : null;
   const [stepIndex, setStepIndex] = useState(0);
 
-  const recordAndFinish = useCallback(() => {
-    if (!lesson || currentLearnerId === null) return;
-    void (async () => {
-      const newlyRecorded = await recordCompetencies(
-        currentLearnerId,
-        lesson.skills,
-        lesson.id,
-      );
-      finishActivity(newlyRecorded);
-    })();
-  }, [lesson, currentLearnerId, finishActivity]);
+  // In-flight attempt writes, and the set of skills mastered during this play —
+  // tracked in refs so completion can await all writes before counting.
+  const pending = useRef<Promise<void>[]>([]);
+  const masteredThisSession = useRef<Set<string>>(new Set());
+
+  const onAttempt = useCallback(
+    (result: AttemptResult) => {
+      if (!lesson || currentLearnerId === null) return;
+      const write = (async () => {
+        const newly = await recordAttempt(currentLearnerId, lesson.skills, {
+          correct: result.correct,
+          ms: result.ms ?? 0,
+          lessonId: lesson.id,
+          ...(result.itemId !== undefined ? { itemId: result.itemId } : {}),
+        });
+        for (const skill of newly) masteredThisSession.current.add(skill);
+      })();
+      pending.current.push(write);
+    },
+    [lesson, currentLearnerId],
+  );
 
   const onStepComplete = useCallback(() => {
     if (!lesson) return;
     if (stepIndex < lesson.steps.length - 1) {
       setStepIndex((i) => i + 1);
-    } else {
-      recordAndFinish();
+      return;
     }
-  }, [lesson, stepIndex, recordAndFinish]);
+    // Final step: wait for every attempt write to settle, then report how many
+    // skills became mastered so the reward screen can celebrate accurately.
+    void (async () => {
+      await Promise.all(pending.current);
+      finishActivity(masteredThisSession.current.size);
+    })();
+  }, [lesson, stepIndex, finishActivity]);
 
   if (!lesson) {
     return <p>Choose a lesson to begin.</p>;
@@ -58,7 +76,12 @@ export function ActivityScreen(): React.JSX.Element {
   return (
     <section className="activity-screen" aria-label={lesson.title}>
       {/* key on stepIndex so each step's activity mounts fresh. */}
-      <ActivityComponent key={stepIndex} config={step.config} onComplete={onStepComplete} />
+      <ActivityComponent
+        key={stepIndex}
+        config={step.config}
+        onAttempt={onAttempt}
+        onComplete={onStepComplete}
+      />
     </section>
   );
 }

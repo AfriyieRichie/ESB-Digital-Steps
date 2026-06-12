@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { db, ensureSeedData, type Learner } from '../data/db';
 import { getLearnerGrid, type LearnerGridRow } from '../data/events';
+import { learnerSummary, type LearnerSummary } from '../data/attempts';
 
 export interface FacilitatorData {
   learners: Learner[];
   grid: Map<string, LearnerGridRow>;
+  /** Per-learner roll-up of the attempt log (accuracy, time-on-task, …). */
+  summaries: Map<string, LearnerSummary>;
 }
 
 type LoadState =
@@ -26,9 +29,14 @@ export function useFacilitatorData(): LoadState {
       try {
         await ensureSeedData();
         const learners = await db.learners.orderBy('band').toArray();
-        const rows = await getLearnerGrid(learners.map((l) => l.id));
+        const learnerIds = learners.map((l) => l.id);
+        const rows = await getLearnerGrid(learnerIds);
         const grid = new Map(rows.map((r) => [r.learnerId, r]));
-        if (!cancelled) setState({ status: 'ready', data: { learners, grid } });
+        const summaryEntries = await Promise.all(
+          learnerIds.map(async (id): Promise<[string, LearnerSummary]> => [id, await learnerSummary(id)]),
+        );
+        const summaries = new Map(summaryEntries);
+        if (!cancelled) setState({ status: 'ready', data: { learners, grid, summaries } });
       } catch (err) {
         if (!cancelled) {
           setState({ status: 'error', error: err instanceof Error ? err : new Error(String(err)) });

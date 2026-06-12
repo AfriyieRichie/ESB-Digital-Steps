@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import type { ActivityProps } from '../engine.types';
 import type { TapConfig } from '../../content/schema';
 import { initTapState, isTapComplete, registerTap, tapProgress } from './tapLogic';
@@ -27,13 +27,21 @@ function makeTargets(count: number): Target[] {
  * Tap activity: N stars appear; the child taps each one. When all are tapped the
  * activity completes. Uses Pointer Events so touch and mouse behave identically.
  */
-export default function Tap({ config, onComplete }: ActivityProps<TapConfig>): React.JSX.Element {
+export default function Tap({ config, onAttempt, onComplete }: ActivityProps<TapConfig>): React.JSX.Element {
   const targets = useMemo(() => makeTargets(config.count), [config.count]);
   const [state, setState] = useState(() => initTapState(config.count));
   const [popped, setPopped] = useState<ReadonlySet<number>>(() => new Set());
+  // Timestamp of the previous tap (or mount), to report each tap's reaction time.
+  const lastTapAt = useRef<number>(Date.now());
 
   function handleTap(targetId: number): void {
     if (popped.has(targetId)) return;
+
+    const now = Date.now();
+    const ms = now - lastTapAt.current;
+    lastTapAt.current = now;
+    // Every star tapped is a successful demonstration of the lesson's skills.
+    onAttempt?.({ correct: true, ms });
 
     const nextPopped = new Set(popped);
     nextPopped.add(targetId);

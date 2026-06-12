@@ -72,6 +72,9 @@ build order.
   - `db.ts` — Dexie schema + migrations + first-run seed (hub + learners). **The
     single source of truth for stored (on-device) data.**
   - `events.ts` — record (idempotent) + query competency events.
+  - `attempts.ts` — the attempt log + per-skill/learner stats (accuracy, time).
+  - `mastery.ts` — derives mastery from attempts; writes the CompetencyEvent
+    milestone once a skill is mastered. Activities feed it via `onAttempt`.
   - `export.ts` — funder-facing export (stub).
 - `src/content/` — lesson JSON per subject, validated by `schema.ts` (Zod).
   A lesson lists `skills` and ordered `steps`; each step is one activity +
