@@ -1,0 +1,24 @@
+{
+  "id": "punctuation",
+  "subject": "writing",
+  "strand": "w_compose",
+  "band": 3,
+  "title": "Capitals & full stops",
+  "blurb": "Punctuate sentences correctly.",
+  "order": 1,
+  "skills": ["w_punctuation"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pu_correct", "skill": "w_punctuation", "bloom": "apply", "prompt": "Which sentence is punctuated correctly?", "choices": ["Ama went to the market.", "ama went to the market.", "Ama went to the market"], "answerIndex": 0 },
+          { "id": "pu_question", "skill": "w_punctuation", "bloom": "apply", "prompt": "Which sentence needs a question mark?", "choices": ["Where are you going", "I am happy.", "The sky is blue."], "answerIndex": 0 },
+          { "id": "pu_names", "skill": "w_punctuation", "bloom": "apply", "prompt": "Choose the correctly capitalised sentence.", "choices": ["My friend Kofi lives in Accra.", "my friend kofi lives in accra.", "My friend kofi lives in accra."], "answerIndex": 0 },
+          { "id": "pu_comma", "skill": "w_punctuation", "bloom": "analyze", "prompt": "Where do the commas go in a list of apples bananas and rice?", "choices": ["apples, bananas and rice", "apples bananas, and rice", "apples bananas and, rice"], "answerIndex": 0 },
+          { "id": "pu_exclaim", "skill": "w_punctuation", "bloom": "understand", "prompt": "Which sentence shows strong feeling and ends correctly?", "choices": ["Watch out!", "Watch out", "Watch, out"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "sentence",
+  "subject": "writing",
+  "strand": "w_compose",
+  "band": 2,
+  "title": "Make a sentence",
+  "blurb": "What makes a whole sentence?",
+  "order": 2,
+  "skills": ["w_sentence"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "se_complete", "skill": "w_sentence", "bloom": "understand", "prompt": "Which one is a complete sentence?", "choices": ["The dog runs fast.", "Runs fast", "Big brown"], "answerIndex": 0 },
+          { "id": "se_capital", "skill": "w_sentence", "bloom": "recall", "prompt": "A sentence must begin with a ___ letter.", "choices": ["capital", "small", "red"], "answerIndex": 0 },
+          { "id": "se_end", "skill": "w_sentence", "bloom": "recall", "prompt": "A telling sentence ends with a ___.", "choices": ["full stop", "comma", "space"], "answerIndex": 0 },
+          { "id": "se_correct", "skill": "w_sentence", "bloom": "apply", "prompt": "Which sentence is written correctly?", "choices": ["We play in the park.", "we play in the park", "we Play in the park."], "answerIndex": 0 },
+          { "id": "se_group", "skill": "w_sentence", "bloom": "understand", "prompt": "Which group of words is a sentence?", "choices": ["Birds can fly.", "Can fly birds", "Flying the the"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

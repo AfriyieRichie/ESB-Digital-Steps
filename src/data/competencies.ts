@@ -61,8 +61,15 @@ const READING_COMPETENCIES: readonly Competency[] = [
   { id: 'r_purpose', subject: 'reading', strand: 'r_comp', label: "Identifies author's purpose", prerequisites: [] },
   { id: 'r_evaluate', subject: 'reading', strand: 'r_comp', label: 'Evaluates arguments & evidence', prerequisites: [] },
 ];
+// Writing climbs from building words -> sentences -> punctuation -> paragraphs
+// -> essays -> structured arguments across the five bands.
 const WRITING_COMPETENCIES: readonly Competency[] = [
   { id: 'w_word', subject: 'writing', strand: 'w_build', label: 'Builds simple words', prerequisites: [] },
+  { id: 'w_sentence', subject: 'writing', strand: 'w_compose', label: 'Writes a complete sentence', prerequisites: [] },
+  { id: 'w_punctuation', subject: 'writing', strand: 'w_compose', label: 'Uses capitals & punctuation', prerequisites: [] },
+  { id: 'w_paragraph', subject: 'writing', strand: 'w_compose', label: 'Builds a clear paragraph', prerequisites: [] },
+  { id: 'w_structure', subject: 'writing', strand: 'w_compose', label: 'Structures an essay', prerequisites: [] },
+  { id: 'w_argue', subject: 'writing', strand: 'w_compose', label: 'Builds a structured argument', prerequisites: [] },
 ];
 const NUMERACY_COMPETENCIES: readonly Competency[] = [
   { id: 'm_count', subject: 'numeracy', strand: 'n_number', label: 'Counts objects to 10', prerequisites: [] },

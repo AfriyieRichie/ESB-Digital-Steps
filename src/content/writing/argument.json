@@ -1,0 +1,24 @@
+{
+  "id": "argument",
+  "subject": "writing",
+  "strand": "w_compose",
+  "band": 5,
+  "title": "Make your case",
+  "blurb": "Build a clear, supported argument.",
+  "order": 1,
+  "skills": ["w_argue"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ar_claim", "skill": "w_argue", "bloom": "understand", "prompt": "A claim in an argument is:", "choices": ["the main point you are arguing", "a random fact", "the title only"], "answerIndex": 0 },
+          { "id": "ar_support", "skill": "w_argue", "bloom": "evaluate", "prompt": "Which is the strongest support for a claim?", "choices": ["Evidence from a reliable study", "Your personal feeling", "Saying it very loudly"], "answerIndex": 0 },
+          { "id": "ar_counter", "skill": "w_argue", "bloom": "understand", "prompt": "Fairly considering the other side is called a:", "choices": ["counter-argument", "conclusion", "heading"], "answerIndex": 0 },
+          { "id": "ar_cta", "skill": "w_argue", "bloom": "apply", "prompt": "A persuasive essay should end with a:", "choices": ["clear call to action", "brand new unrelated idea", "spelling test"], "answerIndex": 0 },
+          { "id": "ar_position", "skill": "w_argue", "bloom": "evaluate", "prompt": "Which sentence states a clear position?", "choices": ["School uniforms should be required.", "Uniforms exist.", "Maybe, sometimes, who knows."], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "paragraph",
+  "subject": "writing",
+  "strand": "w_compose",
+  "band": 3,
+  "title": "Build a paragraph",
+  "blurb": "Keep a paragraph to one idea.",
+  "order": 2,
+  "skills": ["w_paragraph"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pa_topic", "skill": "w_paragraph", "bloom": "understand", "prompt": "A paragraph usually begins with a ___ sentence.", "choices": ["topic", "last", "question"], "answerIndex": 0 },
+          { "id": "pa_best", "skill": "w_paragraph", "bloom": "analyze", "prompt": "Which is the best topic sentence about dogs?", "choices": ["Dogs are loyal and helpful animals.", "My dog ate.", "Yesterday afternoon."], "answerIndex": 0 },
+          { "id": "pa_belong", "skill": "w_paragraph", "bloom": "analyze", "prompt": "The paragraph is about our school. Which sentence does NOT belong?", "choices": ["I like pizza on Sundays.", "Our school has a big library.", "The teachers here are kind."], "answerIndex": 0 },
+          { "id": "pa_end", "skill": "w_paragraph", "bloom": "analyze", "prompt": "Which sentence best ends a paragraph about dogs?", "choices": ["That is why dogs make wonderful friends.", "Dogs.", "And then and then."], "answerIndex": 0 },
+          { "id": "pa_oneidea", "skill": "w_paragraph", "bloom": "understand", "prompt": "All the sentences in a paragraph should be about:", "choices": ["one main idea", "many different topics", "nothing in particular"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

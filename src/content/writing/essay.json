@@ -1,0 +1,24 @@
+{
+  "id": "essay",
+  "subject": "writing",
+  "strand": "w_compose",
+  "band": 4,
+  "title": "Plan an essay",
+  "blurb": "Introduction, body, conclusion.",
+  "order": 1,
+  "skills": ["w_structure"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "es_intro", "skill": "w_structure", "bloom": "understand", "prompt": "An essay's introduction should:", "choices": ["tell the reader the main idea", "list a bibliography", "end the essay"], "answerIndex": 0 },
+          { "id": "es_detail", "skill": "w_structure", "bloom": "analyze", "prompt": "Which is a strong supporting detail for “Exercise is good for you”?", "choices": ["It strengthens your heart and muscles.", "I like ice cream.", "The sky is blue today."], "answerIndex": 0 },
+          { "id": "es_link", "skill": "w_structure", "bloom": "apply", "prompt": "Which linking word adds another idea?", "choices": ["Furthermore,", "Stop,", "Nowhere,"], "answerIndex": 0 },
+          { "id": "es_conclude", "skill": "w_structure", "bloom": "understand", "prompt": "The conclusion of an essay should:", "choices": ["sum up the main points", "introduce a brand new topic", "be a single comma"], "answerIndex": 0 },
+          { "id": "es_order", "skill": "w_structure", "bloom": "apply", "prompt": "What is the correct order of an essay?", "choices": ["introduction, body, conclusion", "conclusion, body, introduction", "body, body, body"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

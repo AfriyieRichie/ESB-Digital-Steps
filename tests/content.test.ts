@@ -37,6 +37,14 @@ describe('bundled lessons', () => {
         'figurative',
         'purpose',
         'evaluate',
+        // Writing curriculum across the five bands
+        'buildword',
+        'bigwords',
+        'sentence',
+        'punctuation',
+        'paragraph',
+        'essay',
+        'argument',
       ]),
     );
   });
