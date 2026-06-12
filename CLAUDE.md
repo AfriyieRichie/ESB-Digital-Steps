@@ -59,13 +59,24 @@ npm run typecheck
 
 ## Architecture map
 
-- `src/data/` — **single source of truth for stored data.**
+**Content vs stored data:** content (subjects, strands, skills, lessons, items)
+is bundled + Zod-validated and lives in `src/data/*` registries and
+`src/content/`. **Stored data** (what a child did) lives in Dexie only. See
+`docs/CONTENT-ARCHITECTURE.md` for the full model, mastery/progression plan, and
+build order.
+
+- `src/data/` — competency framework + the content registries it anchors.
   - `subjects.ts` — the four subjects (reading, writing, numeracy, digital).
-  - `competencies.ts` — the competency framework, grouped by subject.
-  - `db.ts` — Dexie schema + migrations + first-run seed (hub + learners).
+  - `strands.ts` — topics within a subject (Subject → Strand → Skill).
+  - `competencies.ts` — the skill/competency framework; each references a strand.
+  - `db.ts` — Dexie schema + migrations + first-run seed (hub + learners). **The
+    single source of truth for stored (on-device) data.**
   - `events.ts` — record (idempotent) + query competency events.
   - `export.ts` — funder-facing export (stub).
-- `src/content/` — lesson JSON per subject; validated by `schema.ts` (Zod).
+- `src/content/` — lesson JSON per subject, validated by `schema.ts` (Zod).
+  A lesson lists `skills` and ordered `steps`; each step is one activity +
+  config. Item schemas (`chooseItem`, `typeItem`) are defined ready for their
+  activities.
 - `src/activities/` — `engine.types.ts` (the Activity contract) + one folder per
   activity type. `Tap/` is built; others are stubs implementing the same contract.
 - `src/learner/` — no-login learner selection + current-learner store.
