@@ -34,6 +34,20 @@ const DIGITAL_COMPETENCIES: readonly Competency[] = [
   { id: 'c_share', subject: 'digital', strand: 'd_care', label: 'Takes turns and shares', prerequisites: [] },
   { id: 'c_report', subject: 'digital', strand: 'd_care', label: 'Reports a problem honestly', prerequisites: [] },
   { id: 'c_return', subject: 'digital', strand: 'd_care', label: 'Returns the device after use', prerequisites: [] },
+  // Using the device, deeper (d_use) — bands 1-3
+  { id: 'u_icons', subject: 'digital', strand: 'd_use', label: 'Knows common icons', prerequisites: [] },
+  { id: 'u_search', subject: 'digital', strand: 'd_use', label: 'Searches for information', prerequisites: [] },
+  // Coding & computational thinking (d_code) — bands 2-5
+  { id: 'dc_sequence', subject: 'digital', strand: 'd_code', label: 'Orders steps in a sequence', prerequisites: [] },
+  { id: 'dc_loops', subject: 'digital', strand: 'd_code', label: 'Uses loops to repeat', prerequisites: [] },
+  { id: 'dc_logic', subject: 'digital', strand: 'd_code', label: 'Uses if/then conditions', prerequisites: [] },
+  { id: 'dc_algorithm', subject: 'digital', strand: 'd_code', label: 'Understands algorithms & AI', prerequisites: [] },
+  // Online safety (d_safety) — bands 2-5
+  { id: 'ds_link', subject: 'digital', strand: 'd_safety', label: 'Spots safe & unsafe links', prerequisites: [] },
+  { id: 'ds_etiquette', subject: 'digital', strand: 'd_safety', label: 'Is kind & safe online', prerequisites: [] },
+  { id: 'ds_password', subject: 'digital', strand: 'd_safety', label: 'Protects passwords & privacy', prerequisites: [] },
+  { id: 'ds_misinfo', subject: 'digital', strand: 'd_safety', label: 'Spots misinformation & ads', prerequisites: [] },
+  { id: 'ds_footprint', subject: 'digital', strand: 'd_safety', label: 'Manages a digital footprint', prerequisites: [] },
 ];
 
 // First numeracy and reading competencies — enough to anchor the Choose and

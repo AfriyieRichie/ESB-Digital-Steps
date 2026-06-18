@@ -1,0 +1,24 @@
+{
+  "id": "etiquette",
+  "subject": "digital",
+  "strand": "d_safety",
+  "band": 3,
+  "title": "Being kind online",
+  "blurb": "Good manners on the internet.",
+  "order": 2,
+  "skills": ["ds_etiquette"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "et_treat", "skill": "ds_etiquette", "bloom": "understand", "prompt": "Online, you should treat other people:", "choices": ["kindly, just like in real life", "rudely", "by ignoring the rules"], "answerIndex": 0 },
+          { "id": "et_mean", "skill": "ds_etiquette", "bloom": "apply", "prompt": "Someone is being mean to you in a chat. You should:", "choices": ["tell a trusted adult", "be mean back", "share it everywhere"], "answerIndex": 0 },
+          { "id": "et_check", "skill": "ds_etiquette", "bloom": "apply", "prompt": "Before sending a message, you should check that it is:", "choices": ["kind and true", "able to be sent anywhere", "all in capital letters"], "answerIndex": 0 },
+          { "id": "et_caps", "skill": "ds_etiquette", "bloom": "understand", "prompt": "Writing in ALL CAPITAL LETTERS online can seem like:", "choices": ["shouting", "whispering", "singing"], "answerIndex": 0 },
+          { "id": "et_photo", "skill": "ds_etiquette", "bloom": "evaluate", "prompt": "It is okay to share someone's photo online:", "choices": ["only with their permission", "at any time", "to embarrass them"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

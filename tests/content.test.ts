@@ -76,6 +76,23 @@ describe('bundled lessons', () => {
         'cells',
         'atoms',
         'energy',
+        // Digital curriculum across the five bands
+        'tap',
+        'parts',
+        'drag',
+        'care',
+        'icons',
+        'typing',
+        'safelink',
+        'sequence',
+        'search',
+        'etiquette',
+        'loops',
+        'passwords',
+        'misinfo',
+        'conditions',
+        'algorithms',
+        'footprint',
       ]),
     );
   });

@@ -1,0 +1,24 @@
+{
+  "id": "loops",
+  "subject": "digital",
+  "strand": "d_code",
+  "band": 3,
+  "title": "Loops & repeats",
+  "blurb": "Repeat steps the smart way.",
+  "order": 3,
+  "skills": ["dc_loops"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "lo_use", "skill": "dc_loops", "bloom": "understand", "prompt": "A loop in coding is used to:", "choices": ["repeat steps", "stop forever", "delete files"], "answerIndex": 0 },
+          { "id": "lo_clap", "skill": "dc_loops", "bloom": "apply", "prompt": "To clap 10 times, the shortest code is:", "choices": ["repeat 10 times: clap", "clap, clap, clap … written 10 times", "clap once"], "answerIndex": 0 },
+          { "id": "lo_avoid", "skill": "dc_loops", "bloom": "understand", "prompt": "Loops help us avoid:", "choices": ["writing the same step again and again", "all numbers", "all colours"], "answerIndex": 0 },
+          { "id": "lo_square", "skill": "dc_loops", "bloom": "apply", "prompt": "To draw a square, repeat “forward, turn” how many times?", "choices": ["4", "1", "100"], "answerIndex": 0 },
+          { "id": "lo_until", "skill": "dc_loops", "bloom": "analyze", "prompt": "“Repeat until you reach the wall” is a loop that stops when:", "choices": ["it reaches the wall", "never", "after exactly one step"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

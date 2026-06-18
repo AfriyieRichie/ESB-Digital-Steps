@@ -1,0 +1,24 @@
+{
+  "id": "conditions",
+  "subject": "digital",
+  "strand": "d_code",
+  "band": 4,
+  "title": "If this, then that",
+  "blurb": "Code that makes decisions.",
+  "order": 3,
+  "skills": ["dc_logic"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cn_mean", "skill": "dc_logic", "bloom": "understand", "prompt": "An “if / then” rule means:", "choices": ["IF something is true, THEN do an action", "do everything always", "do nothing"], "answerIndex": 0 },
+          { "id": "cn_umbrella", "skill": "dc_logic", "bloom": "analyze", "prompt": "IF it is raining THEN take an umbrella. It is sunny. Take the umbrella?", "choices": ["No", "Yes", "Maybe"], "answerIndex": 0 },
+          { "id": "cn_decide", "skill": "dc_logic", "bloom": "understand", "prompt": "Conditions let a program:", "choices": ["make decisions", "only repeat", "only change colour"], "answerIndex": 0 },
+          { "id": "cn_score", "skill": "dc_logic", "bloom": "analyze", "prompt": "IF score > 10 THEN show “You win”. The score is 12. What shows?", "choices": ["You win", "nothing", "try again"], "answerIndex": 0 },
+          { "id": "cn_else", "skill": "dc_logic", "bloom": "analyze", "prompt": "The “else” part of an if/else runs when the condition is:", "choices": ["false", "true", "missing"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "safelink",
+  "subject": "digital",
+  "strand": "d_safety",
+  "band": 2,
+  "title": "Safe or not?",
+  "blurb": "Stay safe online.",
+  "order": 2,
+  "skills": ["ds_link"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sl_prize", "skill": "ds_link", "bloom": "apply", "prompt": "A pop-up says “You won a prize! Click here!” You should:", "choices": ["tell an adult and not click", "click it quickly", "type your name"], "answerIndex": 0 },
+          { "id": "sl_trust", "skill": "ds_link", "bloom": "understand", "prompt": "A website you can trust is usually:", "choices": ["one your teacher gave you", "a surprise pop-up", "a promise of free money"], "answerIndex": 0 },
+          { "id": "sl_stranger", "skill": "ds_link", "bloom": "apply", "prompt": "A stranger online asks where you live. You should:", "choices": ["never share, and tell an adult", "tell them your street", "send a photo"], "answerIndex": 0 },
+          { "id": "sl_warning", "skill": "ds_link", "bloom": "analyze", "prompt": "Which is a warning sign of an unsafe link?", "choices": ["“You won! Click now!”", "your school's homepage", "a saved bookmark"], "answerIndex": 0 },
+          { "id": "sl_scary", "skill": "ds_link", "bloom": "understand", "prompt": "If something online feels scary or wrong, you should:", "choices": ["tell a trusted adult", "keep it secret", "click on more"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

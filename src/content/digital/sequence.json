@@ -1,0 +1,24 @@
+{
+  "id": "sequence",
+  "subject": "digital",
+  "strand": "d_code",
+  "band": 2,
+  "title": "Step by step",
+  "blurb": "Put the steps in order.",
+  "order": 3,
+  "skills": ["dc_sequence"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sq_tea", "skill": "dc_sequence", "bloom": "apply", "prompt": "To make tea, what is the FIRST step?", "choices": ["boil the water", "drink the tea", "pour it into the cup"], "answerIndex": 0 },
+          { "id": "sq_name", "skill": "dc_sequence", "bloom": "understand", "prompt": "A list of steps in the right order is called a:", "choices": ["sequence", "colour", "number"], "answerIndex": 0 },
+          { "id": "sq_robot", "skill": "dc_sequence", "bloom": "analyze", "prompt": "A robot must (1) open the door, (2) walk out. What happens if it walks first?", "choices": ["it bumps the closed door", "nothing goes wrong", "it flies away"], "answerIndex": 0 },
+          { "id": "sq_order", "skill": "dc_sequence", "bloom": "understand", "prompt": "In coding, the steps run:", "choices": ["in order, one after another", "all backwards", "in a random order"], "answerIndex": 0 },
+          { "id": "sq_square", "skill": "dc_sequence", "bloom": "apply", "prompt": "To draw a square you repeat “forward, turn”. How many corners does a square have?", "choices": ["4", "1", "10"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "misinfo",
+  "subject": "digital",
+  "strand": "d_safety",
+  "band": 4,
+  "title": "True or fake?",
+  "blurb": "Spot misinformation and ads.",
+  "order": 2,
+  "skills": ["ds_misinfo"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "mi_def", "skill": "ds_misinfo", "bloom": "understand", "prompt": "Misinformation means information that is:", "choices": ["false or misleading", "always true", "a password"], "answerIndex": 0 },
+          { "id": "mi_ad", "skill": "ds_misinfo", "bloom": "understand", "prompt": "An advert online is designed to:", "choices": ["make you buy or click something", "teach you maths", "be a search result"], "answerIndex": 0 },
+          { "id": "mi_check", "skill": "ds_misinfo", "bloom": "evaluate", "prompt": "To check whether a news story is true, you can:", "choices": ["compare several trusted sources", "believe it instantly", "share it quickly"], "answerIndex": 0 },
+          { "id": "mi_reliable", "skill": "ds_misinfo", "bloom": "evaluate", "prompt": "Which is more likely to be reliable?", "choices": ["a well-known news or school site", "a random pop-up", "an anonymous message"], "answerIndex": 0 },
+          { "id": "mi_headline", "skill": "ds_misinfo", "bloom": "analyze", "prompt": "A headline that seems shocking and unbelievable might be:", "choices": ["fake or exaggerated", "always correct", "a password"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

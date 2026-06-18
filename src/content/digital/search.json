@@ -1,0 +1,24 @@
+{
+  "id": "search",
+  "subject": "digital",
+  "strand": "d_use",
+  "band": 3,
+  "title": "Finding information",
+  "blurb": "Search well and choose good results.",
+  "order": 1,
+  "skills": ["u_search"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sr_how", "skill": "u_search", "bloom": "apply", "prompt": "To find facts about lions, you could:", "choices": ["search “facts about lions”", "close the device", "just guess"], "answerIndex": 0 },
+          { "id": "sr_words", "skill": "u_search", "bloom": "understand", "prompt": "Good search words are:", "choices": ["short and about your topic", "a whole long story", "random letters"], "answerIndex": 0 },
+          { "id": "sr_result", "skill": "u_search", "bloom": "evaluate", "prompt": "After searching, it is best to pick a result that is:", "choices": ["from a trusted website", "the most colourful", "the first advert"], "answerIndex": 0 },
+          { "id": "sr_retry", "skill": "u_search", "bloom": "apply", "prompt": "If the first results don't help, you can:", "choices": ["try different search words", "give up", "turn it off"], "answerIndex": 0 },
+          { "id": "sr_reliable", "skill": "u_search", "bloom": "understand", "prompt": "A library or school website is usually:", "choices": ["a reliable source", "a game", "an advert"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

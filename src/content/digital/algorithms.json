@@ -1,0 +1,24 @@
+{
+  "id": "algorithms",
+  "subject": "digital",
+  "strand": "d_code",
+  "band": 5,
+  "title": "Algorithms & AI",
+  "blurb": "How computers and AI think.",
+  "order": 1,
+  "skills": ["dc_algorithm"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "al_def", "skill": "dc_algorithm", "bloom": "understand", "prompt": "An algorithm is:", "choices": ["a set of step-by-step instructions", "a type of computer", "a password"], "answerIndex": 0 },
+          { "id": "al_recipe", "skill": "dc_algorithm", "bloom": "apply", "prompt": "A cooking recipe is a real-life example of an:", "choices": ["algorithm", "advert", "atom"], "answerIndex": 0 },
+          { "id": "al_ai", "skill": "dc_algorithm", "bloom": "understand", "prompt": "Artificial intelligence (AI) usually learns patterns from:", "choices": ["lots of data", "nothing at all", "a single picture"], "answerIndex": 0 },
+          { "id": "al_good", "skill": "dc_algorithm", "bloom": "evaluate", "prompt": "A good algorithm should be:", "choices": ["clear and correct", "secret and random", "as long as possible"], "answerIndex": 0 },
+          { "id": "al_exact", "skill": "dc_algorithm", "bloom": "understand", "prompt": "A computer follows its instructions:", "choices": ["exactly as written", "by guessing", "with feelings"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

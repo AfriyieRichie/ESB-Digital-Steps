@@ -1,0 +1,24 @@
+{
+  "id": "footprint",
+  "subject": "digital",
+  "strand": "d_safety",
+  "band": 5,
+  "title": "Your digital footprint",
+  "blurb": "Be a good, ethical digital citizen.",
+  "order": 2,
+  "skills": ["ds_footprint"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fp_def", "skill": "ds_footprint", "bloom": "understand", "prompt": "Your “digital footprint” is:", "choices": ["the trail of what you post and do online", "your shoe size", "a password"], "answerIndex": 0 },
+          { "id": "fp_post", "skill": "ds_footprint", "bloom": "evaluate", "prompt": "Before posting something online, remember it can be:", "choices": ["seen by others and hard to delete", "instantly forgotten", "always kept fully private"], "answerIndex": 0 },
+          { "id": "fp_plagiarism", "skill": "ds_footprint", "bloom": "understand", "prompt": "Copying someone's work and claiming it as your own is called:", "choices": ["plagiarism", "sharing", "searching"], "answerIndex": 0 },
+          { "id": "fp_credit", "skill": "ds_footprint", "bloom": "apply", "prompt": "To use information ethically, you should:", "choices": ["credit the source", "hide where it came from", "change the author's name"], "answerIndex": 0 },
+          { "id": "fp_citizen", "skill": "ds_footprint", "bloom": "evaluate", "prompt": "A good online citizen is:", "choices": ["respectful, honest and safe", "someone who shares others' secrets", "someone who ignores the rules"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "icons",
+  "subject": "digital",
+  "strand": "d_use",
+  "band": 1,
+  "title": "Picture buttons",
+  "blurb": "Know the common icons.",
+  "order": 4,
+  "skills": ["u_icons"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ic_play", "skill": "u_icons", "bloom": "recall", "prompt": "Which button means PLAY?", "choices": ["▶️", "⏸️", "🔉"], "answerIndex": 0 },
+          { "id": "ic_home", "skill": "u_icons", "bloom": "recall", "prompt": "Which icon takes you HOME?", "choices": ["🏠", "🗑️", "🔍"], "answerIndex": 0 },
+          { "id": "ic_search", "skill": "u_icons", "bloom": "understand", "prompt": "The magnifying glass 🔍 is used to:", "choices": ["search", "delete", "turn up the sound"], "answerIndex": 0 },
+          { "id": "ic_trash", "skill": "u_icons", "bloom": "understand", "prompt": "Which icon means DELETE or throw away?", "choices": ["🗑️", "🏠", "▶️"], "answerIndex": 0 },
+          { "id": "ic_volume", "skill": "u_icons", "bloom": "understand", "prompt": "Which icon changes the SOUND?", "choices": ["🔊", "🏠", "🔍"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

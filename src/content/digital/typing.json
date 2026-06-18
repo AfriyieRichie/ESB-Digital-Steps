@@ -1,0 +1,24 @@
+{
+  "id": "typing",
+  "subject": "digital",
+  "strand": "d_use",
+  "band": 2,
+  "title": "Type the word",
+  "blurb": "Find the letters and type.",
+  "order": 1,
+  "skills": ["u_type"],
+  "steps": [
+    {
+      "activityType": "type",
+      "config": {
+        "items": [
+          { "id": "ty_go", "skill": "u_type", "bloom": "apply", "prompt": "Type this word:", "answer": "go" },
+          { "id": "ty_yes", "skill": "u_type", "bloom": "apply", "prompt": "Type this word:", "answer": "yes" },
+          { "id": "ty_play", "skill": "u_type", "bloom": "apply", "prompt": "Type this word:", "answer": "play" },
+          { "id": "ty_open", "skill": "u_type", "bloom": "apply", "prompt": "Type this word:", "answer": "open" },
+          { "id": "ty_save", "skill": "u_type", "bloom": "apply", "prompt": "Type this word:", "answer": "save" }
+        ]
+      }
+    }
+  ]
+}
