@@ -1,0 +1,24 @@
+{
+  "id": "instruments",
+  "subject": "arts",
+  "strand": "art_music",
+  "band": 4,
+  "title": "Instrument families",
+  "blurb": "How instruments make sound.",
+  "order": 2,
+  "skills": ["art_instruments"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "in_string", "skill": "art_instruments", "bloom": "understand", "prompt": "A guitar and a violin make sound from their:", "choices": ["strings", "skins", "keys"], "answerIndex": 0 },
+          { "id": "in_drum", "skill": "art_instruments", "bloom": "understand", "prompt": "A drum belongs to the ___ family.", "choices": ["percussion", "string", "wind"], "answerIndex": 0 },
+          { "id": "in_wind", "skill": "art_instruments", "bloom": "understand", "prompt": "A flute and a trumpet are played by:", "choices": ["blowing air", "plucking strings", "shaking them"], "answerIndex": 0 },
+          { "id": "in_kpanlogo", "skill": "art_instruments", "bloom": "recall", "prompt": "The Ghanaian “kpanlogo” is a type of:", "choices": ["drum", "flute", "piano"], "answerIndex": 0 },
+          { "id": "in_percussion", "skill": "art_instruments", "bloom": "understand", "prompt": "Hitting, shaking or scraping to make sound is the ___ family.", "choices": ["percussion", "string", "brass"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

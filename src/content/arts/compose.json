@@ -1,0 +1,24 @@
+{
+  "id": "compose",
+  "subject": "arts",
+  "strand": "art_make",
+  "band": 4,
+  "title": "Composition",
+  "blurb": "Arrange a picture well.",
+  "order": 1,
+  "skills": ["art_compose"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cp_def", "skill": "art_compose", "bloom": "understand", "prompt": "Arranging the parts of a picture in a pleasing way is called:", "choices": ["composition", "only mixing", "singing"], "answerIndex": 0 },
+          { "id": "cp_far", "skill": "art_compose", "bloom": "apply", "prompt": "In a drawing, things that are far away are usually drawn:", "choices": ["smaller", "bigger", "upside down"], "answerIndex": 0 },
+          { "id": "cp_focal", "skill": "art_compose", "bloom": "analyze", "prompt": "The main subject of a picture is often placed at a:", "choices": ["focal point that draws the eye", "spot off the page", "completely hidden place"], "answerIndex": 0 },
+          { "id": "cp_shade", "skill": "art_compose", "bloom": "understand", "prompt": "Adding light and dark to make a shape look round is called:", "choices": ["shading", "erasing", "framing"], "answerIndex": 0 },
+          { "id": "cp_balance", "skill": "art_compose", "bloom": "understand", "prompt": "Balance in art means the picture feels:", "choices": ["evenly arranged", "empty", "accidentally crooked"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

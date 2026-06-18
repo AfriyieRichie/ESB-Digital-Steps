@@ -185,6 +185,26 @@ const SEL_COMPETENCIES: readonly Competency[] = [
   { id: 'sel_goals', subject: 'sel', strand: 'sel_regulate', label: 'Sets goals & self-regulates', prerequisites: [] },
 ];
 
+// Creative arts: colour & sound -> shape & rhythm -> colour mixing & tempo ->
+// composition & instruments -> art styles/critique & musical form.
+const ARTS_COMPETENCIES: readonly Competency[] = [
+  // Band 1
+  { id: 'art_colour', subject: 'arts', strand: 'art_make', label: 'Knows colours', prerequisites: [] },
+  { id: 'art_sound', subject: 'arts', strand: 'art_music', label: 'Hears loud/soft & high/low', prerequisites: [] },
+  // Band 2
+  { id: 'art_shape', subject: 'arts', strand: 'art_make', label: 'Uses shapes & lines in art', prerequisites: [] },
+  { id: 'art_rhythm', subject: 'arts', strand: 'art_music', label: 'Keeps a beat & rhythm', prerequisites: [] },
+  // Band 3
+  { id: 'art_mix', subject: 'arts', strand: 'art_make', label: 'Mixes primary & secondary colours', prerequisites: [] },
+  { id: 'art_tempo', subject: 'arts', strand: 'art_music', label: 'Knows tempo, pitch & melody', prerequisites: [] },
+  // Band 4
+  { id: 'art_compose', subject: 'arts', strand: 'art_make', label: 'Composition & perspective', prerequisites: [] },
+  { id: 'art_instruments', subject: 'arts', strand: 'art_music', label: 'Knows instrument families', prerequisites: [] },
+  // Band 5
+  { id: 'art_style', subject: 'arts', strand: 'art_make', label: 'Recognises art styles & critiques', prerequisites: [] },
+  { id: 'art_form', subject: 'arts', strand: 'art_music', label: 'Knows musical form', prerequisites: [] },
+];
+
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,
   ...WRITING_COMPETENCIES,
@@ -193,6 +213,7 @@ export const COMPETENCIES: readonly Competency[] = [
   ...LOGIC_COMPETENCIES,
   ...SOCIAL_COMPETENCIES,
   ...SEL_COMPETENCIES,
+  ...ARTS_COMPETENCIES,
   ...DIGITAL_COMPETENCIES,
 ];
 

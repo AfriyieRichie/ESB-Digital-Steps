@@ -1,0 +1,24 @@
+{
+  "id": "shape",
+  "subject": "arts",
+  "strand": "art_make",
+  "band": 2,
+  "title": "Shapes & lines",
+  "blurb": "Draw with shapes and lines.",
+  "order": 1,
+  "skills": ["art_shape"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sp_house", "skill": "art_shape", "bloom": "apply", "prompt": "A simple drawing of a house often uses a square and a:", "choices": ["triangle", "only a circle", "nothing"], "answerIndex": 0 },
+          { "id": "sp_vertical", "skill": "art_shape", "bloom": "understand", "prompt": "A line that goes straight up and down is:", "choices": ["vertical", "horizontal", "round"], "answerIndex": 0 },
+          { "id": "sp_sun", "skill": "art_shape", "bloom": "apply", "prompt": "To draw the sun you would most likely use a:", "choices": ["circle", "square", "straight line"], "answerIndex": 0 },
+          { "id": "sp_picture", "skill": "art_shape", "bloom": "understand", "prompt": "An artist uses lines and shapes to make a:", "choices": ["picture", "sound", "smell"], "answerIndex": 0 },
+          { "id": "sp_zigzag", "skill": "art_shape", "bloom": "understand", "prompt": "A zig-zag line looks:", "choices": ["pointy", "perfectly round", "invisible"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

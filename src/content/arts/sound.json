@@ -1,0 +1,24 @@
+{
+  "id": "sound",
+  "subject": "arts",
+  "strand": "art_music",
+  "band": 1,
+  "title": "Loud & soft",
+  "blurb": "Listen to sounds.",
+  "order": 2,
+  "skills": ["art_sound"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sd_whisper", "skill": "art_sound", "bloom": "understand", "prompt": "A whisper is a sound that is:", "choices": ["soft and quiet", "very loud", "a colour"], "answerIndex": 0 },
+          { "id": "sd_drum", "skill": "art_sound", "bloom": "understand", "prompt": "A drum banged hard makes a sound that is:", "choices": ["loud", "silent", "invisible"], "answerIndex": 0 },
+          { "id": "sd_bird", "skill": "art_sound", "bloom": "understand", "prompt": "A tiny bird's tweet is usually a ___ sound.", "choices": ["high", "low", "red"], "answerIndex": 0 },
+          { "id": "sd_bigdrum", "skill": "art_sound", "bloom": "understand", "prompt": "A big drum makes a ___ sound.", "choices": ["low", "high", "green"], "answerIndex": 0 },
+          { "id": "sd_music", "skill": "art_sound", "bloom": "recall", "prompt": "Music is made of:", "choices": ["sounds", "only letters", "only numbers"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tempo",
+  "subject": "arts",
+  "strand": "art_music",
+  "band": 3,
+  "title": "Fast, slow, high, low",
+  "blurb": "Tempo, pitch and melody.",
+  "order": 2,
+  "skills": ["art_tempo"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "tp_fast", "skill": "art_tempo", "bloom": "understand", "prompt": "Music played very fast has a ___ tempo.", "choices": ["fast", "slow", "quiet"], "answerIndex": 0 },
+          { "id": "tp_lullaby", "skill": "art_tempo", "bloom": "understand", "prompt": "A gentle lullaby usually has a ___ tempo.", "choices": ["slow", "fast", "loud"], "answerIndex": 0 },
+          { "id": "tp_pitch", "skill": "art_tempo", "bloom": "understand", "prompt": "How high or low a note sounds is its:", "choices": ["pitch", "colour", "weight"], "answerIndex": 0 },
+          { "id": "tp_melody", "skill": "art_tempo", "bloom": "understand", "prompt": "A melody is a:", "choices": ["tune made of notes", "colour", "drawing"], "answerIndex": 0 },
+          { "id": "tp_repeat", "skill": "art_tempo", "bloom": "understand", "prompt": "Singing the same short tune again is repeating a:", "choices": ["melody", "shape", "number"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

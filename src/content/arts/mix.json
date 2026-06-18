@@ -1,0 +1,24 @@
+{
+  "id": "mix",
+  "subject": "arts",
+  "strand": "art_make",
+  "band": 3,
+  "title": "Mixing colours",
+  "blurb": "Primary and secondary colours.",
+  "order": 1,
+  "skills": ["art_mix"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "mx_primary", "skill": "art_mix", "bloom": "understand", "prompt": "Red, blue and yellow are the three ___ colours.", "choices": ["primary", "secondary", "dark"], "answerIndex": 0 },
+          { "id": "mx_green", "skill": "art_mix", "bloom": "apply", "prompt": "Blue mixed with yellow makes:", "choices": ["green", "purple", "orange"], "answerIndex": 0 },
+          { "id": "mx_orange", "skill": "art_mix", "bloom": "apply", "prompt": "Red mixed with yellow makes:", "choices": ["orange", "green", "blue"], "answerIndex": 0 },
+          { "id": "mx_purple", "skill": "art_mix", "bloom": "apply", "prompt": "Red mixed with blue makes:", "choices": ["purple", "green", "yellow"], "answerIndex": 0 },
+          { "id": "mx_secondary", "skill": "art_mix", "bloom": "understand", "prompt": "Colours you make by mixing two primary colours are called:", "choices": ["secondary colours", "primary colours", "no colours"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

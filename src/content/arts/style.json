@@ -1,0 +1,26 @@
+{
+  "id": "style",
+  "subject": "arts",
+  "strand": "art_make",
+  "band": 5,
+  "title": "Kente & art styles",
+  "blurb": "Read about kente, then look closely.",
+  "order": 1,
+  "skills": ["art_style"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "The Art of Kente",
+        "passage": "Kente is a colourful, handwoven cloth from Ghana. Each pattern and colour carries meaning: gold can stand for wealth, green for growth, and blue for peace. Weavers plan their designs carefully before they begin, turning simple threads into bold and beautiful works of art.",
+        "questions": [
+          { "id": "sy_where", "skill": "art_style", "bloom": "recall", "prompt": "Where does kente cloth come from?", "choices": ["Ghana", "Europe", "the moon"], "answerIndex": 0 },
+          { "id": "sy_meaning", "skill": "art_style", "bloom": "understand", "prompt": "In kente, the colours and patterns:", "choices": ["have meanings", "are random", "make sounds"], "answerIndex": 0 },
+          { "id": "sy_green", "skill": "art_style", "bloom": "recall", "prompt": "Green in kente can stand for:", "choices": ["growth", "silence", "cold"], "answerIndex": 0 },
+          { "id": "sy_plan", "skill": "art_style", "bloom": "understand", "prompt": "Weavers plan their design:", "choices": ["before they begin", "never", "only after it is finished"], "answerIndex": 0 },
+          { "id": "sy_critique", "skill": "art_style", "bloom": "understand", "prompt": "Looking closely and giving a thoughtful opinion about art is called a:", "choices": ["critique", "copy", "colour"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

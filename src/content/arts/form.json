@@ -1,0 +1,24 @@
+{
+  "id": "form",
+  "subject": "arts",
+  "strand": "art_music",
+  "band": 5,
+  "title": "Melody & harmony",
+  "blurb": "How a song is built.",
+  "order": 2,
+  "skills": ["art_form"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fm_melody", "skill": "art_form", "bloom": "understand", "prompt": "The main tune of a song is the:", "choices": ["melody", "tempo", "volume"], "answerIndex": 0 },
+          { "id": "fm_harmony", "skill": "art_form", "bloom": "understand", "prompt": "Notes played together to support the melody make:", "choices": ["harmony", "silence", "a drawing"], "answerIndex": 0 },
+          { "id": "fm_chorus", "skill": "art_form", "bloom": "understand", "prompt": "The part of a song that repeats and you remember most is the:", "choices": ["chorus", "title page", "margin"], "answerIndex": 0 },
+          { "id": "fm_form", "skill": "art_form", "bloom": "analyze", "prompt": "A song's overall plan (verse, chorus, verse) is its:", "choices": ["form, or structure", "colour", "weight"], "answerIndex": 0 },
+          { "id": "fm_together", "skill": "art_form", "bloom": "understand", "prompt": "When many instruments play different parts together, we hear:", "choices": ["harmony", "only one note", "no music"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

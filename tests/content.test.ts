@@ -121,6 +121,17 @@ describe('bundled lessons', () => {
         'empathy',
         'teamwork',
         'goals',
+        // Creative arts across the five bands
+        'colour',
+        'sound',
+        'shape',
+        'rhythm',
+        'mix',
+        'tempo',
+        'compose',
+        'instruments',
+        'style',
+        'form',
       ]),
     );
   });
@@ -133,14 +144,17 @@ describe('bundled lessons', () => {
     }
   });
 
-  it('every subject that has competencies also has at least one lesson', () => {
+  it('every one of the nine subjects has lessons', () => {
     const subjectsWithLessons = new Set(LESSONS.map((l) => l.subject));
     for (const subject of SUBJECT_IDS) {
-      const hasCompetencies = competenciesForSubject(subject).length > 0;
-      if (hasCompetencies) {
-        expect(subjectsWithLessons.has(subject), `subject ${subject}`).toBe(true);
-      }
+      expect(competenciesForSubject(subject).length, `competencies for ${subject}`).toBeGreaterThan(0);
+      expect(subjectsWithLessons.has(subject), `lessons for ${subject}`).toBe(true);
     }
+  });
+
+  it('spans all five developmental bands', () => {
+    const bands = new Set(LESSONS.map((l) => l.band));
+    expect([...bands].sort()).toEqual([1, 2, 3, 4, 5]);
   });
 
   it('every lesson is internally consistent (strand, skills)', () => {

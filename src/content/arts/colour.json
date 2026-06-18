@@ -1,0 +1,24 @@
+{
+  "id": "colour",
+  "subject": "arts",
+  "strand": "art_make",
+  "band": 1,
+  "title": "Colours",
+  "blurb": "Name the colours.",
+  "order": 1,
+  "skills": ["art_colour"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cr_red", "skill": "art_colour", "bloom": "recall", "prompt": "Which one is RED?", "choices": ["🔴", "🔵", "🟢"], "answerIndex": 0 },
+          { "id": "cr_blue", "skill": "art_colour", "bloom": "recall", "prompt": "Which one is BLUE?", "choices": ["🔵", "🟡", "🔴"], "answerIndex": 0 },
+          { "id": "cr_grass", "skill": "art_colour", "bloom": "understand", "prompt": "The colour of grass is usually:", "choices": ["green", "purple", "black"], "answerIndex": 0 },
+          { "id": "cr_rainbow", "skill": "art_colour", "bloom": "understand", "prompt": "A rainbow is made of many:", "choices": ["colours", "sounds", "numbers"], "answerIndex": 0 },
+          { "id": "cr_yellow", "skill": "art_colour", "bloom": "recall", "prompt": "Which one is YELLOW?", "choices": ["🟡", "🟣", "🔵"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

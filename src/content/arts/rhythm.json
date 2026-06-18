@@ -1,0 +1,24 @@
+{
+  "id": "rhythm",
+  "subject": "arts",
+  "strand": "art_music",
+  "band": 2,
+  "title": "Keep the beat",
+  "blurb": "Feel the rhythm.",
+  "order": 2,
+  "skills": ["art_rhythm"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "rh_beat", "skill": "art_rhythm", "bloom": "understand", "prompt": "A steady pulse you can clap along to is called the:", "choices": ["beat", "colour", "line"], "answerIndex": 0 },
+          { "id": "rh_steady", "skill": "art_rhythm", "bloom": "understand", "prompt": "Clapping at the same speed keeps a:", "choices": ["steady beat", "picture", "story"], "answerIndex": 0 },
+          { "id": "rh_dance", "skill": "art_rhythm", "bloom": "understand", "prompt": "Music that makes you want to dance has a strong:", "choices": ["beat", "smell", "taste"], "answerIndex": 0 },
+          { "id": "rh_foot", "skill": "art_rhythm", "bloom": "understand", "prompt": "Tapping your foot to a song helps you feel the:", "choices": ["rhythm", "weight", "colour"], "answerIndex": 0 },
+          { "id": "rh_pattern", "skill": "art_rhythm", "bloom": "understand", "prompt": "A pattern of long and short sounds makes a:", "choices": ["rhythm", "square", "number"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
