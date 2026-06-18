@@ -1,0 +1,24 @@
+{
+  "id": "helpers",
+  "subject": "social",
+  "strand": "soc_community",
+  "band": 1,
+  "title": "People who help us",
+  "blurb": "Helpers in our community.",
+  "order": 1,
+  "skills": ["soc_helpers"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "he_doctor", "skill": "soc_helpers", "bloom": "recall", "prompt": "Who helps us when we are sick?", "choices": ["a doctor", "a farmer", "a driver"], "answerIndex": 0 },
+          { "id": "he_teacher", "skill": "soc_helpers", "bloom": "recall", "prompt": "Who teaches children at school?", "choices": ["a teacher", "a chef", "a pilot"], "answerIndex": 0 },
+          { "id": "he_farmer", "skill": "soc_helpers", "bloom": "recall", "prompt": "Who grows the food we eat?", "choices": ["a farmer", "a doctor", "a banker"], "answerIndex": 0 },
+          { "id": "he_police", "skill": "soc_helpers", "bloom": "understand", "prompt": "Who helps keep the community safe?", "choices": ["the police", "a singer", "a painter"], "answerIndex": 0 },
+          { "id": "he_family", "skill": "soc_helpers", "bloom": "understand", "prompt": "A family is a group of people who:", "choices": ["care for each other", "only sell things", "never meet"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "geography",
+  "subject": "social",
+  "strand": "soc_world",
+  "band": 3,
+  "title": "Ghana & the world",
+  "blurb": "Our country and our planet.",
+  "order": 1,
+  "skills": ["soc_geography"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ge_continent", "skill": "soc_geography", "bloom": "recall", "prompt": "Which continent is Ghana in?", "choices": ["Africa", "Europe", "Asia"], "answerIndex": 0 },
+          { "id": "ge_capital", "skill": "soc_geography", "bloom": "recall", "prompt": "What is the capital city of Ghana?", "choices": ["Accra", "Kumasi", "Lagos"], "answerIndex": 0 },
+          { "id": "ge_continents", "skill": "soc_geography", "bloom": "recall", "prompt": "How many continents are there on Earth?", "choices": ["7", "3", "12"], "answerIndex": 0 },
+          { "id": "ge_ocean", "skill": "soc_geography", "bloom": "understand", "prompt": "To the south, Ghana lies next to which large body of water?", "choices": ["the Atlantic Ocean", "a desert", "the Pacific Ocean"], "answerIndex": 0 },
+          { "id": "ge_globe", "skill": "soc_geography", "bloom": "understand", "prompt": "A globe is a model of:", "choices": ["the Earth", "a single city", "the moon"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

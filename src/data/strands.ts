@@ -39,7 +39,8 @@ export const STRANDS: readonly Strand[] = [
   // Social studies / world knowledge
   { id: 'soc_community', subject: 'social', label: 'Family & community' },
   { id: 'soc_world', subject: 'social', label: 'Maps & world' },
-  { id: 'soc_history', subject: 'social', label: 'History & civics' },
+  { id: 'soc_history', subject: 'social', label: 'History & timelines' },
+  { id: 'soc_civics', subject: 'social', label: 'Government & economy' },
   // Social-emotional learning
   { id: 'sel_emotion', subject: 'sel', label: 'Emotions' },
   { id: 'sel_social', subject: 'sel', label: 'Empathy & collaboration' },

@@ -1,0 +1,24 @@
+{
+  "id": "community",
+  "subject": "social",
+  "strand": "soc_community",
+  "band": 2,
+  "title": "Living together",
+  "blurb": "Rules and jobs in a community.",
+  "order": 2,
+  "skills": ["soc_rules"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cy_market", "skill": "soc_rules", "bloom": "recall", "prompt": "A market is a place where people:", "choices": ["buy and sell things", "sleep", "go to hospital"], "answerIndex": 0 },
+          { "id": "cy_rules", "skill": "soc_rules", "bloom": "understand", "prompt": "Rules in a community help everyone to:", "choices": ["stay safe and be fair", "be confused", "fight"], "answerIndex": 0 },
+          { "id": "cy_litter", "skill": "soc_rules", "bloom": "understand", "prompt": "Throwing rubbish on the ground is:", "choices": ["bad for the community", "helpful", "tidy"], "answerIndex": 0 },
+          { "id": "cy_clinic", "skill": "soc_rules", "bloom": "recall", "prompt": "Who looks after sick people in a clinic?", "choices": ["nurses and doctors", "farmers", "drivers"], "answerIndex": 0 },
+          { "id": "cy_share", "skill": "soc_rules", "bloom": "understand", "prompt": "Sharing and taking turns makes a community:", "choices": ["happier and fairer", "unfair", "empty"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

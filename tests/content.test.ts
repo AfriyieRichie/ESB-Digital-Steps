@@ -104,6 +104,16 @@ describe('bundled lessons', () => {
         'conditional',
         'validity',
         'fallacies',
+        // Social studies across the five bands
+        'helpers',
+        'maps',
+        'community',
+        'geography',
+        'history',
+        'civics',
+        'economy',
+        'causes',
+        'global',
       ]),
     );
   });

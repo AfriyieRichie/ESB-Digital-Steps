@@ -1,0 +1,26 @@
+{
+  "id": "history",
+  "subject": "social",
+  "strand": "soc_history",
+  "band": 3,
+  "title": "Ghana's independence",
+  "blurb": "Read about the past, then answer.",
+  "order": 2,
+  "skills": ["soc_past"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "A Free Ghana",
+        "passage": "Long ago, Ghana was ruled by Britain and was known as the Gold Coast. Many people wanted to govern their own country. Led by Kwame Nkrumah, they worked hard for their freedom. On 6 March 1957, Ghana became independent — the first country in sub-Saharan Africa to do so.",
+        "questions": [
+          { "id": "hi_name", "skill": "soc_past", "bloom": "recall", "prompt": "What was Ghana called before independence?", "choices": ["the Gold Coast", "Accra", "Nkrumah"], "answerIndex": 0 },
+          { "id": "hi_leader", "skill": "soc_past", "bloom": "recall", "prompt": "Who led Ghana to independence?", "choices": ["Kwame Nkrumah", "a British king", "no one"], "answerIndex": 0 },
+          { "id": "hi_year", "skill": "soc_past", "bloom": "recall", "prompt": "In which year did Ghana become independent?", "choices": ["1957", "1857", "2007"], "answerIndex": 0 },
+          { "id": "hi_first", "skill": "soc_past", "bloom": "understand", "prompt": "Ghana was the FIRST country in sub-Saharan Africa to:", "choices": ["become independent", "build a road", "grow cocoa"], "answerIndex": 0 },
+          { "id": "hi_timeline", "skill": "soc_past", "bloom": "understand", "prompt": "A line that shows events in the order they happened is called a:", "choices": ["timeline", "map", "graph"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

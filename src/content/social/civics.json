@@ -1,0 +1,24 @@
+{
+  "id": "civics",
+  "subject": "social",
+  "strand": "soc_civics",
+  "band": 4,
+  "title": "Citizens & government",
+  "blurb": "Rights, rules and leaders.",
+  "order": 1,
+  "skills": ["soc_civics"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ci_vote", "skill": "soc_civics", "bloom": "understand", "prompt": "In a democracy, leaders are chosen by:", "choices": ["the people voting", "one family forever", "chance"], "answerIndex": 0 },
+          { "id": "ci_right", "skill": "soc_civics", "bloom": "understand", "prompt": "A right that every child has is the right to:", "choices": ["education", "ignore all rules", "take others' things"], "answerIndex": 0 },
+          { "id": "ci_resp", "skill": "soc_civics", "bloom": "understand", "prompt": "Along with rights, citizens also have:", "choices": ["responsibilities", "nothing to do", "only holidays"], "answerIndex": 0 },
+          { "id": "ci_tax", "skill": "soc_civics", "bloom": "understand", "prompt": "Public roads and schools are paid for with money called:", "choices": ["taxes", "prizes", "gifts"], "answerIndex": 0 },
+          { "id": "ci_citizen", "skill": "soc_civics", "bloom": "evaluate", "prompt": "A good citizen:", "choices": ["follows fair laws and helps others", "breaks the rules", "drops litter"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

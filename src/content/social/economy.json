@@ -1,0 +1,24 @@
+{
+  "id": "economy",
+  "subject": "social",
+  "strand": "soc_civics",
+  "band": 4,
+  "title": "Needs, wants & trade",
+  "blurb": "How people get what they need.",
+  "order": 2,
+  "skills": ["soc_economy"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ec_water", "skill": "soc_economy", "bloom": "understand", "prompt": "Clean water is a:", "choices": ["need", "want", "toy"], "answerIndex": 0 },
+          { "id": "ec_console", "skill": "soc_economy", "bloom": "understand", "prompt": "A brand-new game console is a:", "choices": ["want", "need", "law"], "answerIndex": 0 },
+          { "id": "ec_goods", "skill": "soc_economy", "bloom": "understand", "prompt": "Things people make to sell, like bread, are called:", "choices": ["goods", "services", "taxes"], "answerIndex": 0 },
+          { "id": "ec_services", "skill": "soc_economy", "bloom": "understand", "prompt": "A doctor's care and a haircut are examples of:", "choices": ["services", "goods", "money"], "answerIndex": 0 },
+          { "id": "ec_cedi", "skill": "soc_economy", "bloom": "recall", "prompt": "Ghana's money is called the:", "choices": ["cedi", "dollar", "euro"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

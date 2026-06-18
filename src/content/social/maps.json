@@ -1,0 +1,24 @@
+{
+  "id": "maps",
+  "subject": "social",
+  "strand": "soc_world",
+  "band": 2,
+  "title": "Reading a map",
+  "blurb": "Find your way around.",
+  "order": 1,
+  "skills": ["soc_map"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "mp_north", "skill": "soc_map", "bloom": "recall", "prompt": "On most maps, which way is UP?", "choices": ["North", "South", "Left"], "answerIndex": 0 },
+          { "id": "mp_what", "skill": "soc_map", "bloom": "understand", "prompt": "A map is a picture that shows:", "choices": ["where places are", "only colours", "the time"], "answerIndex": 0 },
+          { "id": "mp_blue", "skill": "soc_map", "bloom": "understand", "prompt": "On a map, the colour blue usually shows:", "choices": ["water", "roads", "mountains"], "answerIndex": 0 },
+          { "id": "mp_south", "skill": "soc_map", "bloom": "apply", "prompt": "If North is up, then South is:", "choices": ["down", "up", "sideways"], "answerIndex": 0 },
+          { "id": "mp_symbol", "skill": "soc_map", "bloom": "understand", "prompt": "Small pictures on a map that stand for real things are called:", "choices": ["symbols", "stories", "songs"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

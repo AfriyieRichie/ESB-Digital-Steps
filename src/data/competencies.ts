@@ -154,12 +154,32 @@ const LOGIC_COMPETENCIES: readonly Competency[] = [
   { id: 'l_fallacy', subject: 'logic', strand: 'l_reason', label: 'Spots flaws in reasoning', prerequisites: [] },
 ];
 
+// Social studies: family & community -> maps & geography -> history & timelines
+// -> government, economy & civics -> analysing events & global citizenship.
+const SOCIAL_COMPETENCIES: readonly Competency[] = [
+  // Band 1
+  { id: 'soc_helpers', subject: 'social', strand: 'soc_community', label: 'Knows community helpers', prerequisites: [] },
+  // Band 2
+  { id: 'soc_map', subject: 'social', strand: 'soc_world', label: 'Reads a simple map', prerequisites: [] },
+  { id: 'soc_rules', subject: 'social', strand: 'soc_community', label: 'Knows community rules & jobs', prerequisites: [] },
+  // Band 3
+  { id: 'soc_geography', subject: 'social', strand: 'soc_world', label: 'Knows Ghana & the world', prerequisites: [] },
+  { id: 'soc_past', subject: 'social', strand: 'soc_history', label: 'Understands the past & timelines', prerequisites: [] },
+  // Band 4
+  { id: 'soc_civics', subject: 'social', strand: 'soc_civics', label: 'Understands government & rights', prerequisites: [] },
+  { id: 'soc_economy', subject: 'social', strand: 'soc_civics', label: 'Understands needs, wants & trade', prerequisites: [] },
+  // Band 5
+  { id: 'soc_analysis', subject: 'social', strand: 'soc_history', label: 'Analyses causes & effects', prerequisites: [] },
+  { id: 'soc_global', subject: 'social', strand: 'soc_civics', label: 'Understands global citizenship', prerequisites: [] },
+];
+
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,
   ...WRITING_COMPETENCIES,
   ...NUMERACY_COMPETENCIES,
   ...SCIENCE_COMPETENCIES,
   ...LOGIC_COMPETENCIES,
+  ...SOCIAL_COMPETENCIES,
   ...DIGITAL_COMPETENCIES,
 ];
 

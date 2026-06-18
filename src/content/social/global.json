@@ -1,0 +1,24 @@
+{
+  "id": "global",
+  "subject": "social",
+  "strand": "soc_civics",
+  "band": 5,
+  "title": "Our shared world",
+  "blurb": "Global citizenship & sustainability.",
+  "order": 2,
+  "skills": ["soc_global"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "gl_sustain", "skill": "soc_global", "bloom": "understand", "prompt": "Caring for the environment so it lasts for the future is called:", "choices": ["sustainability", "pollution", "a holiday"], "answerIndex": 0 },
+          { "id": "gl_interdep", "skill": "soc_global", "bloom": "understand", "prompt": "People around the world rely on each other for trade and ideas. This is called:", "choices": ["interdependence", "loneliness", "a map"], "answerIndex": 0 },
+          { "id": "gl_rights", "skill": "soc_global", "bloom": "understand", "prompt": "Basic freedoms that belong to every person are called:", "choices": ["human rights", "prizes", "taxes"], "answerIndex": 0 },
+          { "id": "gl_planet", "skill": "soc_global", "bloom": "evaluate", "prompt": "Which action helps the planet?", "choices": ["planting trees and saving water", "wasting water", "burning rubbish"], "answerIndex": 0 },
+          { "id": "gl_citizen", "skill": "soc_global", "bloom": "evaluate", "prompt": "A global citizen thinks about:", "choices": ["people and the planet everywhere", "only themselves", "only today"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

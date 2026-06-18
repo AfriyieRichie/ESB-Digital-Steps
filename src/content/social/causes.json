@@ -1,0 +1,26 @@
+{
+  "id": "causes",
+  "subject": "social",
+  "strand": "soc_history",
+  "band": 5,
+  "title": "Cause & effect",
+  "blurb": "Read an event, then analyse it.",
+  "order": 1,
+  "skills": ["soc_analysis"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "The Dry Year",
+        "passage": "One year, very little rain fell on the farms for many months. The crops dried up and there was not enough food. Prices in the market rose sharply, and many families had to travel far to find work and water.",
+        "questions": [
+          { "id": "ca_cause", "skill": "soc_analysis", "bloom": "analyze", "prompt": "What was the main CAUSE of the problem?", "choices": ["Too little rain — a drought", "Too much food", "A festival"], "answerIndex": 0 },
+          { "id": "ca_effect", "skill": "soc_analysis", "bloom": "analyze", "prompt": "What was an EFFECT of the drought?", "choices": ["Crops dried up and food was scarce", "More rain fell", "Prices went down"], "answerIndex": 0 },
+          { "id": "ca_prices", "skill": "soc_analysis", "bloom": "analyze", "prompt": "Why did prices in the market rise?", "choices": ["Food was scarce, so it cost more", "Everyone had too much food", "The market closed"], "answerIndex": 0 },
+          { "id": "ca_def", "skill": "soc_analysis", "bloom": "understand", "prompt": "A “cause” is something that:", "choices": ["makes another thing happen", "comes afterwards", "is a place"], "answerIndex": 0 },
+          { "id": "ca_persp", "skill": "soc_analysis", "bloom": "evaluate", "prompt": "Looking at an event from different people's points of view is called considering different:", "choices": ["perspectives", "answers only", "weather"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
