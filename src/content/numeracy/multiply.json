@@ -1,0 +1,24 @@
+{
+  "id": "multiply",
+  "subject": "numeracy",
+  "strand": "n_ops",
+  "band": 3,
+  "title": "Times tables",
+  "blurb": "Multiply single digits.",
+  "order": 1,
+  "skills": ["m_multiply"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "mu_34", "skill": "m_multiply", "bloom": "apply", "prompt": "3 × 4 = ?", "choices": ["12", "7", "9"], "answerIndex": 0 },
+          { "id": "mu_62", "skill": "m_multiply", "bloom": "apply", "prompt": "6 × 2 = ?", "choices": ["12", "8", "10"], "answerIndex": 0 },
+          { "id": "mu_55", "skill": "m_multiply", "bloom": "apply", "prompt": "5 × 5 = ?", "choices": ["25", "10", "20"], "answerIndex": 0 },
+          { "id": "mu_73", "skill": "m_multiply", "bloom": "apply", "prompt": "7 × 3 = ?", "choices": ["21", "18", "24"], "answerIndex": 0 },
+          { "id": "mu_word", "skill": "m_multiply", "bloom": "apply", "prompt": "There are 4 bags with 5 mangoes in each. How many mangoes altogether?", "choices": ["20", "9", "45"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

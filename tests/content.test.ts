@@ -45,6 +45,23 @@ describe('bundled lessons', () => {
         'paragraph',
         'essay',
         'argument',
+        // Numeracy curriculum across the five bands
+        'count',
+        'numerals',
+        'compare',
+        'shapes',
+        'addmatch',
+        'subtract',
+        'placevalue',
+        'multiply',
+        'fractions',
+        'data',
+        'percent',
+        'prealgebra',
+        'negatives',
+        'linear',
+        'coordinates',
+        'statistics',
       ]),
     );
   });

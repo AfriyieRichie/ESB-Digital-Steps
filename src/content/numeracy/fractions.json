@@ -1,0 +1,24 @@
+{
+  "id": "fractions",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 3,
+  "title": "Parts of a whole",
+  "blurb": "Understand simple fractions.",
+  "order": 2,
+  "skills": ["m_fraction"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fr_half", "skill": "m_fraction", "bloom": "understand", "prompt": "Which fraction means one half?", "choices": ["1/2", "1/4", "2/1"], "answerIndex": 0 },
+          { "id": "fr_quarter", "skill": "m_fraction", "bloom": "understand", "prompt": "A pizza is cut into 4 equal parts. Each part is:", "choices": ["one quarter", "one half", "one third"], "answerIndex": 0 },
+          { "id": "fr_bigger", "skill": "m_fraction", "bloom": "analyze", "prompt": "Which is bigger: 1/2 or 1/4?", "choices": ["1/2", "1/4", "they are equal"], "answerIndex": 0 },
+          { "id": "fr_three", "skill": "m_fraction", "bloom": "understand", "prompt": "3/4 of a cake means how many of the 4 equal parts?", "choices": ["3", "4", "1"], "answerIndex": 0 },
+          { "id": "fr_whole", "skill": "m_fraction", "bloom": "understand", "prompt": "Two halves make:", "choices": ["one whole", "one quarter", "three parts"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

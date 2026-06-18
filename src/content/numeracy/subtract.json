@@ -1,0 +1,24 @@
+{
+  "id": "subtract",
+  "subject": "numeracy",
+  "strand": "n_ops",
+  "band": 2,
+  "title": "Taking away",
+  "blurb": "Subtract within 20.",
+  "order": 2,
+  "skills": ["m_subtract"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "su_73", "skill": "m_subtract", "bloom": "apply", "prompt": "7 − 3 = ?", "choices": ["4", "5", "3"], "answerIndex": 0 },
+          { "id": "su_106", "skill": "m_subtract", "bloom": "apply", "prompt": "10 − 6 = ?", "choices": ["4", "6", "2"], "answerIndex": 0 },
+          { "id": "su_95", "skill": "m_subtract", "bloom": "apply", "prompt": "9 − 5 = ?", "choices": ["4", "3", "5"], "answerIndex": 0 },
+          { "id": "su_157", "skill": "m_subtract", "bloom": "apply", "prompt": "15 − 7 = ?", "choices": ["8", "9", "7"], "answerIndex": 0 },
+          { "id": "su_word", "skill": "m_subtract", "bloom": "apply", "prompt": "You have 12 sweets and eat 4. How many are left?", "choices": ["8", "9", "16"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

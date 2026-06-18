@@ -1,8 +1,8 @@
 {
   "id": "addmatch",
   "subject": "numeracy",
-  "strand": "n_number",
-  "band": 3,
+  "strand": "n_ops",
+  "band": 2,
   "title": "Add and match",
   "blurb": "Match each sum to its answer.",
   "order": 1,

@@ -1,0 +1,24 @@
+{
+  "id": "placevalue",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 2,
+  "title": "Tens and ones",
+  "blurb": "Understand place value.",
+  "order": 3,
+  "skills": ["m_place"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pv_34", "skill": "m_place", "bloom": "understand", "prompt": "In the number 34, what does the 3 stand for?", "choices": ["3 tens", "3 ones", "3 hundreds"], "answerIndex": 0 },
+          { "id": "pv_50", "skill": "m_place", "bloom": "understand", "prompt": "How many tens are in 50?", "choices": ["5", "0", "50"], "answerIndex": 0 },
+          { "id": "pv_42", "skill": "m_place", "bloom": "apply", "prompt": "What is 4 tens and 2 ones?", "choices": ["42", "24", "402"], "answerIndex": 0 },
+          { "id": "pv_78", "skill": "m_place", "bloom": "understand", "prompt": "In 78, which digit is in the ones place?", "choices": ["8", "7", "0"], "answerIndex": 0 },
+          { "id": "pv_26", "skill": "m_place", "bloom": "apply", "prompt": "20 + 6 = ?", "choices": ["26", "8", "206"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

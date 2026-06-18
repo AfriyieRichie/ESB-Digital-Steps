@@ -1,0 +1,24 @@
+{
+  "id": "linear",
+  "subject": "numeracy",
+  "strand": "n_ops",
+  "band": 5,
+  "title": "Solve the equation",
+  "blurb": "Linear equations.",
+  "order": 1,
+  "skills": ["m_linear"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "li_2x1_9", "skill": "m_linear", "bloom": "analyze", "prompt": "Solve: 2x + 1 = 9. x = ?", "choices": ["4", "5", "3"], "answerIndex": 0 },
+          { "id": "li_3x6_9", "skill": "m_linear", "bloom": "analyze", "prompt": "Solve: 3x − 6 = 9. x = ?", "choices": ["5", "3", "1"], "answerIndex": 0 },
+          { "id": "li_x2_6", "skill": "m_linear", "bloom": "analyze", "prompt": "Solve: x ÷ 2 = 6. x = ?", "choices": ["12", "3", "8"], "answerIndex": 0 },
+          { "id": "li_y2x", "skill": "m_linear", "bloom": "apply", "prompt": "If y = 2x and x = 4, then y = ?", "choices": ["8", "6", "2"], "answerIndex": 0 },
+          { "id": "li_4x20", "skill": "m_linear", "bloom": "analyze", "prompt": "Solve: 4x = 20. x = ?", "choices": ["5", "16", "80"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

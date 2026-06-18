@@ -1,0 +1,26 @@
+{
+  "id": "data",
+  "subject": "numeracy",
+  "strand": "n_data",
+  "band": 3,
+  "title": "Reading a chart",
+  "blurb": "Use the fruit votes to answer.",
+  "order": 3,
+  "skills": ["m_data"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "Favourite fruit (class votes)",
+        "passage": "A class voted for their favourite fruit. Mango got 8 votes, Banana got 5 votes, and Orange got 3 votes.",
+        "questions": [
+          { "id": "da_most", "skill": "m_data", "bloom": "analyze", "prompt": "Which fruit got the MOST votes?", "choices": ["Mango", "Banana", "Orange"], "answerIndex": 0 },
+          { "id": "da_fewest", "skill": "m_data", "bloom": "analyze", "prompt": "Which fruit got the FEWEST votes?", "choices": ["Orange", "Mango", "Banana"], "answerIndex": 0 },
+          { "id": "da_diff", "skill": "m_data", "bloom": "apply", "prompt": "How many more votes did Mango get than Orange?", "choices": ["5", "3", "8"], "answerIndex": 0 },
+          { "id": "da_total", "skill": "m_data", "bloom": "apply", "prompt": "How many children voted in total?", "choices": ["16", "13", "18"], "answerIndex": 0 },
+          { "id": "da_bar", "skill": "m_data", "bloom": "understand", "prompt": "A bar chart shows data using:", "choices": ["bars of different heights", "only words", "a single dot"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

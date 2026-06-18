@@ -1,0 +1,24 @@
+{
+  "id": "coordinates",
+  "subject": "numeracy",
+  "strand": "n_geometry",
+  "band": 5,
+  "title": "On the grid",
+  "blurb": "Plot and read coordinates.",
+  "order": 2,
+  "skills": ["m_coordinate"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "co_x", "skill": "m_coordinate", "bloom": "understand", "prompt": "In the point (3, 2), which number is the x-coordinate?", "choices": ["3", "2", "5"], "answerIndex": 0 },
+          { "id": "co_origin", "skill": "m_coordinate", "bloom": "recall", "prompt": "The point (0, 0) is called the:", "choices": ["origin", "peak", "centre line"], "answerIndex": 0 },
+          { "id": "co_plot", "skill": "m_coordinate", "bloom": "apply", "prompt": "To plot (4, 1) you go 4 to the right and 1:", "choices": ["up", "down", "left"], "answerIndex": 0 },
+          { "id": "co_axis", "skill": "m_coordinate", "bloom": "understand", "prompt": "Which axis is the horizontal one?", "choices": ["x-axis", "y-axis", "z-axis"], "answerIndex": 0 },
+          { "id": "co_negx", "skill": "m_coordinate", "bloom": "apply", "prompt": "A point with a negative x-coordinate is to the ___ of the origin.", "choices": ["left", "right", "above"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

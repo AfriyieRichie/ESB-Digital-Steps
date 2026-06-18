@@ -1,0 +1,24 @@
+{
+  "id": "shapes",
+  "subject": "numeracy",
+  "strand": "n_geometry",
+  "band": 1,
+  "title": "Know your shapes",
+  "blurb": "Find each shape.",
+  "order": 4,
+  "skills": ["m_shape"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "sh_triangle", "skill": "m_shape", "bloom": "recall", "prompt": "Which one is a triangle?", "choices": ["🔺", "⬛", "⚫"], "answerIndex": 0 },
+          { "id": "sh_circle", "skill": "m_shape", "bloom": "recall", "prompt": "Which one is a circle?", "choices": ["⚫", "🔺", "⬛"], "answerIndex": 0 },
+          { "id": "sh_square", "skill": "m_shape", "bloom": "recall", "prompt": "Which one is a square?", "choices": ["⬛", "🔺", "⚫"], "answerIndex": 0 },
+          { "id": "sh_sides", "skill": "m_shape", "bloom": "understand", "prompt": "How many sides does a triangle have?", "choices": ["3", "4", "1"], "answerIndex": 0 },
+          { "id": "sh_round", "skill": "m_shape", "bloom": "understand", "prompt": "Which shape is perfectly round?", "choices": ["circle", "square", "triangle"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

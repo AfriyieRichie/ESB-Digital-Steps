@@ -1,0 +1,24 @@
+{
+  "id": "prealgebra",
+  "subject": "numeracy",
+  "strand": "n_ops",
+  "band": 4,
+  "title": "Find the unknown",
+  "blurb": "Solve for x.",
+  "order": 2,
+  "skills": ["m_algebra1"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pa_x3_7", "skill": "m_algebra1", "bloom": "analyze", "prompt": "If x + 3 = 7, then x = ?", "choices": ["4", "10", "3"], "answerIndex": 0 },
+          { "id": "pa_2x10", "skill": "m_algebra1", "bloom": "analyze", "prompt": "If 2x = 10, then x = ?", "choices": ["5", "8", "20"], "answerIndex": 0 },
+          { "id": "pa_n4_6", "skill": "m_algebra1", "bloom": "analyze", "prompt": "Find n: n − 4 = 6", "choices": ["10", "2", "24"], "answerIndex": 0 },
+          { "id": "pa_xx12", "skill": "m_algebra1", "bloom": "analyze", "prompt": "If x + x = 12, then x = ?", "choices": ["6", "12", "3"], "answerIndex": 0 },
+          { "id": "pa_5q9", "skill": "m_algebra1", "bloom": "apply", "prompt": "5 + ? = 9", "choices": ["4", "14", "5"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

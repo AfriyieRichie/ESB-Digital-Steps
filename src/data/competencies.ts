@@ -71,10 +71,30 @@ const WRITING_COMPETENCIES: readonly Competency[] = [
   { id: 'w_structure', subject: 'writing', strand: 'w_compose', label: 'Structures an essay', prerequisites: [] },
   { id: 'w_argue', subject: 'writing', strand: 'w_compose', label: 'Builds a structured argument', prerequisites: [] },
 ];
+// Numeracy climbs counting -> operations -> fractions/data -> pre-algebra ->
+// algebra/coordinates/statistics across the five bands.
 const NUMERACY_COMPETENCIES: readonly Competency[] = [
+  // Band 1 — number sense
   { id: 'm_count', subject: 'numeracy', strand: 'n_number', label: 'Counts objects to 10', prerequisites: [] },
   { id: 'm_numeral', subject: 'numeracy', strand: 'n_number', label: 'Recognises numerals', prerequisites: ['m_count'] },
-  { id: 'm_add', subject: 'numeracy', strand: 'n_number', label: 'Adds within 10', prerequisites: ['m_count'] },
+  { id: 'm_compare', subject: 'numeracy', strand: 'n_number', label: 'Compares more & less', prerequisites: [] },
+  { id: 'm_shape', subject: 'numeracy', strand: 'n_geometry', label: 'Names 2-D shapes', prerequisites: [] },
+  // Band 2 — early operations
+  { id: 'm_add', subject: 'numeracy', strand: 'n_ops', label: 'Adds within 20', prerequisites: ['m_count'] },
+  { id: 'm_subtract', subject: 'numeracy', strand: 'n_ops', label: 'Subtracts within 20', prerequisites: [] },
+  { id: 'm_place', subject: 'numeracy', strand: 'n_number', label: 'Understands tens & ones', prerequisites: [] },
+  // Band 3 — operations & fractions
+  { id: 'm_multiply', subject: 'numeracy', strand: 'n_ops', label: 'Multiplies single digits', prerequisites: [] },
+  { id: 'm_fraction', subject: 'numeracy', strand: 'n_number', label: 'Understands simple fractions', prerequisites: [] },
+  { id: 'm_data', subject: 'numeracy', strand: 'n_data', label: 'Reads a bar chart', prerequisites: [] },
+  // Band 4 — pre-algebra
+  { id: 'm_percent', subject: 'numeracy', strand: 'n_ops', label: 'Finds simple percentages', prerequisites: [] },
+  { id: 'm_algebra1', subject: 'numeracy', strand: 'n_ops', label: 'Solves for an unknown', prerequisites: [] },
+  { id: 'm_negative', subject: 'numeracy', strand: 'n_number', label: 'Uses negative numbers', prerequisites: [] },
+  // Band 5 — algebra, geometry, statistics
+  { id: 'm_linear', subject: 'numeracy', strand: 'n_ops', label: 'Solves linear equations', prerequisites: [] },
+  { id: 'm_coordinate', subject: 'numeracy', strand: 'n_geometry', label: 'Plots coordinates', prerequisites: [] },
+  { id: 'm_stats', subject: 'numeracy', strand: 'n_data', label: 'Finds mean & median', prerequisites: [] },
 ];
 
 export const COMPETENCIES: readonly Competency[] = [

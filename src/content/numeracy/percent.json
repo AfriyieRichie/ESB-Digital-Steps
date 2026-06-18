@@ -1,0 +1,24 @@
+{
+  "id": "percent",
+  "subject": "numeracy",
+  "strand": "n_ops",
+  "band": 4,
+  "title": "Percentages",
+  "blurb": "Find simple percentages.",
+  "order": 1,
+  "skills": ["m_percent"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pc_50of20", "skill": "m_percent", "bloom": "apply", "prompt": "What is 50% of 20?", "choices": ["10", "5", "20"], "answerIndex": 0 },
+          { "id": "pc_10of100", "skill": "m_percent", "bloom": "apply", "prompt": "What is 10% of 100?", "choices": ["10", "1", "100"], "answerIndex": 0 },
+          { "id": "pc_25frac", "skill": "m_percent", "bloom": "understand", "prompt": "25% is the same as which fraction?", "choices": ["1/4", "1/2", "1/5"], "answerIndex": 0 },
+          { "id": "pc_discount", "skill": "m_percent", "bloom": "apply", "prompt": "A shirt costs 80 cedis with 50% off. What is the new price?", "choices": ["40", "30", "80"], "answerIndex": 0 },
+          { "id": "pc_100of7", "skill": "m_percent", "bloom": "understand", "prompt": "What is 100% of 7?", "choices": ["7", "70", "0"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

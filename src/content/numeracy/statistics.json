@@ -1,0 +1,24 @@
+{
+  "id": "statistics",
+  "subject": "numeracy",
+  "strand": "n_data",
+  "band": 5,
+  "title": "Mean and median",
+  "blurb": "Find the average.",
+  "order": 3,
+  "skills": ["m_stats"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "st_mean246", "skill": "m_stats", "bloom": "apply", "prompt": "Find the MEAN of 2, 4 and 6. (Add them, then divide by 3.)", "choices": ["4", "6", "2"], "answerIndex": 0 },
+          { "id": "st_median139", "skill": "m_stats", "bloom": "apply", "prompt": "Find the MEDIAN of 1, 3 and 9.", "choices": ["3", "1", "9"], "answerIndex": 0 },
+          { "id": "st_meanname", "skill": "m_stats", "bloom": "understand", "prompt": "The mean is also called the:", "choices": ["average", "middle", "biggest"], "answerIndex": 0 },
+          { "id": "st_mediandef", "skill": "m_stats", "bloom": "understand", "prompt": "The median is the ___ value when the numbers are in order.", "choices": ["middle", "largest", "smallest"], "answerIndex": 0 },
+          { "id": "st_mean1020", "skill": "m_stats", "bloom": "apply", "prompt": "Find the MEAN of 10 and 20.", "choices": ["15", "30", "10"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -53,7 +53,7 @@ describe('buildJourney', () => {
   it('respects the order field within a subject track', () => {
     const journey = buildJourney(lessonsForBand(1), new Set());
     const numeracy = journey.filter((p) => p.lesson.subject === 'numeracy').map((p) => p.lesson.id);
-    expect(numeracy).toEqual(['count', 'numerals']);
+    expect(numeracy).toEqual(['count', 'numerals', 'compare', 'shapes']);
   });
 });
 

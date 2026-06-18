@@ -1,0 +1,24 @@
+{
+  "id": "compare",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 1,
+  "title": "More or less",
+  "blurb": "Which is bigger?",
+  "order": 3,
+  "skills": ["m_compare"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cm_58", "skill": "m_compare", "bloom": "understand", "prompt": "Which number is MORE: 5 or 8?", "choices": ["8", "5"], "answerIndex": 0 },
+          { "id": "cm_37", "skill": "m_compare", "bloom": "understand", "prompt": "Which number is LESS: 3 or 7?", "choices": ["3", "7"], "answerIndex": 0 },
+          { "id": "cm_apples", "skill": "m_compare", "bloom": "understand", "prompt": "Which group has MORE: 🍎🍎🍎 or 🍎🍎🍎🍎🍎?", "choices": ["five apples", "three apples"], "answerIndex": 0 },
+          { "id": "cm_biggest", "skill": "m_compare", "bloom": "understand", "prompt": "Which number is the biggest?", "choices": ["9", "4", "6"], "answerIndex": 0 },
+          { "id": "cm_fewer", "skill": "m_compare", "bloom": "understand", "prompt": "Which is FEWER: 2 birds or 6 birds?", "choices": ["2 birds", "6 birds"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

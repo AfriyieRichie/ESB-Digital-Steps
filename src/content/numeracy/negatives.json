@@ -1,0 +1,24 @@
+{
+  "id": "negatives",
+  "subject": "numeracy",
+  "strand": "n_number",
+  "band": 4,
+  "title": "Below zero",
+  "blurb": "Work with negative numbers.",
+  "order": 3,
+  "skills": ["m_negative"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ng_colder", "skill": "m_negative", "bloom": "understand", "prompt": "Which is colder: −5° or 3°?", "choices": ["−5°", "3°"], "answerIndex": 0 },
+          { "id": "ng_2m5", "skill": "m_negative", "bloom": "apply", "prompt": "What is 2 − 5?", "choices": ["−3", "3", "7"], "answerIndex": 0 },
+          { "id": "ng_line", "skill": "m_negative", "bloom": "understand", "prompt": "On a number line, −2 is to the ___ of 0.", "choices": ["left", "right", "top"], "answerIndex": 0 },
+          { "id": "ng_smallest", "skill": "m_negative", "bloom": "analyze", "prompt": "Which is the smallest: −4, −1, or 2?", "choices": ["−4", "−1", "2"], "answerIndex": 0 },
+          { "id": "ng_add", "skill": "m_negative", "bloom": "apply", "prompt": "What is −3 + 5?", "choices": ["2", "−2", "8"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
