@@ -1,0 +1,24 @@
+{
+  "id": "teamwork",
+  "subject": "sel",
+  "strand": "sel_social",
+  "band": 4,
+  "title": "Working together",
+  "blurb": "Collaboration and solving conflict.",
+  "order": 1,
+  "skills": ["sel_collaborate"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "tw_disagree", "skill": "sel_collaborate", "bloom": "evaluate", "prompt": "Your group disagrees on a plan. The best move is to:", "choices": ["listen and find a fair compromise", "insist you are always right", "quit the group"], "answerIndex": 0 },
+          { "id": "tw_share", "skill": "sel_collaborate", "bloom": "understand", "prompt": "Good teamwork means everyone:", "choices": ["shares ideas and tasks", "does nothing", "argues"], "answerIndex": 0 },
+          { "id": "tw_listen", "skill": "sel_collaborate", "bloom": "apply", "prompt": "When someone else is talking, you should:", "choices": ["listen carefully", "interrupt them", "look away"], "answerIndex": 0 },
+          { "id": "tw_conflict", "skill": "sel_collaborate", "bloom": "evaluate", "prompt": "If two friends are arguing, a peaceful way to help is to:", "choices": ["help them talk and listen to each other", "pick a side and shout", "spread it around"], "answerIndex": 0 },
+          { "id": "tw_respect", "skill": "sel_collaborate", "bloom": "understand", "prompt": "Saying “I think… what do you think?” shows you:", "choices": ["respect others' ideas", "only care about yourself", "are not listening"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "feelings",
+  "subject": "sel",
+  "strand": "sel_emotion",
+  "band": 1,
+  "title": "How do they feel?",
+  "blurb": "Name the feeling.",
+  "order": 1,
+  "skills": ["sel_name"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fe_happy", "skill": "sel_name", "bloom": "recall", "prompt": "Ama is smiling and laughing. How does she feel?", "choices": ["happy", "sad", "angry"], "answerIndex": 0 },
+          { "id": "fe_sad", "skill": "sel_name", "bloom": "understand", "prompt": "Kofi is crying. He probably feels:", "choices": ["sad", "excited", "sleepy"], "answerIndex": 0 },
+          { "id": "fe_gift", "skill": "sel_name", "bloom": "understand", "prompt": "Your friend got a gift they love. They feel:", "choices": ["happy", "scared", "angry"], "answerIndex": 0 },
+          { "id": "fe_upset", "skill": "sel_name", "bloom": "understand", "prompt": "Someone took your toy without asking. You might feel:", "choices": ["upset", "joyful", "hungry"], "answerIndex": 0 },
+          { "id": "fe_normal", "skill": "sel_name", "bloom": "understand", "prompt": "It is okay to feel many different feelings. Feelings are:", "choices": ["normal for everyone", "only for adults", "always bad"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

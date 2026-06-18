@@ -1,0 +1,24 @@
+{
+  "id": "goals",
+  "subject": "sel",
+  "strand": "sel_regulate",
+  "band": 5,
+  "title": "Goals & growth mindset",
+  "blurb": "Keep going and grow.",
+  "order": 1,
+  "skills": ["sel_goals"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "go_mindset", "skill": "sel_goals", "bloom": "evaluate", "prompt": "You did badly on a test. A growth mindset says:", "choices": ["“I can improve with practice.”", "“I'm just bad at this.”", "“I'll never try again.”"], "answerIndex": 0 },
+          { "id": "go_goal", "skill": "sel_goals", "bloom": "evaluate", "prompt": "A good goal is:", "choices": ["specific, with a plan to reach it", "vague and impossible", "a secret you forget"], "answerIndex": 0 },
+          { "id": "go_stress", "skill": "sel_goals", "bloom": "apply", "prompt": "When you feel stressed before an exam, a healthy step is to:", "choices": ["plan, rest, and prepare a little each day", "panic the night before", "ignore it completely"], "answerIndex": 0 },
+          { "id": "go_persevere", "skill": "sel_goals", "bloom": "understand", "prompt": "Sticking with something difficult until you improve is called:", "choices": ["perseverance", "quitting", "luck"], "answerIndex": 0 },
+          { "id": "go_mistake", "skill": "sel_goals", "bloom": "evaluate", "prompt": "Learning from a mistake means you:", "choices": ["find what to do better next time", "pretend it never happened", "blame other people"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

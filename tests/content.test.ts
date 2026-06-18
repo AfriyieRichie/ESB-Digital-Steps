@@ -114,6 +114,13 @@ describe('bundled lessons', () => {
         'economy',
         'causes',
         'global',
+        // Social-emotional learning across the five bands
+        'feelings',
+        'calm',
+        'kindness',
+        'empathy',
+        'teamwork',
+        'goals',
       ]),
     );
   });

@@ -1,0 +1,26 @@
+{
+  "id": "empathy",
+  "subject": "sel",
+  "strand": "sel_social",
+  "band": 3,
+  "title": "Walking in their shoes",
+  "blurb": "Read, then understand how a friend feels.",
+  "order": 1,
+  "skills": ["sel_empathy"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "Kofi at Break Time",
+        "passage": "At break time, Kofi dropped his lunch on the ground, and it could not be eaten. He sat by himself in the corner, looking down and saying nothing, while the other children laughed and played nearby.",
+        "questions": [
+          { "id": "em_feel", "skill": "sel_empathy", "bloom": "analyze", "prompt": "How does Kofi most likely feel?", "choices": ["sad and left out", "very excited", "angry at the food"], "answerIndex": 0 },
+          { "id": "em_clue", "skill": "sel_empathy", "bloom": "analyze", "prompt": "How can you tell how he feels?", "choices": ["he is alone and looking down", "he is laughing loudly", "he is running about"], "answerIndex": 0 },
+          { "id": "em_word", "skill": "sel_empathy", "bloom": "understand", "prompt": "Understanding how another person feels is called:", "choices": ["empathy", "ignoring", "winning"], "answerIndex": 0 },
+          { "id": "em_kind", "skill": "sel_empathy", "bloom": "evaluate", "prompt": "The kindest thing to do is:", "choices": ["ask if he is okay and share some food", "point and laugh", "tell him to cheer up, then leave"], "answerIndex": 0 },
+          { "id": "em_friend", "skill": "sel_empathy", "bloom": "understand", "prompt": "Showing empathy helps friendships to:", "choices": ["grow stronger", "break apart", "disappear"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

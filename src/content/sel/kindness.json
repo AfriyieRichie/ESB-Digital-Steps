@@ -1,0 +1,24 @@
+{
+  "id": "kindness",
+  "subject": "sel",
+  "strand": "sel_social",
+  "band": 2,
+  "title": "Being kind",
+  "blurb": "Kindness and good manners.",
+  "order": 2,
+  "skills": ["sel_kind"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ki_fall", "skill": "sel_kind", "bloom": "apply", "prompt": "Your friend falls and hurts their knee. A kind thing to do is:", "choices": ["help them and ask if they are okay", "laugh at them", "walk away"], "answerIndex": 0 },
+          { "id": "ki_manners", "skill": "sel_kind", "bloom": "understand", "prompt": "Saying “please” and “thank you” shows:", "choices": ["good manners", "that you are bored", "nothing at all"], "answerIndex": 0 },
+          { "id": "ki_new", "skill": "sel_kind", "bloom": "apply", "prompt": "A new student doesn't know anyone yet. You could:", "choices": ["invite them to play", "ignore them", "tease them"], "answerIndex": 0 },
+          { "id": "ki_share", "skill": "sel_kind", "bloom": "understand", "prompt": "Sharing your snack with a hungry friend is:", "choices": ["kind", "unfair", "rude"], "answerIndex": 0 },
+          { "id": "ki_words", "skill": "sel_kind", "bloom": "understand", "prompt": "Kind words can make someone feel:", "choices": ["happy and welcome", "sad", "invisible"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

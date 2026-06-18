@@ -173,6 +173,18 @@ const SOCIAL_COMPETENCIES: readonly Competency[] = [
   { id: 'soc_global', subject: 'social', strand: 'soc_civics', label: 'Understands global citizenship', prerequisites: [] },
 ];
 
+// Social-emotional learning: naming feelings -> managing them -> empathy ->
+// collaboration & conflict -> self-regulation & goal-setting. Items reward the
+// kind / healthy choice; they complement a facilitator, not replace one.
+const SEL_COMPETENCIES: readonly Competency[] = [
+  { id: 'sel_name', subject: 'sel', strand: 'sel_emotion', label: 'Names feelings', prerequisites: [] },
+  { id: 'sel_calm', subject: 'sel', strand: 'sel_regulate', label: 'Calms down when upset', prerequisites: [] },
+  { id: 'sel_kind', subject: 'sel', strand: 'sel_social', label: 'Shows kindness', prerequisites: [] },
+  { id: 'sel_empathy', subject: 'sel', strand: 'sel_social', label: 'Understands how others feel', prerequisites: [] },
+  { id: 'sel_collaborate', subject: 'sel', strand: 'sel_social', label: 'Works with others & resolves conflict', prerequisites: [] },
+  { id: 'sel_goals', subject: 'sel', strand: 'sel_regulate', label: 'Sets goals & self-regulates', prerequisites: [] },
+];
+
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,
   ...WRITING_COMPETENCIES,
@@ -180,6 +192,7 @@ export const COMPETENCIES: readonly Competency[] = [
   ...SCIENCE_COMPETENCIES,
   ...LOGIC_COMPETENCIES,
   ...SOCIAL_COMPETENCIES,
+  ...SEL_COMPETENCIES,
   ...DIGITAL_COMPETENCIES,
 ];
 

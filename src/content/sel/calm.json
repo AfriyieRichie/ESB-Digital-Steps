@@ -1,0 +1,24 @@
+{
+  "id": "calm",
+  "subject": "sel",
+  "strand": "sel_regulate",
+  "band": 2,
+  "title": "Calming down",
+  "blurb": "What to do with big feelings.",
+  "order": 1,
+  "skills": ["sel_calm"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "cl_angry", "skill": "sel_calm", "bloom": "apply", "prompt": "You feel very angry. A good first thing to do is:", "choices": ["take a slow, deep breath", "shout at someone", "throw something"], "answerIndex": 0 },
+          { "id": "cl_hard", "skill": "sel_calm", "bloom": "apply", "prompt": "When a task feels too hard, you can:", "choices": ["take a short break and try again", "give up forever", "cry and stop"], "answerIndex": 0 },
+          { "id": "cl_count", "skill": "sel_calm", "bloom": "understand", "prompt": "Counting slowly to ten when you are upset can help you:", "choices": ["calm down", "get angrier", "fall asleep"], "answerIndex": 0 },
+          { "id": "cl_worry", "skill": "sel_calm", "bloom": "apply", "prompt": "If you feel worried, a helpful thing is to:", "choices": ["talk to a trusted adult", "keep it all inside", "hide away"], "answerIndex": 0 },
+          { "id": "cl_ok", "skill": "sel_calm", "bloom": "evaluate", "prompt": "Strong feelings like anger are okay, but it is NOT okay to:", "choices": ["hurt others or yourself", "feel them", "talk about them"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

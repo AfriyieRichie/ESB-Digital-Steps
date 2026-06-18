@@ -44,6 +44,7 @@ export const STRANDS: readonly Strand[] = [
   // Social-emotional learning
   { id: 'sel_emotion', subject: 'sel', label: 'Emotions' },
   { id: 'sel_social', subject: 'sel', label: 'Empathy & collaboration' },
+  { id: 'sel_regulate', subject: 'sel', label: 'Self-regulation & goals' },
   // Creative arts
   { id: 'art_make', subject: 'arts', label: 'Drawing & making' },
   { id: 'art_music', subject: 'arts', label: 'Music' },
