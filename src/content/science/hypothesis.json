@@ -1,0 +1,26 @@
+{
+  "id": "hypothesis",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 4,
+  "title": "A fair test",
+  "blurb": "Read the experiment, then reason about it.",
+  "order": 1,
+  "skills": ["sci_hypothesis"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "Do plants need sunlight?",
+        "passage": "Ama thinks plants grow better with sunlight. She puts one plant on a sunny windowsill and an identical plant in a dark cupboard. She gives both plants the same amount of water for two weeks, then compares how much they have grown.",
+        "questions": [
+          { "id": "hy_hyp", "skill": "sci_hypothesis", "bloom": "analyze", "prompt": "What is Ama's hypothesis (her idea to test)?", "choices": ["Plants grow better with sunlight", "Plants need no water", "Cupboards are dark"], "answerIndex": 0 },
+          { "id": "hy_samewater", "skill": "sci_hypothesis", "bloom": "evaluate", "prompt": "Why does she give both plants the same water?", "choices": ["So sunlight is the only thing being tested", "To use less water", "Because plants dislike water"], "answerIndex": 0 },
+          { "id": "hy_control", "skill": "sci_hypothesis", "bloom": "analyze", "prompt": "The plant in the dark cupboard acts as the:", "choices": ["control to compare against", "source of sunlight", "hypothesis"], "answerIndex": 0 },
+          { "id": "hy_support", "skill": "sci_hypothesis", "bloom": "evaluate", "prompt": "If the sunny plant grows much more, the result:", "choices": ["supports her hypothesis", "proves nothing about light", "is only an opinion"], "answerIndex": 0 },
+          { "id": "hy_fair", "skill": "sci_hypothesis", "bloom": "understand", "prompt": "Changing only ONE thing at a time makes the test:", "choices": ["fair", "unfair", "impossible"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

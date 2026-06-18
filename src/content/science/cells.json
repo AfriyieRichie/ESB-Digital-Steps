@@ -1,0 +1,24 @@
+{
+  "id": "cells",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 5,
+  "title": "Cells",
+  "blurb": "The building blocks of life.",
+  "order": 1,
+  "skills": ["sci_cells"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ce_unit", "skill": "sci_cells", "bloom": "understand", "prompt": "The smallest living unit of all living things is the:", "choices": ["cell", "atom", "brick"], "answerIndex": 0 },
+          { "id": "ce_chloro", "skill": "sci_cells", "bloom": "understand", "prompt": "Plant cells make food from sunlight in their:", "choices": ["chloroplasts", "bones", "walls only"], "answerIndex": 0 },
+          { "id": "ce_nucleus", "skill": "sci_cells", "bloom": "understand", "prompt": "The part that controls a cell and holds its DNA is the:", "choices": ["nucleus", "membrane", "floor"], "answerIndex": 0 },
+          { "id": "ce_tissue", "skill": "sci_cells", "bloom": "analyze", "prompt": "Many cells of the same type working together form a:", "choices": ["tissue", "planet", "mineral"], "answerIndex": 0 },
+          { "id": "ce_divide", "skill": "sci_cells", "bloom": "understand", "prompt": "Living things grow because their cells:", "choices": ["divide and multiply", "disappear", "melt"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

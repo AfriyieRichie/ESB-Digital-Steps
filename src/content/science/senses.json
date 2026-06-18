@@ -1,0 +1,24 @@
+{
+  "id": "senses",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 1,
+  "title": "My five senses",
+  "blurb": "See, hear, smell, taste, touch.",
+  "order": 1,
+  "skills": ["sci_senses"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "se_see", "skill": "sci_senses", "bloom": "recall", "prompt": "Which sense do you use to SEE a rainbow?", "choices": ["eyes", "ears", "nose"], "answerIndex": 0 },
+          { "id": "se_hear", "skill": "sci_senses", "bloom": "recall", "prompt": "Which sense do you use to HEAR music?", "choices": ["ears", "eyes", "tongue"], "answerIndex": 0 },
+          { "id": "se_smell", "skill": "sci_senses", "bloom": "recall", "prompt": "Which body part do you use to SMELL a flower?", "choices": ["nose", "hand", "ear"], "answerIndex": 0 },
+          { "id": "se_taste", "skill": "sci_senses", "bloom": "understand", "prompt": "You use your tongue to:", "choices": ["taste", "see", "hear"], "answerIndex": 0 },
+          { "id": "se_touch", "skill": "sci_senses", "bloom": "understand", "prompt": "Feeling whether something is soft uses your sense of:", "choices": ["touch", "smell", "sight"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

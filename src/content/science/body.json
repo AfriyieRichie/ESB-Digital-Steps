@@ -1,0 +1,24 @@
+{
+  "id": "body",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 4,
+  "title": "The human body",
+  "blurb": "Organs and systems.",
+  "order": 3,
+  "skills": ["sci_body"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "bo_heart", "skill": "sci_body", "bloom": "understand", "prompt": "Which organ pumps blood around the body?", "choices": ["heart", "stomach", "ear"], "answerIndex": 0 },
+          { "id": "bo_lungs", "skill": "sci_body", "bloom": "understand", "prompt": "We breathe using our:", "choices": ["lungs", "liver", "bones"], "answerIndex": 0 },
+          { "id": "bo_brain", "skill": "sci_body", "bloom": "understand", "prompt": "The brain controls the body and helps us:", "choices": ["think and move", "only digest food", "only grow hair"], "answerIndex": 0 },
+          { "id": "bo_skeleton", "skill": "sci_body", "bloom": "recall", "prompt": "The skeleton is made of:", "choices": ["bones", "muscles only", "blood"], "answerIndex": 0 },
+          { "id": "bo_digest", "skill": "sci_body", "bloom": "understand", "prompt": "Which system breaks down the food we eat?", "choices": ["the digestive system", "the nervous system", "the skeleton"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

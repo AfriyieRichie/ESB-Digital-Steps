@@ -1,0 +1,24 @@
+{
+  "id": "atoms",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 5,
+  "title": "Atoms & matter",
+  "blurb": "What everything is made of.",
+  "order": 2,
+  "skills": ["sci_atoms"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "at_particles", "skill": "sci_atoms", "bloom": "understand", "prompt": "Everything around us is made of tiny particles called:", "choices": ["atoms", "cells", "planets"], "answerIndex": 0 },
+          { "id": "at_molecule", "skill": "sci_atoms", "bloom": "understand", "prompt": "Two or more atoms joined together form a:", "choices": ["molecule", "galaxy", "muscle"], "answerIndex": 0 },
+          { "id": "at_water", "skill": "sci_atoms", "bloom": "recall", "prompt": "Water is made of hydrogen and:", "choices": ["oxygen", "iron", "gold"], "answerIndex": 0 },
+          { "id": "at_nucleus", "skill": "sci_atoms", "bloom": "understand", "prompt": "The centre of an atom is called the:", "choices": ["nucleus", "shell", "orbit"], "answerIndex": 0 },
+          { "id": "at_element", "skill": "sci_atoms", "bloom": "analyze", "prompt": "A substance made of only one kind of atom is an:", "choices": ["element", "mixture", "opinion"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

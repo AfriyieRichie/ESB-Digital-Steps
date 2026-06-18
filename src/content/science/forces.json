@@ -1,0 +1,24 @@
+{
+  "id": "forces",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 4,
+  "title": "Forces & energy",
+  "blurb": "Pushes, pulls and energy.",
+  "order": 2,
+  "skills": ["sci_forces"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fo_gravity", "skill": "sci_forces", "bloom": "understand", "prompt": "What force pulls objects down towards the ground?", "choices": ["gravity", "sound", "light"], "answerIndex": 0 },
+          { "id": "fo_force", "skill": "sci_forces", "bloom": "recall", "prompt": "A push or a pull is called a:", "choices": ["force", "colour", "number"], "answerIndex": 0 },
+          { "id": "fo_friction", "skill": "sci_forces", "bloom": "understand", "prompt": "Friction is a force that:", "choices": ["slows moving things down", "speeds light up", "makes colour"], "answerIndex": 0 },
+          { "id": "fo_sun", "skill": "sci_forces", "bloom": "understand", "prompt": "Energy from the sun reaches us mainly as:", "choices": ["light and heat", "sound", "gravity"], "answerIndex": 0 },
+          { "id": "fo_magnet", "skill": "sci_forces", "bloom": "apply", "prompt": "A magnet attracts objects made of:", "choices": ["iron", "wood", "plastic"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

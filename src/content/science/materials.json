@@ -1,0 +1,24 @@
+{
+  "id": "materials",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 2,
+  "title": "Everyday materials",
+  "blurb": "What things are made of.",
+  "order": 2,
+  "skills": ["sci_materials"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ma_hard", "skill": "sci_materials", "bloom": "understand", "prompt": "Which material is HARD?", "choices": ["a rock", "cotton wool", "water"], "answerIndex": 0 },
+          { "id": "ma_glass", "skill": "sci_materials", "bloom": "understand", "prompt": "Which material is used to make windows?", "choices": ["glass", "wood", "cloth"], "answerIndex": 0 },
+          { "id": "ma_seethrough", "skill": "sci_materials", "bloom": "apply", "prompt": "Which one can you see through?", "choices": ["clear glass", "a brick", "a wooden door"], "answerIndex": 0 },
+          { "id": "ma_wood", "skill": "sci_materials", "bloom": "recall", "prompt": "Wood comes from:", "choices": ["trees", "rocks", "metal"], "answerIndex": 0 },
+          { "id": "ma_liquid", "skill": "sci_materials", "bloom": "understand", "prompt": "Which one is a liquid?", "choices": ["water", "a stone", "a chair"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

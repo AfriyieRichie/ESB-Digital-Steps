@@ -1,0 +1,26 @@
+{
+  "id": "energy",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 5,
+  "title": "Energy in an ecosystem",
+  "blurb": "Read about a food chain, then reason.",
+  "order": 3,
+  "skills": ["sci_energy"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "A Grassland Food Chain",
+        "passage": "In a grassland, the sun's energy helps the grass grow. Grasshoppers eat the grass, and frogs eat the grasshoppers. Snakes then eat the frogs. When any of these living things die, tiny decomposers break them down, returning nutrients to the soil so new grass can grow.",
+        "questions": [
+          { "id": "en_start", "skill": "sci_energy", "bloom": "understand", "prompt": "Where does the energy in this food chain START?", "choices": ["The sun", "The snake", "The soil"], "answerIndex": 0 },
+          { "id": "en_eat", "skill": "sci_energy", "bloom": "recall", "prompt": "What do the grasshoppers eat?", "choices": ["Grass", "Frogs", "Snakes"], "answerIndex": 0 },
+          { "id": "en_consumer", "skill": "sci_energy", "bloom": "understand", "prompt": "An animal that eats other living things is called a:", "choices": ["consumer", "producer", "rock"], "answerIndex": 0 },
+          { "id": "en_decomp", "skill": "sci_energy", "bloom": "analyze", "prompt": "What do decomposers do?", "choices": ["Break down dead things into nutrients", "Make sunlight", "Eat the snakes"], "answerIndex": 0 },
+          { "id": "en_remove", "skill": "sci_energy", "bloom": "evaluate", "prompt": "If all the frogs disappeared, the number of grasshoppers would most likely:", "choices": ["increase", "stay exactly the same", "drop to zero at once"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

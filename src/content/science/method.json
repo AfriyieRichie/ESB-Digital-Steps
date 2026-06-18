@@ -1,0 +1,24 @@
+{
+  "id": "method",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 3,
+  "title": "How scientists work",
+  "blurb": "The steps of an experiment.",
+  "order": 3,
+  "skills": ["sci_method"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "me_first", "skill": "sci_method", "bloom": "understand", "prompt": "The first step of an experiment is usually to:", "choices": ["ask a question", "throw things away", "go home"], "answerIndex": 0 },
+          { "id": "me_observe", "skill": "sci_method", "bloom": "understand", "prompt": "A scientist who watches carefully is making an:", "choices": ["observation", "invention", "argument"], "answerIndex": 0 },
+          { "id": "me_record", "skill": "sci_method", "bloom": "understand", "prompt": "We record what happens so we can:", "choices": ["remember and compare results", "forget it", "hide it"], "answerIndex": 0 },
+          { "id": "me_repeat", "skill": "sci_method", "bloom": "analyze", "prompt": "If you do a test again and get the same result, it is:", "choices": ["repeatable", "broken", "magic"], "answerIndex": 0 },
+          { "id": "me_safe", "skill": "sci_method", "bloom": "understand", "prompt": "Equipment should always be used:", "choices": ["safely and carefully", "quickly and roughly", "never at all"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

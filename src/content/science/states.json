@@ -1,0 +1,24 @@
+{
+  "id": "states",
+  "subject": "science",
+  "strand": "sci_inquiry",
+  "band": 3,
+  "title": "Solid, liquid, gas",
+  "blurb": "The three states of matter.",
+  "order": 1,
+  "skills": ["sci_states"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "st_ice", "skill": "sci_states", "bloom": "understand", "prompt": "Ice is water in which state?", "choices": ["solid", "liquid", "gas"], "answerIndex": 0 },
+          { "id": "st_gas", "skill": "sci_states", "bloom": "understand", "prompt": "Which one is a GAS?", "choices": ["the air we breathe", "a brick", "milk"], "answerIndex": 0 },
+          { "id": "st_melt", "skill": "sci_states", "bloom": "apply", "prompt": "When you heat ice, it turns into:", "choices": ["liquid water", "a gas at once", "a hard rock"], "answerIndex": 0 },
+          { "id": "st_shape", "skill": "sci_states", "bloom": "understand", "prompt": "A liquid takes the shape of its:", "choices": ["container", "nothing at all", "own fixed shape"], "answerIndex": 0 },
+          { "id": "st_steam", "skill": "sci_states", "bloom": "analyze", "prompt": "Steam rising from boiling water is water as a:", "choices": ["gas", "solid", "metal"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

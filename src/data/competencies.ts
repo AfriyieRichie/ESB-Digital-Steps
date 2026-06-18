@@ -97,10 +97,34 @@ const NUMERACY_COMPETENCIES: readonly Competency[] = [
   { id: 'm_stats', subject: 'numeracy', strand: 'n_data', label: 'Finds mean & median', prerequisites: [] },
 ];
 
+// Science scales sensory exploration -> classification -> experiments &
+// hypotheses -> discipline-specific concepts across the five bands.
+const SCIENCE_COMPETENCIES: readonly Competency[] = [
+  // Band 1
+  { id: 'sci_senses', subject: 'science', strand: 'sci_observe', label: 'Uses the five senses', prerequisites: [] },
+  { id: 'sci_living', subject: 'science', strand: 'sci_observe', label: 'Sorts living & non-living', prerequisites: [] },
+  // Band 2
+  { id: 'sci_animals', subject: 'science', strand: 'sci_observe', label: 'Groups animals & plants', prerequisites: [] },
+  { id: 'sci_materials', subject: 'science', strand: 'sci_observe', label: 'Describes materials', prerequisites: [] },
+  // Band 3
+  { id: 'sci_states', subject: 'science', strand: 'sci_inquiry', label: 'Knows states of matter', prerequisites: [] },
+  { id: 'sci_lifecycle', subject: 'science', strand: 'sci_observe', label: 'Understands life cycles', prerequisites: [] },
+  { id: 'sci_method', subject: 'science', strand: 'sci_inquiry', label: "Follows an experiment's steps", prerequisites: [] },
+  // Band 4
+  { id: 'sci_hypothesis', subject: 'science', strand: 'sci_inquiry', label: 'Forms & tests a hypothesis', prerequisites: [] },
+  { id: 'sci_forces', subject: 'science', strand: 'sci_inquiry', label: 'Understands forces & energy', prerequisites: [] },
+  { id: 'sci_body', subject: 'science', strand: 'sci_observe', label: 'Knows human body systems', prerequisites: [] },
+  // Band 5
+  { id: 'sci_cells', subject: 'science', strand: 'sci_observe', label: 'Understands cells', prerequisites: [] },
+  { id: 'sci_atoms', subject: 'science', strand: 'sci_inquiry', label: 'Understands atoms & matter', prerequisites: [] },
+  { id: 'sci_energy', subject: 'science', strand: 'sci_inquiry', label: 'Understands energy & ecosystems', prerequisites: [] },
+];
+
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,
   ...WRITING_COMPETENCIES,
   ...NUMERACY_COMPETENCIES,
+  ...SCIENCE_COMPETENCIES,
   ...DIGITAL_COMPETENCIES,
 ];
 

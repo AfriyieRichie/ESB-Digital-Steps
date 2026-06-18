@@ -1,0 +1,24 @@
+{
+  "id": "living",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 1,
+  "title": "Living or not?",
+  "blurb": "Sort living things from objects.",
+  "order": 2,
+  "skills": ["sci_living"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "lv_dog", "skill": "sci_living", "bloom": "understand", "prompt": "Which one is LIVING?", "choices": ["🐶 a dog", "🪨 a rock", "🚗 a car"], "answerIndex": 0 },
+          { "id": "lv_stone", "skill": "sci_living", "bloom": "understand", "prompt": "Which one is NON-living?", "choices": ["🪨 a stone", "🌳 a tree", "🐝 a bee"], "answerIndex": 0 },
+          { "id": "lv_grow", "skill": "sci_living", "bloom": "understand", "prompt": "Living things can:", "choices": ["grow and need food", "never change", "be switched off"], "answerIndex": 0 },
+          { "id": "lv_water", "skill": "sci_living", "bloom": "apply", "prompt": "Which one needs water to stay alive?", "choices": ["a plant", "a spoon", "a ball"], "answerIndex": 0 },
+          { "id": "lv_car", "skill": "sci_living", "bloom": "analyze", "prompt": "A car is non-living because it:", "choices": ["cannot grow or eat", "is big", "is fast"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

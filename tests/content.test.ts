@@ -62,6 +62,20 @@ describe('bundled lessons', () => {
         'linear',
         'coordinates',
         'statistics',
+        // Science curriculum across the five bands
+        'senses',
+        'living',
+        'animals',
+        'materials',
+        'states',
+        'lifecycle',
+        'method',
+        'hypothesis',
+        'forces',
+        'body',
+        'cells',
+        'atoms',
+        'energy',
       ]),
     );
   });

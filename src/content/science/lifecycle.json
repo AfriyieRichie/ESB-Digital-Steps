@@ -1,0 +1,26 @@
+{
+  "id": "lifecycle",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 3,
+  "title": "Life cycle of a butterfly",
+  "blurb": "Read, then trace the stages.",
+  "order": 2,
+  "skills": ["sci_lifecycle"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "From Egg to Butterfly",
+        "passage": "A butterfly begins life as a tiny egg laid on a leaf. The egg hatches into a caterpillar, which eats leaves and grows bigger and bigger. The caterpillar then forms a hard case called a chrysalis. Inside the chrysalis its body changes completely, and at last a beautiful butterfly comes out.",
+        "questions": [
+          { "id": "lc_first", "skill": "sci_lifecycle", "bloom": "recall", "prompt": "What is the FIRST stage of a butterfly's life?", "choices": ["An egg", "A butterfly", "A chrysalis"], "answerIndex": 0 },
+          { "id": "lc_eat", "skill": "sci_lifecycle", "bloom": "understand", "prompt": "What does the caterpillar do to grow?", "choices": ["Eats leaves", "Flies away", "Only sleeps"], "answerIndex": 0 },
+          { "id": "lc_case", "skill": "sci_lifecycle", "bloom": "recall", "prompt": "What is the hard case called?", "choices": ["A chrysalis", "A nest", "An egg shell"], "answerIndex": 0 },
+          { "id": "lc_order", "skill": "sci_lifecycle", "bloom": "analyze", "prompt": "Which stage comes JUST BEFORE the butterfly?", "choices": ["Chrysalis", "Egg", "Caterpillar"], "answerIndex": 0 },
+          { "id": "lc_meta", "skill": "sci_lifecycle", "bloom": "understand", "prompt": "This big change in an animal's body is called:", "choices": ["metamorphosis", "photosynthesis", "gravity"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

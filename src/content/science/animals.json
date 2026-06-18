@@ -1,0 +1,24 @@
+{
+  "id": "animals",
+  "subject": "science",
+  "strand": "sci_observe",
+  "band": 2,
+  "title": "Animals & plants",
+  "blurb": "Group living things.",
+  "order": 1,
+  "skills": ["sci_animals"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "an_fly", "skill": "sci_animals", "bloom": "understand", "prompt": "Which animal can FLY?", "choices": ["🦅 eagle", "🐟 fish", "🐍 snake"], "answerIndex": 0 },
+          { "id": "an_mammal", "skill": "sci_animals", "bloom": "understand", "prompt": "Which one is a mammal (has fur and feeds its babies milk)?", "choices": ["🐄 cow", "🐟 fish", "🐛 worm"], "answerIndex": 0 },
+          { "id": "an_gills", "skill": "sci_animals", "bloom": "understand", "prompt": "Fish breathe underwater using their:", "choices": ["gills", "lungs", "wings"], "answerIndex": 0 },
+          { "id": "an_water", "skill": "sci_animals", "bloom": "apply", "prompt": "Which animal lives in water?", "choices": ["🐠 fish", "🐓 chicken", "🐫 camel"], "answerIndex": 0 },
+          { "id": "an_plant", "skill": "sci_animals", "bloom": "understand", "prompt": "A green plant makes its own food using:", "choices": ["sunlight", "meat", "stones"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
