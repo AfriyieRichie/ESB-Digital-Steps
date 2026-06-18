@@ -1,0 +1,24 @@
+{
+  "id": "validity",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 5,
+  "title": "Does it follow?",
+  "blurb": "Judge whether a conclusion is valid.",
+  "order": 1,
+  "skills": ["l_argument"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "va_rex", "skill": "l_argument", "bloom": "evaluate", "prompt": "All dogs bark. Rex is a dog. Conclusion: Rex barks. Is this valid?", "choices": ["Yes — it follows", "No", "Maybe"], "answerIndex": 0 },
+          { "id": "va_tail", "skill": "l_argument", "bloom": "evaluate", "prompt": "All cats have tails. This animal has a tail. Conclusion: it is a cat. Valid?", "choices": ["No — other animals have tails too", "Yes", "Always"], "answerIndex": 0 },
+          { "id": "va_def", "skill": "l_argument", "bloom": "understand", "prompt": "A conclusion that MUST be true if the reasons are true is:", "choices": ["valid", "loud", "colourful"], "answerIndex": 0 },
+          { "id": "va_invalid", "skill": "l_argument", "bloom": "evaluate", "prompt": "If the premises are true but the conclusion can still be false, the argument is:", "choices": ["invalid", "valid", "true"], "answerIndex": 0 },
+          { "id": "va_basis", "skill": "l_argument", "bloom": "understand", "prompt": "Good reasoning is based on:", "choices": ["evidence and logic", "feelings only", "shouting"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

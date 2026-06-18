@@ -134,11 +134,32 @@ const SCIENCE_COMPETENCIES: readonly Competency[] = [
   { id: 'sci_energy', subject: 'science', strand: 'sci_inquiry', label: 'Understands energy & ecosystems', prerequisites: [] },
 ];
 
+// Logic & problem solving: pattern puzzles -> sequencing -> deduction &
+// analogies -> multi-step & conditional reasoning -> argument analysis.
+const LOGIC_COMPETENCIES: readonly Competency[] = [
+  // Band 1
+  { id: 'l_pattern1', subject: 'logic', strand: 'l_pattern', label: 'Continues a pattern', prerequisites: [] },
+  { id: 'l_sort', subject: 'logic', strand: 'l_reason', label: 'Sorts and finds what does not belong', prerequisites: [] },
+  // Band 2
+  { id: 'l_sequence', subject: 'logic', strand: 'l_pattern', label: 'Finds the next in a sequence', prerequisites: [] },
+  { id: 'l_oddone', subject: 'logic', strand: 'l_reason', label: 'Finds the odd one out', prerequisites: [] },
+  // Band 3
+  { id: 'l_analogy', subject: 'logic', strand: 'l_reason', label: 'Completes analogies', prerequisites: [] },
+  { id: 'l_deduce', subject: 'logic', strand: 'l_reason', label: 'Uses clues to deduce', prerequisites: [] },
+  // Band 4
+  { id: 'l_multistep', subject: 'logic', strand: 'l_reason', label: 'Solves multi-step problems', prerequisites: [] },
+  { id: 'l_conditional', subject: 'logic', strand: 'l_reason', label: 'Reasons with all / some / if-then', prerequisites: [] },
+  // Band 5
+  { id: 'l_argument', subject: 'logic', strand: 'l_reason', label: 'Judges if a conclusion follows', prerequisites: [] },
+  { id: 'l_fallacy', subject: 'logic', strand: 'l_reason', label: 'Spots flaws in reasoning', prerequisites: [] },
+];
+
 export const COMPETENCIES: readonly Competency[] = [
   ...READING_COMPETENCIES,
   ...WRITING_COMPETENCIES,
   ...NUMERACY_COMPETENCIES,
   ...SCIENCE_COMPETENCIES,
+  ...LOGIC_COMPETENCIES,
   ...DIGITAL_COMPETENCIES,
 ];
 

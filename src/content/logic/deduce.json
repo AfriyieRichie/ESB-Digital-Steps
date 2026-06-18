@@ -1,0 +1,26 @@
+{
+  "id": "deduce",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 3,
+  "title": "Use the clues",
+  "blurb": "Read the clues and work it out.",
+  "order": 2,
+  "skills": ["l_deduce"],
+  "steps": [
+    {
+      "activityType": "read",
+      "config": {
+        "title": "The Race",
+        "passage": "Three friends ran a race: Ama, Kofi and Esi. Ama finished before Kofi. Esi finished last of all. No two runners tied.",
+        "questions": [
+          { "id": "de_last", "skill": "l_deduce", "bloom": "recall", "prompt": "Who finished LAST?", "choices": ["Esi", "Ama", "Kofi"], "answerIndex": 0 },
+          { "id": "de_first", "skill": "l_deduce", "bloom": "analyze", "prompt": "Who finished FIRST?", "choices": ["Ama", "Kofi", "Esi"], "answerIndex": 0 },
+          { "id": "de_kofi", "skill": "l_deduce", "bloom": "analyze", "prompt": "Did Kofi finish before or after Ama?", "choices": ["after", "before", "at the same time"], "answerIndex": 0 },
+          { "id": "de_before", "skill": "l_deduce", "bloom": "analyze", "prompt": "How many runners finished before Kofi?", "choices": ["1 (just Ama)", "2", "0"], "answerIndex": 0 },
+          { "id": "de_name", "skill": "l_deduce", "bloom": "understand", "prompt": "Working out an answer from clues is called:", "choices": ["deduction", "guessing", "colouring"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

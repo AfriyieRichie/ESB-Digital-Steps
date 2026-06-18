@@ -1,0 +1,24 @@
+{
+  "id": "sorting",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 1,
+  "title": "Which does not belong?",
+  "blurb": "Find the odd one.",
+  "order": 2,
+  "skills": ["l_sort"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "so_car", "skill": "l_sort", "bloom": "understand", "prompt": "Which one does NOT belong? 🍎 🍌 🍇 🚗", "choices": ["🚗", "🍎", "🍌"], "answerIndex": 0 },
+          { "id": "so_tree", "skill": "l_sort", "bloom": "understand", "prompt": "Which is NOT an animal? 🐶 🐱 🌳 🐮", "choices": ["🌳", "🐶", "🐱"], "answerIndex": 0 },
+          { "id": "so_square", "skill": "l_sort", "bloom": "analyze", "prompt": "Three are round. Which is the odd one? ⚫ 🔴 ⬛ 🟠", "choices": ["⬛", "⚫", "🔴"], "answerIndex": 0 },
+          { "id": "so_banana", "skill": "l_sort", "bloom": "analyze", "prompt": "Which does NOT belong with clothes? shirt, hat, shoe, banana", "choices": ["banana", "shirt", "hat"], "answerIndex": 0 },
+          { "id": "so_def", "skill": "l_sort", "bloom": "understand", "prompt": "Sorting means putting things into:", "choices": ["groups by a rule", "a random pile", "the bin"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

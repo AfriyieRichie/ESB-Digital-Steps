@@ -1,0 +1,24 @@
+{
+  "id": "fallacies",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 5,
+  "title": "Spot the flaw",
+  "blurb": "Find the mistake in the reasoning.",
+  "order": 2,
+  "skills": ["l_fallacy"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "fa_everyone", "skill": "l_fallacy", "bloom": "evaluate", "prompt": "“Everyone is doing it, so it must be right.” This reasoning is:", "choices": ["a flaw — popularity is not proof", "perfectly correct", "a fact"], "answerIndex": 0 },
+          { "id": "fa_person", "skill": "l_fallacy", "bloom": "understand", "prompt": "Attacking the person instead of their argument is a:", "choices": ["fallacy", "valid point", "fact"], "answerIndex": 0 },
+          { "id": "fa_slope", "skill": "l_fallacy", "bloom": "analyze", "prompt": "“If we allow this small thing, the very worst will surely happen.” This is a:", "choices": ["slippery-slope flaw", "strong proof", "statistic"], "answerIndex": 0 },
+          { "id": "fa_example", "skill": "l_fallacy", "bloom": "evaluate", "prompt": "Using only one example to prove a big claim is:", "choices": ["weak evidence", "strong evidence", "a law"], "answerIndex": 0 },
+          { "id": "fa_why", "skill": "l_fallacy", "bloom": "understand", "prompt": "Spotting flaws in reasoning helps you:", "choices": ["think critically", "be fooled easily", "stop thinking"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "analogies",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 3,
+  "title": "Analogies",
+  "blurb": "A is to B as C is to ___.",
+  "order": 1,
+  "skills": ["l_analogy"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ay_puppy", "skill": "l_analogy", "bloom": "analyze", "prompt": "Dog is to puppy as cat is to ___.", "choices": ["kitten", "bark", "tree"], "answerIndex": 0 },
+          { "id": "ay_down", "skill": "l_analogy", "bloom": "analyze", "prompt": "Hot is to cold as up is to ___.", "choices": ["down", "warm", "sky"], "answerIndex": 0 },
+          { "id": "ay_shoe", "skill": "l_analogy", "bloom": "analyze", "prompt": "Hand is to glove as foot is to ___.", "choices": ["shoe", "head", "ball"], "answerIndex": 0 },
+          { "id": "ay_hive", "skill": "l_analogy", "bloom": "analyze", "prompt": "Bird is to nest as bee is to ___.", "choices": ["hive", "honey", "fly"], "answerIndex": 0 },
+          { "id": "ay_slow", "skill": "l_analogy", "bloom": "analyze", "prompt": "Big is to small as fast is to ___.", "choices": ["slow", "quick", "car"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

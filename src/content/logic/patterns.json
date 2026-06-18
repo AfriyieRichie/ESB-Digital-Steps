@@ -1,0 +1,24 @@
+{
+  "id": "patterns",
+  "subject": "logic",
+  "strand": "l_pattern",
+  "band": 1,
+  "title": "What comes next?",
+  "blurb": "Continue the pattern.",
+  "order": 1,
+  "skills": ["l_pattern1"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "pt_rb", "skill": "l_pattern1", "bloom": "apply", "prompt": "🔴 🔵 🔴 🔵 🔴 — what comes next?", "choices": ["🔵", "🔴", "🟢"], "answerIndex": 0 },
+          { "id": "pt_shapes", "skill": "l_pattern1", "bloom": "apply", "prompt": "🔺 🔺 ⬛ 🔺 🔺 ⬛ 🔺 🔺 — what comes next?", "choices": ["⬛", "🔺", "⚫"], "answerIndex": 0 },
+          { "id": "pt_12", "skill": "l_pattern1", "bloom": "apply", "prompt": "1, 2, 1, 2, 1, ? — what comes next?", "choices": ["2", "1", "3"], "answerIndex": 0 },
+          { "id": "pt_fruit", "skill": "l_pattern1", "bloom": "apply", "prompt": "🍎 🍌 🍎 🍌 🍎 — what comes next?", "choices": ["🍌", "🍎", "🍇"], "answerIndex": 0 },
+          { "id": "pt_name", "skill": "l_pattern1", "bloom": "understand", "prompt": "🔴🔵🔴🔵 over and over is called a:", "choices": ["repeating pattern", "number", "colour only"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

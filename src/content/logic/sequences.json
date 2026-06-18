@@ -1,0 +1,24 @@
+{
+  "id": "sequences",
+  "subject": "logic",
+  "strand": "l_pattern",
+  "band": 2,
+  "title": "Number sequences",
+  "blurb": "Find the next number.",
+  "order": 1,
+  "skills": ["l_sequence"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "se_even", "skill": "l_sequence", "bloom": "apply", "prompt": "2, 4, 6, 8, ? — what comes next?", "choices": ["10", "9", "12"], "answerIndex": 0 },
+          { "id": "se_five", "skill": "l_sequence", "bloom": "apply", "prompt": "5, 10, 15, ? — what comes next?", "choices": ["20", "16", "25"], "answerIndex": 0 },
+          { "id": "se_odd", "skill": "l_sequence", "bloom": "apply", "prompt": "1, 3, 5, 7, ? — what comes next?", "choices": ["9", "8", "10"], "answerIndex": 0 },
+          { "id": "se_down", "skill": "l_sequence", "bloom": "apply", "prompt": "10, 9, 8, 7, ? — what comes next?", "choices": ["6", "8", "5"], "answerIndex": 0 },
+          { "id": "se_rule", "skill": "l_sequence", "bloom": "analyze", "prompt": "In 3, 6, 9, 12 each number goes up by:", "choices": ["3", "1", "6"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

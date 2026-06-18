@@ -93,6 +93,17 @@ describe('bundled lessons', () => {
         'conditions',
         'algorithms',
         'footprint',
+        // Logic & problem solving across the five bands
+        'patterns',
+        'sorting',
+        'sequences',
+        'oddone',
+        'analogies',
+        'deduce',
+        'multistep',
+        'conditional',
+        'validity',
+        'fallacies',
       ]),
     );
   });

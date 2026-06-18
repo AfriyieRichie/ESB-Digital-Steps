@@ -1,0 +1,24 @@
+{
+  "id": "multistep",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 4,
+  "title": "Multi-step problems",
+  "blurb": "One step at a time.",
+  "order": 1,
+  "skills": ["l_multistep"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "ms_apples", "skill": "l_multistep", "bloom": "analyze", "prompt": "A box has 3 rows of 4 apples. You eat 2. How many are left?", "choices": ["10", "12", "9"], "answerIndex": 0 },
+          { "id": "ms_money", "skill": "l_multistep", "bloom": "analyze", "prompt": "You have 20. You spend 5, then earn 8. How much now?", "choices": ["23", "13", "33"], "answerIndex": 0 },
+          { "id": "ms_bus", "skill": "l_multistep", "bloom": "analyze", "prompt": "A bus has 30 seats. 12 people get on, then 7 more. How many seats are empty?", "choices": ["11", "18", "19"], "answerIndex": 0 },
+          { "id": "ms_pencils", "skill": "l_multistep", "bloom": "analyze", "prompt": "2 packs of 6 pencils are shared equally among 3 friends. Each friend gets:", "choices": ["4", "6", "2"], "answerIndex": 0 },
+          { "id": "ms_how", "skill": "l_multistep", "bloom": "understand", "prompt": "To solve a multi-step problem you should:", "choices": ["do one step at a time", "skip to the end", "guess once"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

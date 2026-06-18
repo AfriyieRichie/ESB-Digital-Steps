@@ -1,0 +1,24 @@
+{
+  "id": "conditional",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 4,
+  "title": "All, some, if-then",
+  "blurb": "Reason with rules.",
+  "order": 2,
+  "skills": ["l_conditional"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "co_cat", "skill": "l_conditional", "bloom": "analyze", "prompt": "All cats are animals. Fluffy is a cat. So Fluffy is ___.", "choices": ["an animal", "a dog", "a plant"], "answerIndex": 0 },
+          { "id": "co_square", "skill": "l_conditional", "bloom": "analyze", "prompt": "All squares have 4 sides. This shape is a square. So it has ___.", "choices": ["4 sides", "3 sides", "no sides"], "answerIndex": 0 },
+          { "id": "co_birds", "skill": "l_conditional", "bloom": "evaluate", "prompt": "Some birds cannot fly. So the statement “all birds fly” is ___.", "choices": ["false", "true", "a question"], "answerIndex": 0 },
+          { "id": "co_fruit", "skill": "l_conditional", "bloom": "analyze", "prompt": "IF it is a fruit THEN it grows on a plant. An apple is a fruit. So an apple ___.", "choices": ["grows on a plant", "is an animal", "is made of metal"], "answerIndex": 0 },
+          { "id": "co_reverse", "skill": "l_conditional", "bloom": "analyze", "prompt": "“All A are B” does NOT mean:", "choices": ["all B are A", "some A are B", "A are B"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}

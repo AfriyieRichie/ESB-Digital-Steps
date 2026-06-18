@@ -1,0 +1,24 @@
+{
+  "id": "oddone",
+  "subject": "logic",
+  "strand": "l_reason",
+  "band": 2,
+  "title": "Odd one out",
+  "blurb": "Spot what doesn't fit.",
+  "order": 2,
+  "skills": ["l_oddone"],
+  "steps": [
+    {
+      "activityType": "choose",
+      "config": {
+        "items": [
+          { "id": "od_table", "skill": "l_oddone", "bloom": "analyze", "prompt": "Which is the odd one out? cat, dog, cow, table", "choices": ["table", "cat", "dog"], "answerIndex": 0 },
+          { "id": "od_loud", "skill": "l_oddone", "bloom": "analyze", "prompt": "Which does not belong? red, blue, green, loud", "choices": ["loud", "red", "blue"], "answerIndex": 0 },
+          { "id": "od_letter", "skill": "l_oddone", "bloom": "analyze", "prompt": "Which is NOT a number? 4, 7, B, 9", "choices": ["B", "4", "7"], "answerIndex": 0 },
+          { "id": "od_fish", "skill": "l_oddone", "bloom": "analyze", "prompt": "Three can fly. Which cannot? bird, plane, butterfly, fish", "choices": ["fish", "bird", "plane"], "answerIndex": 0 },
+          { "id": "od_apple", "skill": "l_oddone", "bloom": "analyze", "prompt": "Which is the odd one out? circle, square, triangle, apple", "choices": ["apple", "circle", "square"], "answerIndex": 0 }
+        ]
+      }
+    }
+  ]
+}
