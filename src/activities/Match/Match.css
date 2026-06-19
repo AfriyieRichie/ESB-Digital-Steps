@@ -33,42 +33,50 @@
 .match__card {
   width: 100%;
   min-height: var(--touch-target-lg);
-  padding: var(--space-3) var(--space-4);
-  border: 3px solid var(--color-border);
+  padding: var(--space-4);
+  border: none;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--press-lip) var(--color-border), var(--shadow-1);
   font-size: var(--font-size-xl);
   font-weight: 800;
   color: var(--color-text);
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  transition: transform var(--motion-fast) ease, border-color var(--motion-fast) ease,
+  transition: transform var(--motion-fast) var(--ease-spring), box-shadow var(--motion-fast) ease,
     background var(--motion-fast) ease;
 }
 
+/* Tint the two columns differently so pairs read clearly. */
+.match__col:first-child .match__card { box-shadow: var(--press-lip) #245fb0, var(--shadow-1); border-left: 8px solid var(--color-subject-reading); }
+.match__col:last-child .match__card { box-shadow: var(--press-lip) #6a2fd0, var(--shadow-1); border-left: 8px solid var(--color-subject-writing); }
+
+.match__card:hover {
+  transform: translateY(-2px);
+}
+
 .match__card:active {
-  transform: scale(0.97);
+  transform: translateY(3px);
 }
 
 .match__card--selected {
-  border-color: var(--color-primary);
-  background: rgba(27, 111, 107, 0.12);
+  background: var(--gradient-primary);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.03);
 }
 
 .match__card--wrong {
-  border-color: var(--color-danger);
-  background: rgba(179, 38, 30, 0.1);
+  background: var(--opt-1);
+  color: #ffffff;
   animation: match-shake var(--motion-base) ease;
 }
 
 .match__card--done {
-  border-color: var(--color-success);
-  background: rgba(46, 125, 50, 0.12);
-  color: var(--color-success);
+  background: var(--opt-4);
+  color: #ffffff;
   cursor: default;
-  box-shadow: none;
+  box-shadow: var(--shadow-1);
 }
 
 @keyframes match-shake {

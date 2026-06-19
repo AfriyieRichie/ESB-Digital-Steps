@@ -58,6 +58,16 @@
   --gradient-writing: linear-gradient(180deg, #a771ff 0%, #8a3ffc 100%);
   --gradient-numeracy: linear-gradient(180deg, #ffb14d 0%, #e08600 100%);
   --gradient-digital: linear-gradient(180deg, #2fc4c4 0%, #0b7d7d 100%);
+  /* Playful answer-option palette (vibrant; white text clears AA on each) */
+  --opt-1: linear-gradient(180deg, #ff8a8a 0%, #e84e4e 100%);
+  --opt-2: linear-gradient(180deg, #5aa0f0 0%, #2f7fe0 100%);
+  --opt-3: linear-gradient(180deg, #a771ff 0%, #8a3ffc 100%);
+  --opt-4: linear-gradient(180deg, #43b873 0%, #1f8a4c 100%);
+  --opt-5: linear-gradient(180deg, #ffb14d 0%, #e08600 100%);
+  --opt-6: linear-gradient(180deg, #2fc4c4 0%, #0b7d7d 100%);
+  /* Tactile dark "lip" under pressable colour tiles. */
+  --opt-lip: 0 6px 0 rgba(0, 0, 0, 0.18);
+
   --gradient-science: linear-gradient(180deg, #43b873 0%, #1f8a4c 100%);
   --gradient-logic: linear-gradient(180deg, #7b74ee 0%, #4f46e5 100%);
   --gradient-social: linear-gradient(180deg, #b58046 0%, #8a5a2b 100%);

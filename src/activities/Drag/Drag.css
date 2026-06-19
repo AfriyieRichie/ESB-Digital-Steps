@@ -46,14 +46,24 @@
   height: var(--touch-target-xl);
   border: none;
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-2);
+  background: var(--gradient-star);
+  box-shadow: var(--shadow-3);
   font-size: var(--font-size-3xl);
   line-height: 1;
   cursor: grab;
   touch-action: none; /* we own the gesture via Pointer Events */
   -webkit-tap-highlight-color: transparent;
   transition: transform var(--motion-base) ease;
+  animation: drag-nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes drag-nudge {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1.05) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drag__token { animation: none; }
 }
 
 .drag__token--dragging {
@@ -77,14 +87,15 @@
 .drag__target {
   display: grid;
   place-items: center;
-  min-width: 110px;
-  min-height: 110px;
+  min-width: 120px;
+  min-height: 120px;
   padding: var(--space-4);
-  border: 4px dashed var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface-sunken);
+  border: 5px dashed var(--color-subject-digital);
+  border-radius: var(--radius-xl);
+  background: rgba(15, 163, 163, 0.08);
   font-size: var(--font-size-2xl);
-  font-weight: 700;
+  font-weight: 800;
+  transition: transform var(--motion-fast) var(--ease-spring), background var(--motion-fast) ease;
 }
 
 .drag__target--hover {

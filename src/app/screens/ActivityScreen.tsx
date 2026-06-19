@@ -6,6 +6,7 @@ import { recordAttempt } from '../../data/mastery';
 import { applyActivityReward } from '../../gamification/progress';
 import { useCurrentLearner } from '../../learner/store';
 import { useAppStore } from '../store';
+import './ActivityScreen.css';
 
 /**
  * Plays a lesson as an ordered sequence of steps. For each step it looks up the

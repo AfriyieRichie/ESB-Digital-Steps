@@ -1,0 +1,44 @@
+/* The playful "stage" every activity is played on: a bright rounded card with a
+   colourful top ribbon and a soft confetti-dot backdrop. */
+.activity-screen {
+  position: relative;
+  min-height: 60vh;
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+  animation: rise-in var(--motion-base) var(--ease-out) both;
+}
+
+/* Rainbow ribbon along the top. */
+.activity-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 12px;
+  background: linear-gradient(
+    90deg,
+    #ff6b6b 0%,
+    #ffc043 25%,
+    #2fa84f 50%,
+    #2f7fe0 75%,
+    #8a3ffc 100%
+  );
+}
+
+/* Faint polka-dot texture behind the play area. */
+.activity-screen::after {
+  content: '';
+  position: absolute;
+  inset: 12px 0 0 0;
+  background-image: radial-gradient(rgba(36, 59, 83, 0.05) 2px, transparent 2px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.activity-screen > * {
+  position: relative;
+  z-index: 1;
+}
