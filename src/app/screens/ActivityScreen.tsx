@@ -5,6 +5,7 @@ import type { AttemptResult } from '../../activities/engine.types';
 import { recordAttempt } from '../../data/mastery';
 import { applyActivityReward } from '../../gamification/progress';
 import { useCurrentLearner } from '../../learner/store';
+import { Mascot, type MascotMood } from '../../ui/Mascot';
 import { useAppStore } from '../store';
 import './ActivityScreen.css';
 
@@ -28,6 +29,11 @@ export function ActivityScreen(): React.JSX.Element {
   const lesson = activeLessonId !== null ? getLesson(activeLessonId) : null;
   const [stepIndex, setStepIndex] = useState(0);
 
+  // The buddy mascot's mood reacts to each answer (cheers right, encourages
+  // wrong), then settles back to a gentle idle.
+  const [mood, setMood] = useState<MascotMood>('happy');
+  const moodTimer = useRef<number | null>(null);
+
   // In-flight attempt writes, and the set of skills mastered during this play —
   // tracked in refs so completion can await all writes before counting.
   const pending = useRef<Promise<void>[]>([]);
@@ -36,6 +42,11 @@ export function ActivityScreen(): React.JSX.Element {
   const onAttempt = useCallback(
     (result: AttemptResult) => {
       if (!lesson || currentLearnerId === null) return;
+
+      setMood(result.correct ? 'cheer' : 'oops');
+      if (moodTimer.current !== null) window.clearTimeout(moodTimer.current);
+      moodTimer.current = window.setTimeout(() => setMood('happy'), 1300);
+
       // Attribute to the item's own skills when the activity provides them,
       // otherwise to the whole lesson (e.g. the generative Tap activity).
       const skills = result.skills && result.skills.length > 0 ? result.skills : lesson.skills;
@@ -91,6 +102,9 @@ export function ActivityScreen(): React.JSX.Element {
         onAttempt={onAttempt}
         onComplete={onStepComplete}
       />
+      <div className="activity-screen__buddy">
+        <Mascot mood={mood} size={88} />
+      </div>
     </section>
   );
 }

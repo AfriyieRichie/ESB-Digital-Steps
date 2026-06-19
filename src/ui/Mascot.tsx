@@ -1,20 +1,21 @@
 import './Mascot.css';
 
-// "Tema" — the friendly star mascot. Hand-authored SVG so it stays crisp at any
-// size, bundles with zero weight, and works fully offline. A gentle bob brings
-// it to life (disabled under prefers-reduced-motion).
+// "Tema" — the friendly star mascot who guides and reacts throughout the app.
+// Hand-authored SVG so it stays crisp at any size, bundles with zero weight, and
+// works fully offline. Moods let it come alive: cheering on a correct answer,
+// gently encouraging on a wrong one, thinking while the child reads.
 
-type Mood = 'happy' | 'cheer';
+export type MascotMood = 'happy' | 'cheer' | 'think' | 'oops';
 
 interface MascotProps {
-  mood?: Mood;
+  mood?: MascotMood;
   size?: number;
 }
 
 export function Mascot({ mood = 'happy', size = 120 }: MascotProps): React.JSX.Element {
   const cheering = mood === 'cheer';
   return (
-    <span className={`mascot${cheering ? ' mascot--cheer' : ''}`} aria-hidden="true">
+    <span className={`mascot mascot--${mood}`} aria-hidden="true">
       <svg width={size} height={size} viewBox="0 0 120 120" fill="none" role="img">
         <defs>
           <linearGradient id="mascot-star" x1="60" y1="6" x2="60" y2="112" gradientUnits="userSpaceOnUse">
@@ -38,17 +39,31 @@ export function Mascot({ mood = 'happy', size = 120 }: MascotProps): React.JSX.E
         <circle cx="76" cy="68" r="6" fill="#ff8aa0" opacity="0.7" />
 
         {/* Eyes */}
-        <circle cx="49" cy="58" r="7.5" fill="#243b53" />
-        <circle cx="71" cy="58" r="7.5" fill="#243b53" />
-        <circle cx="51.5" cy="55.5" r="2.5" fill="#ffffff" />
-        <circle cx="73.5" cy="55.5" r="2.5" fill="#ffffff" />
-
-        {/* Mouth */}
-        {cheering ? (
-          <path d="M48 72 Q60 88 72 72 Q60 80 48 72 Z" fill="#243b53" />
+        {mood === 'oops' ? (
+          <>
+            <circle cx="49" cy="58" r="9" fill="#243b53" />
+            <circle cx="71" cy="58" r="9" fill="#243b53" />
+            <circle cx="51" cy="55" r="3" fill="#ffffff" />
+            <circle cx="73" cy="55" r="3" fill="#ffffff" />
+          </>
         ) : (
+          <>
+            <circle cx="49" cy="58" r="7.5" fill="#243b53" />
+            <circle cx="71" cy="58" r="7.5" fill="#243b53" />
+            <circle cx="51.5" cy="55.5" r="2.5" fill="#ffffff" />
+            <circle cx="73.5" cy="55.5" r="2.5" fill="#ffffff" />
+          </>
+        )}
+
+        {/* Mouth per mood */}
+        {mood === 'cheer' && <path d="M48 72 Q60 88 72 72 Q60 80 48 72 Z" fill="#243b53" />}
+        {mood === 'happy' && (
           <path d="M50 73 Q60 82 70 73" stroke="#243b53" strokeWidth="4" strokeLinecap="round" fill="none" />
         )}
+        {mood === 'think' && (
+          <path d="M52 76 H68" stroke="#243b53" strokeWidth="4" strokeLinecap="round" fill="none" />
+        )}
+        {mood === 'oops' && <circle cx="60" cy="76" r="5" fill="#243b53" />}
 
         {/* Sparkles when cheering */}
         {cheering && (
@@ -57,6 +72,9 @@ export function Mascot({ mood = 'happy', size = 120 }: MascotProps): React.JSX.E
             <path d="M104 22 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5 z" />
           </g>
         )}
+
+        {/* Thought dot when thinking */}
+        {mood === 'think' && <circle className="mascot__think" cx="92" cy="40" r="5" fill="#7c5cff" />}
       </svg>
     </span>
   );

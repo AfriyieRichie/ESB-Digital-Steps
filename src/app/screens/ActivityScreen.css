@@ -42,3 +42,21 @@
   position: relative;
   z-index: 1;
 }
+
+/* The buddy mascot watches from the bottom-right corner of the stage. */
+.activity-screen__buddy {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .activity-screen__buddy {
+    right: var(--space-2);
+    bottom: var(--space-2);
+    transform: scale(0.7);
+    transform-origin: bottom right;
+  }
+}

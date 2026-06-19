@@ -9,6 +9,25 @@
   animation: mascot-cheer 0.9s var(--ease-spring) infinite;
 }
 
+.mascot--oops {
+  animation: mascot-wobble 0.5s ease;
+}
+
+.mascot__think {
+  animation: mascot-think 1.4s ease-in-out infinite;
+}
+
+@keyframes mascot-wobble {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+@keyframes mascot-think {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
+}
+
 .mascot__sparkles {
   animation: mascot-twinkle 1s ease-in-out infinite alternate;
   transform-origin: center;
@@ -32,7 +51,9 @@
 @media (prefers-reduced-motion: reduce) {
   .mascot,
   .mascot--cheer,
-  .mascot__sparkles {
+  .mascot--oops,
+  .mascot__sparkles,
+  .mascot__think {
     animation: none;
   }
 }

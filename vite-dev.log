@@ -175,3 +175,83 @@
 [2m11:57:21 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/activities/Type/Type.css[22m
 [2m11:57:48 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/activities/Drag/Drag.css[22m
 [2m11:59:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/activities/Drag/Drag.css[22m
+[2m12:13:34 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx[22m
+[2m12:13:47 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx[22m
+[2m12:13:47 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\User\Desktop\Developments\ESB Digital Steps\src\app\App.tsx: Unterminated JSX contents. (27:15)
+
+[0m [90m 25 |[31m       {screen [33m===[31m [32m'village'[31m [33m&&[31m [33m<[31m[33mVillageScreen[31m [33m/[31m[33m>[31m}
+ [90m 26 |[31m       {screen [33m===[31m [32m'facilitator'[31m [33m&&[31m [33m<[31m[33mFacilitatorGate[31m [33m/[31m[33m>[31m}
+[31m[1m>[22m[31m[90m 27 |[31m     [33m<[31m[33m/[31m[33mAppShell[31m[33m>[31m
+ [90m    |[31m                [31m[1m^[22m[31m
+ [90m 28 |[31m   )[33m;[31m
+ [90m 29 |[31m }
+ [90m 30 |[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/User/Desktop/Developments/ESB Digital Steps/src/app/App.tsx[39m:27:15
+[33m  25 |        {screen === 'village' && <VillageScreen />}
+  26 |        {screen === 'facilitator' && <FacilitatorGate />}
+  27 |      </AppShell>
+     |                 ^
+  28 |    );
+  29 |  }[39m
+      at constructor (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:6616:19)
+      at TypeScriptParserMixin.jsxReadToken (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4460:20)
+      at TypeScriptParserMixin.getTokenFromCode (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4786:12)
+      at TypeScriptParserMixin.getTokenFromCode (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:5799:10)
+      at TypeScriptParserMixin.next (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:5709:10)
+      at TypeScriptParserMixin.eat (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:5713:12)
+      at TypeScriptParserMixin.expect (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:6915:15)
+      at TypeScriptParserMixin.jsxParseClosingElementAt (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4692:10)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4707:37)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10848:21)
+      at C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9792:39
+      at TypeScriptParserMixin.tryParse (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9792:18)
+      at C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10801:23)
+      at C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12815:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (C:\Users\User\Desktop\Developments\ESB Digital Steps\node_modules\@babel\parser\lib\index.js:12764:17)
+[2m12:14:05 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx[22m
+[2m12:14:22 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/AppShell.css[22m
+[2m12:14:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/ui/Mascot.tsx[22m
+[2m12:15:07 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/ui/Mascot.css[22m
+[2m12:15:26 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/ui/Mascot.css[22m
+[2m12:15:55 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/StartScreen.tsx[22m
+[2m12:16:16 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/StartScreen.css[22m
+[2m12:16:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/ActivityScreen.tsx[22m
+[2m12:17:33 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/ActivityScreen.tsx[22m
+[2m12:17:50 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/ActivityScreen.tsx[22m
+[2m12:18:03 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/screens/ActivityScreen.css[22m

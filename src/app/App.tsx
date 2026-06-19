@@ -1,4 +1,5 @@
 import { AppShell } from './AppShell';
+import { Scene } from '../ui/Scene';
 import { useAppStore } from './store';
 import { StartScreen } from './screens/StartScreen';
 import { JourneyScreen } from './screens/JourneyScreen';
@@ -13,14 +14,17 @@ export function App(): React.JSX.Element {
   const screen = useAppStore((s) => s.screen);
 
   return (
-    <AppShell>
-      {screen === 'start' && <StartScreen />}
+    <>
+      <Scene />
+      <AppShell>
+        {screen === 'start' && <StartScreen />}
       {screen === 'learners' && <LearnerPicker />}
       {screen === 'journey' && <JourneyScreen />}
       {screen === 'activity' && <ActivityScreen />}
       {screen === 'reward' && <RewardScreen />}
       {screen === 'village' && <VillageScreen />}
       {screen === 'facilitator' && <FacilitatorGate />}
-    </AppShell>
+      </AppShell>
+    </>
   );
 }
